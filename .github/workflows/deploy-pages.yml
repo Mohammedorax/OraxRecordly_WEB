@@ -1,0 +1,73 @@
+name: Deploy landing page to GitHub Pages
+
+# The site is a Next.js static export (next.config.ts → output: "export").
+# It is published at https://mohammedorax.github.io/OraxRecordly_WEB/ , which
+# is why SITE_BASE_PATH is set to /OraxRecordly_WEB for the build. Leave that
+# variable empty and the very same workflow produces a root / custom-domain
+# deploy instead.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# GITHUB_TOKEN permissions required by the Pages deployment.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Never let two Pages deployments race; a newer push wins.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build static export
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build static export
+        env:
+          # Subpath the site is served from. Empty string = root deploy.
+          SITE_BASE_PATH: /OraxRecordly_WEB
+          # Absolute origin used for canonical URLs, OG tags and JSON-LD.
+          SITE_URL: https://mohammedorax.github.io
+        run: npm run build
+
+      - name: Disable Jekyll processing
+        # Without .nojekyll, Pages drops every path that starts with "_",
+        # which would delete all of /_next/.
+        run: touch out/.nojekyll
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
