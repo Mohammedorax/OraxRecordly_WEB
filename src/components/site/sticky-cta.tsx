@@ -48,9 +48,9 @@ export function StickyCTA() {
           <Image
             src={asset("/brand/logo-icon.png")}
             alt=""
-            width={200}
-            height={200}
-            className="h-9 w-9 shrink-0"
+            width={192}
+            height={124}
+            className="h-9 w-auto shrink-0"
           />
           <span className="min-w-0">
             <span className="block truncate text-sm font-medium">

@@ -25,10 +25,21 @@ const WINDOWS_INSTALLER =
 /** Secondary destination: every release, every platform. */
 const ALL_RELEASES = "https://github.com/Mohammedorax/OraxRecordly/releases";
 
+/**
+ * Only Windows has a published build today (`OraxRecordly-windows-x64.exe`,
+ * 161,475,960 bytes ≈ 154 MiB, release v1.4.2). macOS and Linux are listed so
+ * those visitors land on the releases page — never a download we cannot serve.
+ */
 const PLATFORMS = [
-  { name: "Windows", icon: Monitor, meta: "v1.4 — 155 MB — WIN 10+", href: WINDOWS_INSTALLER, direct: true },
-  { name: "macOS", icon: Laptop, meta: "v1.4 — 13.0+", href: ALL_RELEASES, direct: false },
-  { name: "Linux", icon: Terminal, meta: "v1.4 — DEB / RPM", href: ALL_RELEASES, direct: false },
+  {
+    name: "Windows",
+    icon: Monitor,
+    meta: "154 MB",
+    href: WINDOWS_INSTALLER,
+    direct: true,
+  },
+  { name: "macOS", icon: Laptop, meta: "NO BUILD YET", href: ALL_RELEASES, direct: false },
+  { name: "Linux", icon: Terminal, meta: "NO BUILD YET", href: ALL_RELEASES, direct: false },
 ];
 
 type Variant = "button" | "compact" | "link";
@@ -136,7 +147,7 @@ export function DownloadCTA({
         <DialogContent className="rounded-3xl border-black/10 p-8 sm:max-w-md">
           <DialogHeader>
             <p className="mono text-mink-50" dir="ltr">
-              DOWNLOAD — v1.4
+              DOWNLOAD — v1.4.2
             </p>
             <DialogTitle className="mt-2 text-start font-display text-3xl font-medium">
               {t.download.title}
@@ -151,9 +162,10 @@ export function DownloadCTA({
               <li key={p.name}>
                 <a
                   href={p.href}
-                  {...(p.direct ? { download: true } : {})}
+                  {...(p.direct ? { download: true } : { target: "_blank", rel: "noreferrer" })}
                   onClick={() => {
-                    announce(p.name);
+                    // Only a real installer download may announce itself.
+                    if (p.direct) announce(p.name);
                     setOpen(false);
                   }}
                   className="group flex w-full items-center justify-between rounded-2xl border border-ink/10 px-5 py-4 transition-colors duration-500 ease-editorial hover:border-orax-blue hover:bg-orax-blue hover:text-white"
@@ -169,8 +181,11 @@ export function DownloadCTA({
                       </span>
                     </span>
                   </span>
-                  <span className="flex flex-col items-end gap-1">
-                    <span className="mono text-mink-50 group-hover:text-white/60" dir="ltr">
+                  <span className="flex shrink-0 flex-col items-end gap-1">
+                    <span
+                      className="mono whitespace-nowrap text-mink-50 group-hover:text-white/60"
+                      dir="ltr"
+                    >
                       {p.meta}
                     </span>
                     <DirArrow

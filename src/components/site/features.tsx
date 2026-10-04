@@ -10,21 +10,21 @@ import { asset } from "@/lib/asset";
 
 /**
  * Real captures of the shipped app (public/images/app/*), each matched to the
- * feature it actually shows:
- *   screen recording  -> the region-selection overlay
- *   timeline editor   -> the editor with a genuine recording loaded
- *   camera & sound    -> the floating recording HUD (cam + mic controls)
- *   annotations       -> the image editor's pen/arrow/text/blur toolset
- *   instant export    -> the capture-settings inspector (format, filename)
- *   effects/templates -> the screenshots library / gallery
+ * capability its card describes:
+ *   screen recording  -> the floating recording HUD with its source picker
+ *   timeline editor   -> the editor with a real take loaded (timeline + frames)
+ *   screenshots       -> the screenshot library on the dashboard
+ *   image editor      -> the image editor with its pen/arrow/blur/text tools
+ *   settings & Arabic -> the settings panel (appearance, language, screenshots)
+ *   region capture    -> the drag-to-select capture overlay
  */
 const FEATURE_MEDIA = [
-  { image: "/images/app/app-04.jpg", version: "26.1" },
-  { image: "/images/app/app-02.jpg", version: "26.2" },
-  { image: "/images/app/app-01.jpg", version: "26.0" },
-  { image: "/images/app/app-05.jpg", version: "25.4" },
-  { image: "/images/app/app-06.jpg", version: "26.3" },
-  { image: "/images/app/app-03.jpg", version: "25.9" },
+  { image: "/images/app/app-01.jpg", index: "01" },
+  { image: "/images/app/app-02.jpg", index: "02" },
+  { image: "/images/app/app-03.jpg", index: "03" },
+  { image: "/images/app/app-05.jpg", index: "04" },
+  { image: "/images/app/app-06.jpg", index: "05" },
+  { image: "/images/app/app-04.jpg", index: "06" },
 ];
 
 export function Features() {
@@ -90,17 +90,21 @@ export function Features() {
                 </span>
               </div>
 
-              {/* Metadata row */}
-              <div className="mt-5 flex items-baseline justify-between gap-4 border-t border-ink/10 pt-4">
-                <h3 className="shrink-0 font-display text-2xl font-medium">
+              {/* Metadata row — one line on desktop (category truncates),
+                  two tidy lines on mobile so the category never chops off */}
+              <div className="mt-5 flex flex-wrap items-baseline gap-x-4 gap-y-1 border-t border-ink/10 pt-4">
+                <h3 className="order-1 font-display text-2xl font-medium">
                   {feature.title}
                 </h3>
-                <p className="truncate text-sm text-ink-soft">
+                <span
+                  className="mono order-2 ms-auto shrink-0 self-center text-orax-blue/70 md:order-3 md:self-auto"
+                  dir="ltr"
+                >
+                  {FEATURE_MEDIA[i].index}
+                </span>
+                <p className="order-3 w-full text-sm leading-relaxed text-ink-soft md:order-2 md:w-auto md:min-w-0 md:flex-1 md:truncate md:text-end">
                   {feature.category}
                 </p>
-                <span className="mono shrink-0 text-orax-blue/70" dir="ltr">
-                  {FEATURE_MEDIA[i].version}
-                </span>
               </div>
             </a>
           </Reveal>

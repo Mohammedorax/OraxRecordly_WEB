@@ -199,8 +199,8 @@ export function Header() {
             <Image
               src={asset("/brand/logo-horizontal.png")}
               alt={t.header.logoAlt}
-              width={489}
-              height={150}
+              width={400}
+              height={123}
               className="h-7 w-auto md:h-8"
               priority
             />
@@ -317,7 +317,7 @@ export function Header() {
             <Scramble text="ORAXRECORDLY — REC / EDIT / SHARE" />
           </p>
           <p className="mono text-mink-50" dir="ltr">
-            v1.4 — 2026
+            v1.4.2 — 2026
           </p>
         </div>
       </nav>

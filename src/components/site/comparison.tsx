@@ -116,8 +116,8 @@ export function Comparison() {
                     <Image
                       src={asset("/brand/logo-icon.png")}
                       alt=""
-                      width={200}
-                      height={200}
+                      width={192}
+                      height={124}
                       className="h-7 w-auto"
                     />
                     <span className={monoLabel + " text-orax-blue"}>

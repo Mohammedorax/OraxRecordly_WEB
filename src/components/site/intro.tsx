@@ -55,8 +55,8 @@ export function Intro() {
       <Image
         src={asset("/brand/logo-full.png")}
         alt=""
-        width={771}
-        height={729}
+        width={400}
+        height={378}
         className="h-20 w-auto md:h-24"
         priority
       />

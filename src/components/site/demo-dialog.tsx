@@ -21,12 +21,13 @@ const DURATION = 84; // 01:24 — the demo's editorial runtime
 
 /**
  * The three beats of the reel, using real captures of the shipped app:
- * picking the region to record, editing the take, then the capture settings.
+ * the recording HUD, the editor with a take loaded, then the screenshot
+ * library the captures land in.
  */
 const SCENES = [
-  { img: "/images/app/app-04.jpg", meta: "SCENE 01 — RECORD", start: 0 },
+  { img: "/images/app/app-01.jpg", meta: "SCENE 01 — RECORD", start: 0 },
   { img: "/images/app/app-02.jpg", meta: "SCENE 02 — EDIT", start: DURATION / 3 },
-  { img: "/images/app/app-06.jpg", meta: "SCENE 03 — EXPORT", start: (DURATION / 3) * 2 },
+  { img: "/images/app/app-03.jpg", meta: "SCENE 03 — CAPTURE", start: (DURATION / 3) * 2 },
 ];
 
 function fmt(t: number) {

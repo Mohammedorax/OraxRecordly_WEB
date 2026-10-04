@@ -28,25 +28,24 @@ const JSON_LD = {
   "@type": "SoftwareApplication",
   name: "OraxRecordly",
   applicationCategory: "MultimediaApplication",
-  operatingSystem: "Windows, macOS, Linux",
+  // The published release ships a Windows installer only — see
+  // https://github.com/Mohammedorax/OraxRecordly/releases
+  operatingSystem: "Windows 10 (build 19041 or newer), Windows 11",
   description:
     "استوديو تسجيل الشاشة وتحرير الفيديو من أوراكس: التقط شاشتك بدقة 4K وستين إطاراً في الثانية، وحرّر بإيقاع خيالك، وشارك تحفتك بلا علامات مائية.",
-  softwareVersion: "2.4",
+  softwareVersion: "1.4.2",
   inLanguage: "ar",
+  isAccessibleForFree: true,
   screenshot: absoluteUrl("/images/app/app-02.jpg"),
   featureList: [
-    "4K screen recording at 60fps",
-    "Timeline video editor",
-    "Camera & microphone capture",
-    "Live annotations",
-    "Instant export — MP4, GIF, WebM",
-    "120+ effects and templates",
+    "Screen recording up to 4K at 60fps",
+    "Timeline video editor — trim, split, speed",
+    "Auto-zoom and cursor effects",
+    "System audio and microphone capture",
+    "Screenshots with a built-in image editor",
+    "MP4 and GIF export",
+    "Arabic-first interface with full RTL layout",
   ],
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.9",
-    ratingCount: "1284",
-  },
 };
 
 export default function Home() {

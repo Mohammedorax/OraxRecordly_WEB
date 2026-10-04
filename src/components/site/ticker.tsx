@@ -40,7 +40,9 @@ export function Ticker() {
       aria-label={t.ticker.aria}
       className="overflow-hidden bg-[#0A0A0A] py-10 md:py-14"
     >
-      <div className="ticker">
+      {/* Same rule as the showcase marquee: the scroller must be LTR for the
+          -50% keyframe to loop seamlessly in RTL locales. */}
+      <div className="ticker" dir="ltr">
         <div className="ticker__track">
           <TickerSet phrases={t.ticker.phrases} />
           <TickerSet phrases={t.ticker.phrases} hidden />

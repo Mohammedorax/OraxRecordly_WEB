@@ -66,12 +66,12 @@ const ar = {
   marquee: {
     label: "ومضاتٌ من الاستوديو",
     alts: [
-      "لوحة تسجيل الشاشة مع زر تسجيل أحمر",
-      "محرر فيديو بجدول زمني ملون",
-      "فقاعة الكاميرا أثناء التسجيل",
-      "محرر الصوت والموجة الصوتية",
-      "أدوات التعليق التوضيحي على الشاشة",
-      "قائمة المشاركة الفورية",
+      "لوحة التسجيل العائمة في OraxRecordly مع زر التسجيل واختيار المصدر",
+      "محرّر الفيديو مع الجدول الزمني ولوحة الخلفيات والإطار",
+      "مكتبة لقطات الشاشة في لوحة التحكم مع البحث والمجلدات",
+      "محرّر الصور مع أدوات القلم والسهم والتظليل والتمويه والنص",
+      "لوحة الإعدادات: المظهر واللغة وصيغة اللقطات وقالب اسم الملف",
+      "تحديد منطقة من الشاشة بالمقابض قبل تأكيد الالتقاط",
     ],
   },
 
@@ -94,10 +94,10 @@ const ar = {
   stats: {
     aria: "أرقام أوراكس",
     labels: [
-      "نقاءٌ يفوقُ حدّةَ البصر",
-      "تصديرٌ يسبقُ لمحَ البصر",
-      "ترسانةُ قوالبَ ومؤثرات",
-      "علاماتٍ مائيّة — ولا واحدة",
+      "دقّةُ 4K وستّونَ إطاراً في الثانية",
+      "صيغتا تصدير: MP4 وGIF",
+      "أحدَ عشرَ نمطاً للمؤشّر",
+      "علامةٌ مائيّة — ولا واحدة",
     ],
   },
 
@@ -108,33 +108,33 @@ const ar = {
     items: [
       {
         title: "تسجيلُ الشاشة",
-        category: "الشاشةُ كاملةً أو نافذةٌ بعينِها — بدقّةٍ تُخجِلُ الواقع",
-        alt: "واجهة تسجيل الشاشة مع زر التسجيل",
+        category: "الشاشةُ كاملةً أو نافذةٌ بعينِها — بدقّةٍ تصلُ إلى 4K وستّينَ إطاراً",
+        alt: "لوحة التسجيل العائمة في OraxRecordly مع زر التسجيل واختيار الشاشة",
       },
       {
         title: "محرِّرُ الجدولِ الزمنيّ",
-        category: "قصَّ، ادمجْ، قسِّمْ — ومعاينةٌ فوريّةٌ لا تُبطئُ إيقاعَك",
-        alt: "الجدول الزمني لمحرر الفيديو",
+        category: "قصَّ، ادمجْ، قسِّمْ وغيّرِ السرعة — مع خلفياتٍ وإطارٍ يليقانِ بالمشهد",
+        alt: "محرّر الفيديو في OraxRecordly: الجدول الزمني ولوحة الخلفيات والإطار",
       },
       {
-        title: "الكاميرا والصوت",
-        category: "فقاعةُ حضورٍ ومؤشّرُ صوتٍ — أنتَ حاضرٌ في كلِّ مشهد",
-        alt: "تسجيل بالكاميرا والصوت معاً",
+        title: "لقطاتُ الشاشة",
+        category: "التقطْ ما تراهُ دونَ تسجيل، وابحثْ في مكتبتِك واستعِدْ كلَّ لقطة",
+        alt: "مكتبة لقطات الشاشة في لوحة تحكم OraxRecordly مع البحث والمجلدات",
       },
       {
-        title: "التعليقُ التوضيحيّ",
-        category: "أسهمٌ وأقلامٌ ترسمُ فوقَ الزمن — الفكرةُ تصلُ قبلَ الكلمة",
-        alt: "أدوات الرسم والتعليق على الشاشة",
+        title: "محرِّرُ الصورِ والتعليقات",
+        category: "قصٌّ وقلمٌ وسهمٌ وتظليلٌ وتمويهٌ ونص — تصحيحٌ كاملٌ بلا فقدان",
+        alt: "محرّر الصور في OraxRecordly مع أدوات القلم والسهم والتظليل والتمويه والنص",
       },
       {
-        title: "التصديرُ الفوريّ",
-        category: "MP4 وGIF وWebM — بضغطةٍ واحدةٍ يخرجُ العملُ إلى النور",
-        alt: "نافذة التصدير والصيغ المدعومة",
+        title: "عربيّةٌ من الأصل",
+        category: "واجهةٌ عربيّةٌ بتخطيطٍ كاملٍ من اليمينِ إلى اليسار، واللغةُ فيها خيارُك",
+        alt: "لوحة الإعدادات في OraxRecordly: المظهر واللغة وصيغة اللقطات",
       },
       {
-        title: "المؤثراتُ والقوالب",
-        category: "أكثرُ من 120 قالباً ومؤثراً — عُدّةُ الإبهارِ كاملة",
-        alt: "معرض المؤثرات والقوالب",
+        title: "التقاطُ منطقةٍ محدَّدة",
+        category: "اسحبِ الإطارَ وحدِّدْ ما تريدُ بالضبط — ثم أكِّدْ بضغطةٍ واحدة",
+        alt: "تحديد منطقة من الشاشة بالمقابض قبل تأكيد الالتقاط",
       },
     ],
   },
@@ -147,7 +147,8 @@ const ar = {
     sliderLabel: "شريط المقارنة بين اللقطة الخام والمونتاج النهائي",
     rawChip: "RAW — BEFORE",
     editChip: "ORAX — AFTER",
-    exportsCaption: "يصدِّرُ بصيغٍ ومعدّلاتٍ تناسبُ كلَّ منصةٍ وكلَّ شاشة",
+    exportsCaption:
+      "يُصدِّرُ الفيديو بصيغتَي MP4 وGIF، ويحفظُ اللقطاتَ PNG أو JPEG — بصيغٍ تناسبُ كلَّ منصةٍ وكلَّ شاشة",
   },
 
   testimonials: {
@@ -159,7 +160,7 @@ const ar = {
     items: [
       {
         quote:
-          "درّستُ عبر الشاشةِ سنواتٍ، ولم أجدْ أداةً تُحترِمُ وقتيَ كأوراكس: أضغطُ زرّاً واحداً، فيخرجُ الدرسُ مصقولاً كأنه فيلمٌ وثائقيّ. طلّابي ظنّوا أنني استأجرتُ مونتيراً — والسريرُ أزرقُ صغير.",
+          "درّستُ عبر الشاشةِ سنواتٍ، ولم أجدْ أداةً تُحترِمُ وقتيَ كأوراكس: أضغطُ زرّاً واحداً، فيخرجُ الدرسُ مصقولاً كأنه فيلمٌ وثائقيّ. طلّابي ظنّوا أنني استأجرتُ مونتيراً — والسرُّ زرٌّ أزرقُ صغير.",
         name: "ريم الحربي",
         role: "مؤسِّسة أكاديميّة «نُقطة» التعليميّة",
         initials: "رح",
@@ -205,13 +206,13 @@ const ar = {
     },
     rows: [
       {
-        label: "التسجيلُ بدقّةِ 4K و60 إطاراً في الثانية",
+        label: "التسجيلُ بدقّةٍ تصلُ إلى 4K و60 إطاراً في الثانية",
         cells: ["yes", "yes", "yes", "limited"],
       },
       { label: "محرِّرٌ بخطٍّ زمنيٍّ مدمج", cells: ["yes", "no", "yes", "limited"] },
       { label: "بلا علامةٍ مائيّةٍ — إطلاقاً", cells: ["yes", "yes", "no", "no"] },
-      { label: "تعليقاتٌ وتظليلٌ أثناءَ التسجيل", cells: ["yes", "no", "yes", "no"] },
-      { label: "تصدير MP4 وGIF وWebM", cells: ["yes", "yes", "yes", "no"] },
+      { label: "تعليقاتٌ وسهامٌ وتظليلٌ داخلَ المحرِّر", cells: ["yes", "no", "yes", "no"] },
+      { label: "تصدير MP4 وGIF", cells: ["yes", "partial", "yes", "partial"] },
       { label: "يعملُ دونَ اتصالٍ بالإنترنت", cells: ["yes", "yes", "yes", "no"] },
       { label: "واجهةٌ عربيّةٌ كاملةٌ (RTL)", cells: ["yes", "partial", "no", "no"] },
       {
@@ -233,27 +234,27 @@ const ar = {
     items: [
       {
         q: "هل أوراكس مجانيٌّ حقاً؟ وأين الخدعة؟",
-        a: "لا خدقةَ ولا حاشيةَ صغيرة. خطةُ «المجاني» لا تنتهي صلاحيتُها ولا تضعُ علامةً مائيّةً على عملِك ولا تحدُّ عددَ التسجيلات — إلى الأبد. نكسبُ من الخياراتِ الاحترافيّة (برو والاستوديو) التي تشتريها حين تنضجَ احتياجاتُك، لا من كسرِ إبداعِك في منتصفِ الطريق. البدءُ لا يطلبُ بطاقةَ ائتمان، بل ضغطةَ زرٍّ واحدة.",
+        a: "لا خدعةَ ولا حاشيةَ صغيرة: التطبيقُ مجّانيٌّ بالكامل، ومفتوحُ المصدر. لا اشتراكاتٍ ولا خططَ مدفوعةً ولا بطاقةَ ائتمان، ولا حسابَ تُنشئُه لتبدأ. حمِّلْ، ثبِّتْ، وسجِّل.",
       },
       {
         q: "هل يُثقِلُ التسجيلُ جهازي أو يبطئُ ألعابي؟",
-        a: "محركُ الالتقاطِ يعملُ على البطاقةِ الرسوميّةِ لا على المعالج، ويستخدمُ ترميزاً عتاديّاً (GPU encoding) يحافظُ على إيقاعِ جهازِك. في اختباراتِنا على أجهزةٍ متوسطةٍ تعملُ الألعابُ بسرعةِ 60 إطاراً: لم يتجاوزْ أثرُ التسجيلِ 3% من الأداء. وإن كانَ جهازُكَ أقلَّ قدرةً، تخفّضُ الأداةُ الدقةَ تلقائيّاً لتحفظَ سلاسةَ التجربةِ لا كمالَ البيكسلات.",
+        a: "لا نَعِدُ بأرقامِ أداءٍ لا نستطيعُ إثباتَها: الالتقاطُ على ويندوز يجري عبر مساعدٍ أصليٍّ مخصّص، والتصديرُ يستطيعُ الاستعانةَ بتسريعِ NVIDIA CUDA. أمّا سقفُ الجودة فيتبعُ ما تسمحُ به شاشتُك وجهازُك: ما تراهُ العينُ هو ما يُلتقَط.",
       },
       {
         q: "أين تُحفَظُ تسجيلاتي؟ وهل ترونها؟",
-        a: "على جهازِكَ حصراً، لحظةَ إيقافِ التسجيل. لا نرفعُ شيئاً إلى خوادمنا إلا إذا طلبتَ أنتَ مزامنةَ المكتبةِ بيدِك، وحينها تكونُ التشفيرُ من الطرفِ إلى الطرف. سياسةُ الخصوصيّةِ عندنا بسيطةٌ لأنَّ نموذجَ عملِنا لا يحتاجُ إلى بياناتِك — نبيعُك أداةً، لا نشتري منك محتوى.",
+        a: "على جهازِك حصراً، لحظةَ إيقافِ التسجيل. لا حسابَ ولا سحابةَ ولا خادمَ خلفيّ: مكتبتُك تعيشُ في مجلدِ التسجيلاتِ عندك، ولا يُرسَلُ منها شيءٌ إلى أيِّ جهة — لا إلينا ولا إلى غيرِنا.",
       },
       {
-        q: "هل تدعمون العربيةُ في التعليقاتِ التوضيحيّةِ والنصوص؟",
-        a: "الواجهةُ عربيّةٌ أصالةً لا ترجمةً: التحريرُ من اليمينِ إلى اليسار، والخطوطُ تحترمُ المدّاتِ والتشكيل، والتعليقاتُ التوضيحيّةُ تكتُبُ بالعربيّةِ اتصالاً سليماً لا حروفاً مقطّعة. أضفْ إلى ذلك اتجاهين كاملين (RTL/LTR) لمن ينتجُ بالإنجليزيّة، وواجهةً تتذكّرُ اختيارَك.",
+        q: "هل تدعمون العربيةَ في التعليقاتِ التوضيحيّةِ والنصوص؟",
+        a: "الواجهةُ عربيّةٌ أصالةً لا ترجمةً: التحريرُ من اليمينِ إلى اليسار، والخطوطُ تحترمُ المدّاتِ والتشكيل، والتعليقاتُ التوضيحيّةُ تكتُبُ بالعربيّةِ اتصالاً سليماً لا حروفاً مقطّعة. واللغتانِ المدعومتانِ اثنتان: العربيّةُ والإنجليزيّة، وواجهةٌ تتذكّرُ اختيارَك.",
       },
       {
-        q: "ما الفرقُ بين «برو» و«الاستوديو»؟",
-        a: "«برو» لصانعِ المحتوى الفرد: دقّةُ 4K، ومكتبةُ المؤثراتِ الكاملة، وتصديرٌ ثلاثيُّ السرعة. «الاستوديو» للفرق: مقاعدُ غيرُ محدودة، ومكتبةُ فريقٍ مشتركة، وتصديرُ دفعاتٍ للأرشيفِ الكامل، ودعمٌ ذو أولويّةٍ يجيبُ خلالَ ساعتين. القاعدةُ عمليّة: إن كانَ العملُ يخرجُ من جهازٍ واحد، فبرو؛ وإذا خرجَ من غرفةٍ كاملة، فالاستوديو.",
+        q: "على أيِّ نظامٍ يعملُ التطبيق؟ وما متطلّباتُه؟",
+        a: "الإصدارُ المنشورُ اليوم لويندوزَ وحدَه: ويندوز 10 (إصدار 19041 أو أحدث) أو ويندوز 11، بنسخة 64 بت. ولا يوجدُ حتى الآن مُثبِّتٌ منشورٌ لماك أو لينكس؛ وأيُّ بناءٍ جديدٍ يظهرُ أوّلاً في صفحةِ الإصدارات على جيت هاب.",
       },
       {
-        q: "هل يمكنني الإلغاءُ متى شئت؟ وماذا يحدثُ لأعمالي؟",
-        a: "الإلغاءُ بضغطةٍ واحدةٍ من الإعدادات، بلا مكالماتٍ ولا «عروضِ احتفاظ» محرجة. كلُّ ما صدّرتْهُ يبقى ملكَكَ على جهازِكَ بصيغتهِ النهائيّة — لا مفاتيحَ تُسحب، ولا ملفاتٍ تُقفل. وحتى إن أعدتَ الخطةَ المجانية، يظلُّ محررُكَ كاملاً وتصديرُكَ نظيفاً بلا علاماتٍ مائيّة.",
+        q: "هل التطبيقُ مفتوحُ المصدر؟ وماذا يعني ذلك لي؟",
+        a: "نعم — الشيفرةُ منشورةٌ برخصة AGPL-3.0، وهو فرعٌ مشتقٌّ من مشروع Recordly مفتوح المصدر تُحفَظُ نسبتُه كما هي. تستطيعُ أن تقرأَ ما يعملُ على جهازِك، وأن تبنيَه بنفسِك من المصدر. وليس في الطريقِ بابٌ خلفيٌّ للدفع: ما هو مجّانيٌّ يبقى مجّانياً.",
       },
     ],
   },
@@ -265,39 +266,31 @@ const ar = {
     kinds: { new: "جديد", improve: "تحسين", fix: "إصلاح" },
     releases: [
       {
-        version: "v1.4",
-        date: "2026.09",
+        version: "v1.4.2",
+        date: "2026.10.04",
         changes: [
-          { kind: "new", text: "تصديرٌ أسرعُ 3× بترميز H.265 — ساعةُ مونتاجٍ تُختصرُ إلى عشرينَ دقيقة" },
-          { kind: "new", text: "جدولةُ النشرِ إلى يوتيوب ولينكدإن مباشرةً من نافذةِ التصدير" },
-          { kind: "improve", text: "إقلاعُ التطبيقِ صارَ أسرعَ بـ40% على ويندوز" },
+          { kind: "new", text: "خطُّ «تجارب» يحلُّ محلَّ ثماريان سيريف ديسبلاي في الواجهة كلِّها" },
+          { kind: "improve", text: "اختباراتُ الإلكترون صارت مستقلّةً عن المنصّة، فلا تتوقّفُ على نظامِ البناء" },
         ],
       },
       {
-        version: "V2.3",
-        date: "2026.06",
+        version: "v1.4.1",
+        date: "2026.10.04",
         changes: [
-          { kind: "new", text: "أربعونَ مؤثراً انتقالياً جديداً بروحِ المونتاجِ السينمائي" },
-          { kind: "new", text: "وضعُ الفرق: مكتبةٌ مشتركةٌ وتعليقاتٌ على الجدولِ الزمنيّ" },
-          { kind: "improve", text: "استهلاكُ الذاكرةِ انخفضَ 25% في الجلساتِ الطويلة" },
+          { kind: "new", text: "إصداراتُ ويندوز تُنشَرُ آليّاً من الوسم مباشرةً" },
+          { kind: "improve", text: "إزالةُ موادِّ التمويلِ من المستودع — لا طلبَ مالٍ في أيِّ مكان" },
         ],
       },
       {
-        version: "V2.2",
-        date: "2026.03",
+        version: "v1.4.0",
+        date: "2026.10.02",
         changes: [
-          { kind: "new", text: "التعليقُ التوضيحيُّ الحيّ — ارسمْ فوقَ الشاشةِ أثناءَ التسجيلِ لا بعدَه" },
-          { kind: "new", text: "مؤشّرُ مستوى الصوتِ التفاعليّ أثناءَ التسجيل" },
-          { kind: "fix", text: "توافقٌ أوسعُ مع الكاميراتِ الخارجيّةِ ولوحاتِ الالتقاط" },
-        ],
-      },
-      {
-        version: "V2.1",
-        date: "2025.12",
-        changes: [
-          { kind: "new", text: "تصديرُ GIF وWebM بضبطٍ دقيقٍ للأبعادِ والإطارات" },
-          { kind: "new", text: "خمسةٌ وعشرونَ قالباً جاهزاً للدروسِ والعروضِ التقديميّة" },
-          { kind: "fix", text: "مزامنةُ الصوتِ على أجهزةِ إم 1 وإم 2 صارتْ مثاليّةَ التطابق" },
+          { kind: "new", text: "لقطاتُ الشاشة: التقاطٌ كاملٌ أو منطقةٌ محدَّدةٌ أو مصدرٌ بعينه، بمُختصَرٍ عامٍّ يعملُ من أيِّ تطبيق" },
+          { kind: "new", text: "محرّرُ صورٍ مدمج: قصٌّ وقلمٌ وسهمٌ وأشكالٌ وتظليلٌ وتمويهٌ ونص، بتراجعٍ كامل" },
+          { kind: "new", text: "واجهةٌ عربيّةٌ أولاً بتخطيطٍ كاملٍ من اليمينِ إلى اليسار، ولغتانِ فقط: العربيّةُ والإنجليزيّة" },
+          { kind: "improve", text: "إيقافُ التسجيلِ بعد خمولٍ طويل: من 23–42 ثانيةً إلى 0.1–1.3 ثانية، ومقطعُ 20 ثانيةً من 57.9 إلى 3.1 ميجابايت" },
+          { kind: "improve", text: "إزالةُ تسجيلِ الدخولِ والسحابةِ نهائيّاً — التطبيقُ يعملُ محليّاً على جهازِك" },
+          { kind: "fix", text: "كتابةُ ذيلِ ملفِّ التسجيلِ قبل إنهاءِ مساعدِ الالتقاط، فلا يُفقَدُ مقطعٌ بعد شاشةٍ ساكنة" },
         ],
       },
     ],
@@ -350,15 +343,15 @@ const ar = {
     compact: "حمّل مجاناً",
     title: "اخترْ منصّتَك",
     desc: "مجانيٌّ بالكامل للتسجيلِ والتحرير — بلا علاماتٍ مائيّة، وبلا بطاقةٍ تدفعُ ثمنَ خيالِك.",
-    licenseNote: "ترخيصٌ مجانيٌّ للاستخدامِ الشخصيِّ والتّجاريِّ — وللإبداعِ بلا سقف",
+    licenseNote: "مجّانيٌّ للاستخدامِ الشخصيِّ والتجاريِّ، برخصة AGPL-3.0",
     allReleases: "كلُّ الإصداراتِ على جيت هاب ↗",
     platforms: [
-      { note: "إصدار سطح المكتب لويندوز" },
-      { note: "عام لـ Apple Silicon وIntel" },
-      { note: "دبيان، أوبونتو، وفيدورا" },
+      { note: "مُثبِّتُ سطح المكتب لويندوز (64 بت)" },
+      { note: "لا يوجد إصدار منشور بعد — تابِعْ صفحةَ الإصدارات" },
+      { note: "لا يوجد إصدار منشور بعد — تابِعْ صفحةَ الإصدارات" },
     ],
     toastTitle: "انطلقتْ رحلةُ التنزيل",
-    toastDesc: "جارٍ إحضارُ OraxRecordly v1.4 إلى {platform} — أهلاً بك في الحكاية.",
+    toastDesc: "جارٍ إحضارُ OraxRecordly v1.4.2 إلى {platform} — أهلاً بك في الحكاية.",
   },
 
   demo: {
@@ -367,8 +360,8 @@ const ar = {
     pause: "إيقاف مؤقت",
     timeline: "شريط التقدم",
     title: "معاينة حيّة لـ OraxRecordly",
-    desc: "عرض تفاعلي يمثّل رحلة التسجيل والتحرير والتصدير.",
-    scenes: ["المشهدُ الأول — التسجيل", "المشهدُ الثاني — التحرير", "المشهدُ الثالث — التصدير"],
+    desc: "عرض تفاعلي يمثّل رحلة التسجيل والتحرير وحفظ اللقطات.",
+    scenes: ["المشهدُ الأول — التسجيل", "المشهدُ الثاني — التحرير", "المشهدُ الثالث — اللقطات"],
   },
 
   shortcuts: {
@@ -386,7 +379,7 @@ const ar = {
   },
 
   sticky: {
-    title: "OraxRecordly v1.4",
+    title: "OraxRecordly v1.4.2",
     sub: "مجانيٌّ — بلا علاماتٍ مائيّة",
   },
 
@@ -432,8 +425,10 @@ const en: Dict = {
     lightCursor: "Light",
     toEnglish: "Switch to English",
     toArabic: "Switch to Arabic",
-    langCursorEn: "عربي",
-    langCursorAr: "English",
+    /* Same endonyms as the Arabic dictionary: the cursor label always names
+       the language the button will switch TO. */
+    langCursorEn: "English",
+    langCursorAr: "عربي",
     downloadCursor: "Get",
   },
 
@@ -464,12 +459,12 @@ const en: Dict = {
   marquee: {
     label: "Flashes from the studio",
     alts: [
-      "Screen recording panel with a red record button",
-      "Video editor with a colorful timeline",
-      "Camera bubble during recording",
-      "Audio editor and waveform",
-      "On-screen annotation tools",
-      "Instant share menu",
+      "OraxRecordly's floating recording HUD with the record button and source picker",
+      "The video editor with the timeline, background panel and frame controls",
+      "The screenshot library on the dashboard with search and folders",
+      "The image editor with its pen, arrow, highlighter, pixelate and text tools",
+      "The settings panel: appearance, language, screenshot format and file-name template",
+      "Dragging the handles to select a screen region before confirming the capture",
     ],
   },
 
@@ -492,9 +487,9 @@ const en: Dict = {
   stats: {
     aria: "Orax in numbers",
     labels: [
-      "Clarity beyond the eye's resolve",
-      "Export that outruns the glance",
-      "An arsenal of templates & effects",
+      "4K at sixty frames per second",
+      "Two export formats: MP4 & GIF",
+      "Eleven cursor styles",
       "Watermarks — not one",
     ],
   },
@@ -506,33 +501,33 @@ const en: Dict = {
     items: [
       {
         title: "Screen Recording",
-        category: "The full screen or a single window — fidelity that embarrasses reality",
-        alt: "Screen recording interface with the record button",
+        category: "The full screen or a single window — up to 4K at sixty frames per second",
+        alt: "OraxRecordly's floating recording HUD with the record button and source picker",
       },
       {
         title: "Timeline Editor",
-        category: "Cut, merge, split — with instant preview that never slows your tempo",
-        alt: "The video editor's timeline",
+        category: "Cut, merge, split and change speed — with backgrounds and a frame worthy of the scene",
+        alt: "The OraxRecordly video editor: timeline, background panel and frame controls",
       },
       {
-        title: "Camera & Sound",
-        category: "A presence bubble and a voice meter — you are present in every scene",
-        alt: "Recording camera and audio together",
+        title: "Screenshots",
+        category: "Capture what you see without recording, then search and reopen every shot",
+        alt: "The screenshot library on the OraxRecordly dashboard with search and folders",
       },
       {
-        title: "Live Annotations",
-        category: "Arrows and pens that draw over time — the idea lands before the word",
-        alt: "Drawing and annotation tools over the screen",
+        title: "Image Editor & Annotations",
+        category: "Crop, pen, arrow, highlight, pixelate and text — with a full lossless undo",
+        alt: "The OraxRecordly image editor with its pen, arrow, highlighter, pixelate and text tools",
       },
       {
-        title: "Instant Export",
-        category: "MP4, GIF and WebM — one click and the work steps into the light",
-        alt: "The export window and supported formats",
+        title: "Arabic by Origin",
+        category: "An Arabic interface with a full right-to-left layout — and the language stays your choice",
+        alt: "The OraxRecordly settings panel: appearance, language and screenshot options",
       },
       {
-        title: "Effects & Templates",
-        category: "More than 120 templates and effects — the full arsenal of awe",
-        alt: "The effects and templates gallery",
+        title: "Region Capture",
+        category: "Drag the frame and pick exactly what you mean — then confirm with one press",
+        alt: "Dragging the handles to select a screen region before confirming the capture",
       },
     ],
   },
@@ -545,7 +540,8 @@ const en: Dict = {
     sliderLabel: "Comparison slider between raw footage and the final edit",
     rawChip: "RAW — BEFORE",
     editChip: "ORAX — AFTER",
-    exportsCaption: "Exports in formats and frame rates to fit every platform and every screen",
+    exportsCaption:
+      "Exports video as MP4 or GIF, and saves stills as PNG or JPEG — in formats to fit every platform and every screen",
   },
 
   testimonials: {
@@ -557,7 +553,7 @@ const en: Dict = {
     items: [
       {
         quote:
-          "I have taught through screens for years and never found a tool that respects my time like Orax: one press of a button and the lesson comes out polished like a documentary. My students thought I hired an editor — the secret is a little blue button.",
+          "I have taught through screens for years and never found a tool that respects my time like Orax: one press of a button and the lesson comes out polished like a documentary. My students thought I hired an editor — the secret is one little blue button.",
         name: "Reem Al-Harbi",
         role: "Founder of Nuqta Academy",
         initials: "RH",
@@ -603,13 +599,13 @@ const en: Dict = {
     },
     rows: [
       {
-        label: "4K recording at 60fps",
+        label: "Recording up to 4K at 60fps",
         cells: ["yes", "yes", "yes", "limited"],
       },
       { label: "Built-in timeline editor", cells: ["yes", "no", "yes", "limited"] },
       { label: "No watermark — ever", cells: ["yes", "yes", "no", "no"] },
-      { label: "Annotations while recording", cells: ["yes", "no", "yes", "no"] },
-      { label: "MP4, GIF & WebM export", cells: ["yes", "yes", "yes", "no"] },
+      { label: "Annotations and highlights inside the editor", cells: ["yes", "no", "yes", "no"] },
+      { label: "MP4 & GIF export", cells: ["yes", "partial", "yes", "partial"] },
       { label: "Works fully offline", cells: ["yes", "yes", "yes", "no"] },
       { label: "Complete Arabic interface (RTL)", cells: ["yes", "partial", "no", "no"] },
       {
@@ -631,27 +627,27 @@ const en: Dict = {
     items: [
       {
         q: "Is Orax really free? Where's the catch?",
-        a: "No catch, and no fine print. The Free plan never expires, never watermarks your work and never caps your recordings — forever. We earn from the professional tiers (Pro and Studio) that you buy when your needs mature, not from breaking your creativity mid-journey. Getting started asks for no credit card — just one press of a button.",
+        a: "No catch, and no fine print: the app is completely free and open source. No subscriptions, no paid plans, no credit card, and no account to create before you start. Download it, install it, record.",
       },
       {
         q: "Will recording weigh on my machine or slow my games?",
-        a: "The capture engine runs on the graphics card, not the processor, and uses hardware encoding that preserves your machine's tempo. In our tests on mid-range hardware running games at 60fps, recording never cost more than 3% of performance. And if your machine is humbler, the tool lowers resolution automatically to protect the smoothness of the experience over the completeness of the pixels.",
+        a: "We won't promise performance figures we can't prove: on Windows the capture runs through a purpose-built native helper, and export can use NVIDIA CUDA acceleration. The quality ceiling is whatever your screen and machine can give: what your eye sees is what gets captured.",
       },
       {
         q: "Where are my recordings kept? Can you see them?",
-        a: "On your machine, exclusively, the moment you stop recording. Nothing is uploaded to our servers unless you personally ask to sync your library — and then it is end-to-end encrypted. Our privacy policy is simple because our business model doesn't need your data: we sell you a tool; we don't buy your content.",
+        a: "On your machine, exclusively, the moment you stop recording. No account, no cloud, no backend: your library lives in the recordings folder on your own disk, and nothing is sent anywhere — not to us, not to anyone.",
       },
       {
         q: "Do you support Arabic in annotations and text?",
-        a: "The interface is Arabic by origin, not translation: editing runs right-to-left, the typography honours lengtheners and diacritics, and annotations write in properly connected Arabic — never chopped letters. Add to that full dual direction (RTL/LTR) for those who produce in English, and an interface that remembers your choice.",
+        a: "The interface is Arabic by origin, not translation: editing runs right-to-left, the typography honours lengtheners and diacritics, and annotations write in properly connected Arabic — never chopped letters. There are exactly two locales, Arabic and English, each with a complete layout, and the interface remembers your choice.",
       },
       {
-        q: "What's the difference between Pro and Studio?",
-        a: "Pro is for the individual content maker: 4K fidelity, the full effects library, triple-speed export. Studio is for teams: unlimited seats, a shared team library, batch export for the whole archive, and priority support that answers within two hours. The rule of thumb is practical: if the work leaves one machine, Pro; if it leaves a whole room, Studio.",
+        q: "Which systems does it run on, and what does it need?",
+        a: "The published release is Windows only: Windows 10 (build 19041 or newer) or Windows 11, 64-bit. No macOS or Linux installer has been published yet; any new build shows up first on the GitHub releases page.",
       },
       {
-        q: "Can I cancel anytime? And what happens to my work?",
-        a: "Cancellation is one press away in settings — no phone calls, no awkward retention offers. Everything you exported remains yours, on your machine, in its final format: no keys get revoked, no files get locked. And even if you return to the Free plan, your editor stays complete and your exports stay clean of watermarks.",
+        q: "Is the app open source? What does that mean for me?",
+        a: "Yes — the source is published under the AGPL-3.0 licence. OraxRecordly is a fork of the open-source Recordly project, and that attribution is kept intact. You can read what runs on your machine, and build it yourself from source. And there is no hidden toll on the road: what is free stays free.",
       },
     ],
   },
@@ -663,39 +659,31 @@ const en: Dict = {
     kinds: { new: "NEW", improve: "IMPROVED", fix: "FIXED" },
     releases: [
       {
-        version: "v1.4",
-        date: "2026.09",
+        version: "v1.4.2",
+        date: "2026.10.04",
         changes: [
-          { kind: "new", text: "3× faster export with H.265 — an hour of editing condensed to twenty minutes" },
-          { kind: "new", text: "Publish scheduling to YouTube and LinkedIn straight from the export window" },
-          { kind: "improve", text: "App launch is now 40% faster on Windows" },
+          { kind: "new", text: "The Tajarib typeface replaces Thmanyah Serif Display across the whole interface" },
+          { kind: "improve", text: "Electron tests are now platform-agnostic, so they no longer depend on the build machine" },
         ],
       },
       {
-        version: "V2.3",
-        date: "2026.06",
+        version: "v1.4.1",
+        date: "2026.10.04",
         changes: [
-          { kind: "new", text: "Forty new transition effects with the spirit of cinematic editing" },
-          { kind: "new", text: "Team mode: shared library and comments on the timeline" },
-          { kind: "improve", text: "Memory consumption down 25% in long sessions" },
+          { kind: "new", text: "Windows releases publish automatically straight from a tag" },
+          { kind: "improve", text: "All funding material removed from the repository — no money is asked for anywhere" },
         ],
       },
       {
-        version: "V2.2",
-        date: "2026.03",
+        version: "v1.4.0",
+        date: "2026.10.02",
         changes: [
-          { kind: "new", text: "Live annotation — draw over the screen while recording, not after" },
-          { kind: "new", text: "Interactive audio-level meter during recording" },
-          { kind: "fix", text: "Broader compatibility with external cameras and capture cards" },
-        ],
-      },
-      {
-        version: "V2.1",
-        date: "2025.12",
-        changes: [
-          { kind: "new", text: "GIF and WebM export with precise dimension and frame control" },
-          { kind: "new", text: "Twenty-five ready-made templates for lessons and presentations" },
-          { kind: "fix", text: "Audio sync on M1 and M2 machines is now perfectly aligned" },
+          { kind: "new", text: "Screenshots: full screen, a selected area or a chosen source, with a global shortcut that works from any app" },
+          { kind: "new", text: "A built-in image editor: crop, pen, arrow, shapes, highlight, pixelate and text, with full undo" },
+          { kind: "new", text: "Arabic-first interface with a complete right-to-left layout, and exactly two locales: Arabic and English" },
+          { kind: "improve", text: "Stopping a recording after a long idle: from 23–42 seconds down to 0.1–1.3 seconds, and a 20-second clip from 57.9 MB to 3.1 MB" },
+          { kind: "improve", text: "Sign-in and cloud removed entirely — the app runs locally on your machine" },
+          { kind: "fix", text: "The recording file's tail is written before the capture helper exits, so a take after a static screen is never lost" },
         ],
       },
     ],
@@ -748,15 +736,15 @@ const en: Dict = {
     compact: "Get it free",
     title: "Choose your platform",
     desc: "Fully free for recording and editing — no watermarks, and no card paying for your imagination.",
-    licenseNote: "Free licence for personal and commercial use — and for creativity without a ceiling",
+    licenseNote: "Free for personal and commercial use, under the AGPL-3.0 licence",
     allReleases: "All releases on GitHub ↗",
     platforms: [
-      { note: "The desktop build for Windows" },
-      { note: "Universal for Apple Silicon & Intel" },
-      { note: "Debian, Ubuntu and Fedora" },
+      { note: "The desktop installer for Windows (64-bit)" },
+      { note: "No build published yet — watch the releases page" },
+      { note: "No build published yet — watch the releases page" },
     ],
     toastTitle: "The download has launched",
-    toastDesc: "Bringing OraxRecordly v1.4 to {platform} — welcome to the story.",
+    toastDesc: "Bringing OraxRecordly v1.4.2 to {platform} — welcome to the story.",
   },
 
   demo: {
@@ -765,8 +753,8 @@ const en: Dict = {
     pause: "Pause",
     timeline: "Progress bar",
     title: "OraxRecordly live preview",
-    desc: "An interactive walkthrough of the record, edit and export journey.",
-    scenes: ["Scene one — Recording", "Scene two — Editing", "Scene three — Export"],
+    desc: "An interactive walkthrough of the record, edit and capture journey.",
+    scenes: ["Scene one — Recording", "Scene two — Editing", "Scene three — Screenshots"],
   },
 
   shortcuts: {
@@ -784,7 +772,7 @@ const en: Dict = {
   },
 
   sticky: {
-    title: "OraxRecordly v1.4",
+    title: "OraxRecordly v1.4.2",
     sub: "Free — no watermarks",
   },
 

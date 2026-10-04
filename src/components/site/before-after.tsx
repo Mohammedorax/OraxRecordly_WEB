@@ -9,7 +9,7 @@ import { LQIP } from "@/lib/lqip";
 import { asset } from "@/lib/asset";
 
 /** The formats and frame rates the studio ships out of the box. */
-const EXPORT_CHIPS = ["MP4", "GIF", "WEBM", "4K", "120FPS"];
+const EXPORT_CHIPS = ["MP4", "GIF", "PNG", "JPEG", "4K", "60FPS"];
 
 /**
  * Raw versus remarkable — a draggable curtain over the same frame:

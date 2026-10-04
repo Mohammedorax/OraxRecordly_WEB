@@ -166,8 +166,8 @@ export function Footer() {
                 <Image
                   src={asset("/brand/logo-horizontal.png")}
                   alt={f.logoAlt}
-                  width={489}
-                  height={150}
+                  width={400}
+                  height={123}
                   className="h-9 w-auto"
                 />
               </span>
@@ -178,7 +178,7 @@ export function Footer() {
               </p>
             </Reveal>
             <Reveal delay={180} className="mt-6 flex flex-wrap gap-2">
-              {["WINDOWS", "MACOS", "LINUX", "v1.4"].map((tag) => (
+              {["WINDOWS", "64-BIT", "AGPL-3.0", "v1.4.2"].map((tag) => (
                 <span
                   key={tag}
                   dir="ltr"

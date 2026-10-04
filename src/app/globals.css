@@ -175,9 +175,10 @@
   }
   html {
     scroll-behavior: smooth;
-    /* The brand file ships a single true weight (500). Hierarchy is drawn
-       with size, colour and tracking — never with synthetic emboldening,
-       which smears a connected serif. One face, one honest weight. */
+    /* Three real cuts of Tajarib ship with the site (400 / 500 / 700), so
+       hierarchy is drawn with size, colour and tracking on top of genuine
+       weights — never with synthetic emboldening, which smears a connected
+       Arabic serif. */
     font-synthesis: none;
   }
   body {

@@ -74,7 +74,6 @@ export function I18nProvider({
     const root = document.documentElement;
     root.lang = lang;
     root.dir = lang === "ar" ? "rtl" : "ltr";
-    document.title = DICTS[lang].meta.title;
     try {
       localStorage.setItem("orax-lang", lang);
       document.cookie = `orax-lang=${lang}; path=/; max-age=31536000; samesite=lax`;
@@ -98,5 +97,17 @@ export function I18nProvider({
     monoLabel: lang === "ar" ? "mono mono-ar" : "mono",
   };
 
-  return <I18nContext.Provider value={value}>{children}</I18nContext.Provider>;
+  return (
+    <I18nContext.Provider value={value}>
+      {/*
+        React owns the title (it hoists <title> into <head>). Written
+        imperatively it was re-set to the static Arabic metadata title on
+        hydration, so an English visitor who reloaded got the Arabic tab
+        title while reading English. As a rendered node it simply follows
+        the language through every render.
+      */}
+      <title>{DICTS[lang].meta.title}</title>
+      {children}
+    </I18nContext.Provider>
+  );
 }

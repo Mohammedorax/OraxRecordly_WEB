@@ -36,10 +36,14 @@ const tajarib = localFont({
  * exported HTML is always the Arabic RTL default. A pre-paint script in
  * <head> restores the visitor's stored language before first paint, and the
  * I18nProvider takes over on hydration (see i18n-provider.tsx).
+ *
+ * `title` is deliberately NOT set here: the I18nProvider renders the <title>
+ * from the active dictionary, so the tab title follows the language instead of
+ * snapping back to the static Arabic one on hydration. The exported HTML still
+ * carries the Arabic title, server-rendered by that same component.
  */
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: DICTS.ar.meta.title,
   description: DICTS.ar.meta.description,
   keywords: [
     "OraxRecordly",

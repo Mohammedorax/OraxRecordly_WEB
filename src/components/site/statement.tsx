@@ -34,17 +34,22 @@ export function Statement() {
   );
 }
 
+/**
+ * Every number here stands for something the shipped app actually does:
+ * 4K·60 capture, the two export formats (MP4 + GIF), the eleven cursor
+ * styles in Settings → Effects, and the watermark count.
+ */
 const STATS = [
   { prefix: "4K·", to: 60, from: 0, suffix: "" },
-  { prefix: "", to: 3, from: 0, suffix: "×" },
-  { prefix: "", to: 120, from: 0, suffix: "+" },
+  { prefix: "", to: 2, from: 0, suffix: "" },
+  { prefix: "", to: 11, from: 0, suffix: "" },
   { prefix: "", to: 0, from: 9, suffix: "" },
 ];
 
 const STAT_METAS = [
   "ULTRA HD CAPTURE",
-  "FASTER EXPORT",
-  "FX & TEMPLATES",
+  "EXPORT FORMATS",
+  "CURSOR STYLES",
   "NO WATERMARKS",
 ];
 

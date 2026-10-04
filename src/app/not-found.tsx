@@ -13,8 +13,8 @@ export default function NotFound() {
       <Image
         src={asset("/brand/logo-full.png")}
         alt={t.notFound.logoAlt}
-        width={771}
-        height={729}
+        width={400}
+        height={378}
         className="h-16 w-auto"
       />
 

@@ -27,8 +27,8 @@ export function Hero() {
         <Image
           src={asset("/brand/logo-full.png")}
           alt={t.hero.logoAlt}
-          width={771}
-          height={729}
+          width={400}
+          height={378}
           className="h-20 w-auto md:h-24"
           priority
         />

@@ -41,7 +41,7 @@ function MarqueeSet({ alts }: { alts: string[] }) {
             alt={alts[i] ?? ""}
             fill
             sizes="(max-width: 768px) 208px, 288px"
-            loading="eager"
+            loading="lazy"
             placeholder="blur"
             blurDataURL={LQIP[src]}
             draggable={false}
@@ -69,8 +69,13 @@ export function Marquee() {
         </span>
       </Reveal>
 
-      {/* Infinite marquee (LTR wrapper for stable scroll math) */}
-      <div className="marquee">
+      {/* Infinite marquee.
+          `dir="ltr"` on the scroller is what makes the -50% keyframe work:
+          in an RTL document the max-content track is anchored to the right
+          edge and the whole strip slides off to the left, leaving the band
+          empty for most of the cycle. Forcing LTR here (as in the sets)
+          keeps the two copies butted together in every locale. */}
+      <div className="marquee" dir="ltr">
         <div className="marquee__track">
           <MarqueeSet alts={t.marquee.alts} />
           <MarqueeSet alts={t.marquee.alts} />

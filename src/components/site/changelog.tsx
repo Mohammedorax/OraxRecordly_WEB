@@ -41,7 +41,7 @@ export function Changelog() {
           <Reveal delay={380}>
             <p className="mono mt-8 flex items-center gap-3 text-mink-40">
               <span className="rec-dot" aria-hidden="true" />
-              <span dir="ltr">SHIPPED CONTINUOUSLY — SINCE 2025</span>
+              <span dir="ltr">SHIPPED CONTINUOUSLY — SINCE 2026</span>
             </p>
           </Reveal>
         </div>
