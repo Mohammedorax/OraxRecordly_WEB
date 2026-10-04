@@ -155,8 +155,8 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Four-column grid */}
-        <div className="grid grid-cols-1 gap-12 py-16 md:grid-cols-4 md:py-20">
+        {/* Three-column grid */}
+        <div className="grid grid-cols-1 gap-12 py-16 md:grid-cols-3 md:py-20">
           {/* Columns 1-2: brand chip + bio */}
           <div className="md:col-span-2">
             <Reveal>
@@ -188,20 +188,7 @@ export function Footer() {
             </Reveal>
           </div>
 
-          {/* Column 3: Socials */}
-          <FooterList
-            title={f.socialsTitle}
-            items={f.socials}
-            copyAria={f.copyAria}
-            toasts={{
-              okTitle: f.copyToastTitle,
-              okDesc: f.copyToastDesc,
-              failTitle: f.copyFailTitle,
-              failDesc: f.copyFailDesc,
-            }}
-          />
-
-          {/* Column 4: Contact */}
+          {/* Column 3: Contact — the single way to reach us */}
           <FooterList
             title={f.contactTitle}
             items={contact}
