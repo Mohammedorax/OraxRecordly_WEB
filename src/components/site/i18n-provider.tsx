@@ -65,9 +65,15 @@ export function I18nProvider({
 
   // Adopt the stored language pre-paint, then release the visibility guard.
   useIsoLayoutEffect(() => {
+    const root = document.documentElement;
     const stored = readStoredLang();
     if (stored && stored !== initialLang) setLangState(stored);
-    document.documentElement.classList.remove("lang-pending");
+    root.classList.remove("lang-pending");
+    // Hydration has committed, so the client is demonstrably alive: disarm the
+    // pure-CSS white-screen circuit breakers in globals.css. They stay armed —
+    // and still fire — if the bundle never loads or this effect never runs.
+    // See "White-screen circuit breakers" in globals.css.
+    root.classList.add("js-alive");
   }, []);
 
   useEffect(() => {

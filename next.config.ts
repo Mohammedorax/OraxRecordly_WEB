@@ -27,6 +27,18 @@ const nextConfig: NextConfig = {
   turbopack: { root: process.cwd() },
 
   /**
+   * Next 16 blocks its own dev resources (notably `/_next/hmr`) when the page
+   * is opened from a host other than the one the server advertises. Opening
+   * the dev server at http://127.0.0.1:3000 instead of http://localhost:3000
+   * trips that guard, and the app-router client never starts hydrating: the
+   * pre-paint script has already added `intro-hold`, React never releases it,
+   * and the visitor gets a permanent white splash. Declaring the loopback
+   * hostnames keeps both spellings of "this machine" working.
+   * Dev only — it has no effect on `next build` / the static export.
+   */
+  allowedDevOrigins: ["127.0.0.1", "localhost"],
+
+  /**
    * Static HTML export. The landing page is 100% client-side (no database,
    * no API routes), so it can be emitted as plain files that GitHub Pages
    * serves directly.

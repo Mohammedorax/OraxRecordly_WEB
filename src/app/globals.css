@@ -256,9 +256,13 @@ html.lang-pending body {
 }
 
 /* ============ Custom Difference Cursor ============ */
+/* Keyed on `js-alive` (set once hydration has committed), NOT on `js` alone:
+   the `js` class comes from the pre-paint script, so hiding the native cursor
+   on `js` alone would leave a visitor whose bundle never arrives with no
+   cursor at all — a page that looks frozen. */
 @media (hover: hover) and (pointer: fine) {
-  html.js,
-  html.js * {
+  html.js-alive,
+  html.js-alive * {
     cursor: none !important;
   }
 }
@@ -339,6 +343,8 @@ html.lang-pending body {
   transform: translateY(140%);
   transition: transform 1.05s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform;
+  /* Self-arming escape hatch — see "White-screen circuit breakers" below. */
+  animation: orax-rv-valve 1ms linear 4s forwards;
 }
 
 .js .rv-on .rv-inner {
@@ -351,6 +357,8 @@ html.lang-pending body {
   transition:
     opacity 0.9s ease,
     transform 1.05s cubic-bezier(0.16, 1, 0.3, 1);
+  /* Self-arming escape hatch — see "White-screen circuit breakers" below. */
+  animation: orax-fade-valve 1ms linear 4s forwards;
 }
 
 .js .fade-item.rv-on {
@@ -512,6 +520,9 @@ html {
   background: var(--paper);
   transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform;
+  /* Unconditional escape hatch: this curtain is lifted by JavaScript, so it
+     must also be able to lift itself. Never gated on a class a script adds. */
+  animation: orax-curtain-valve 1ms linear 4s forwards;
 }
 
 .intro-curtain.is-open {
@@ -524,6 +535,69 @@ html.intro-skip .intro-curtain {
 
 html.intro-hold {
   overflow: hidden;
+  /* Release the scroll lock even if no script ever runs. */
+  animation: orax-scroll-valve 1ms linear 4s forwards;
+}
+
+/* ================= White-screen circuit breakers =================
+   The page deliberately hides itself before first paint: the pre-paint script
+   in layout.tsx adds `js` (scroll-reveal system) and `intro-hold` (first-visit
+   curtain). Both guards are released *by React* — so a bundle that never
+   loads, a hydration that never commits, or a dev-server that blocks its own
+   client bootstrap would otherwise leave the visitor with a white, frozen
+   page: an opaque full-viewport curtain over content that is still
+   `opacity: 0`.
+
+   The animations below are the last line of defence. They are pure CSS, they
+   need no script to arm, and no script can cancel them: after 4s the curtain
+   hides itself, the scroll lock is released, and every held-back reveal
+   becomes visible.
+
+   When JavaScript *is* alive, `html.js-alive` (added by the I18nProvider
+   layout effect once hydration has committed) *pauses* the reveal valves
+   before they fire, so the intended intro and scroll choreography run
+   untouched. Pausing rather than removing the animation matters: an
+   already-fired valve keeps its final, visible value instead of snapping
+   back to hidden. The curtain valve is deliberately NOT gated — even a
+   half-broken client must never be able to park an opaque sheet over the
+   page.
+
+   KEEP THE FOUR 4s DELAYS IN SYNC: the curtain, the scroll lock and the two
+   content valves must expire together, otherwise a broken client would drop
+   the curtain onto content that is still invisible. */
+@keyframes orax-curtain-valve {
+  to {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+@keyframes orax-scroll-valve {
+  to {
+    overflow: visible;
+  }
+}
+
+@keyframes orax-fade-valve {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes orax-rv-valve {
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* NOTE: `js` and `js-alive` both sit on <html> itself, so these selectors must
+   match the root element directly — `html.js-alive .js .fade-item` would look
+   for a *descendant* carrying `.js` and never match anything. */
+html.js-alive .fade-item,
+html.js-alive .rv-inner {
+  animation-play-state: paused;
 }
 
 /* ============ Sticky Mobile CTA ============ */
