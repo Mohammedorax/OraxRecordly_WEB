@@ -269,7 +269,7 @@ const ar = {
         version: "v1.4.2",
         date: "2026.10.04",
         changes: [
-          { kind: "new", text: "خطُّ «تجارب» يحلُّ محلَّ ثماريان سيريف ديسبلاي في الواجهة كلِّها" },
+          { kind: "new", text: "خطُّ SA Hazm يحلُّ محلَّ ثماريان سيريف ديسبلاي في الواجهة كلِّها" },
           { kind: "improve", text: "اختباراتُ الإلكترون صارت مستقلّةً عن المنصّة، فلا تتوقّفُ على نظامِ البناء" },
         ],
       },
@@ -662,7 +662,7 @@ const en: Dict = {
         version: "v1.4.2",
         date: "2026.10.04",
         changes: [
-          { kind: "new", text: "The Tajarib typeface replaces Thmanyah Serif Display across the whole interface" },
+          { kind: "new", text: "The SA Hazm typeface replaces Thmanyah Serif Display across the whole interface" },
           { kind: "improve", text: "Electron tests are now platform-agnostic, so they no longer depend on the build machine" },
         ],
       },

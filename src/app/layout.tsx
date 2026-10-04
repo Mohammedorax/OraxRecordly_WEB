@@ -8,25 +8,26 @@ import { DICTS } from "@/lib/i18n";
 import { asset, SITE_URL } from "@/lib/asset";
 
 /**
- * Tajarib Typeface — THE single typeface of the whole site.
+ * SA Hazm — THE single typeface of the whole site.
  * Covers Arabic + Latin + both digit systems + full diacritics, so every
  * text — display, body, labels, numerals — renders in one unified voice.
  *
- * All three shipped weights are registered so the design's existing scale
+ * All four shipped weights are registered so the design's existing scale
  * maps onto real cuts instead of synthetic bolding:
- * Regular → 400, Medium → 500, Bold → 700.
+ * Regular → 400, Medium → 500, SemiBold → 600, Bold → 700.
  *
  * `next/font/local` fingerprints and rewrites the files into /_next/static,
  * which Next serves under basePath automatically — so the fonts follow the
  * GitHub Pages subpath with no extra work.
  */
-const tajarib = localFont({
+const saHazm = localFont({
   src: [
-    { path: "../fonts/TajaribTypeface-Regular.otf", weight: "400", style: "normal" },
-    { path: "../fonts/TajaribTypeface-Medium.otf", weight: "500", style: "normal" },
-    { path: "../fonts/TajaribTypeface-Bold.otf", weight: "700", style: "normal" },
+    { path: "../fonts/SAHazm-Regular.ttf", weight: "400", style: "normal" },
+    { path: "../fonts/SAHazm-Medium.ttf", weight: "500", style: "normal" },
+    { path: "../fonts/SAHazm-SemiBold.ttf", weight: "600", style: "normal" },
+    { path: "../fonts/SAHazm-Bold.ttf", weight: "700", style: "normal" },
   ],
-  variable: "--font-tajarib",
+  variable: "--font-sa-hazm",
   display: "swap",
   preload: true,
 });
@@ -110,7 +111,7 @@ try{
           <style>{`.intro-curtain{display:none!important}`}</style>
         </noscript>
       </head>
-      <body className={`${tajarib.variable} antialiased bg-paper text-ink`}>
+      <body className={`${saHazm.variable} antialiased bg-paper text-ink`}>
         <ThemeProvider>
           <I18nProvider initialLang="ar">{children}</I18nProvider>
         </ThemeProvider>

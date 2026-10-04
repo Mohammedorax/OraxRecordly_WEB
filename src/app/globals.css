@@ -6,13 +6,13 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  /* ONE typeface everywhere — Tajarib Typeface (Arabic + Latin + numerals).
+  /* ONE typeface everywhere — SA Hazm (Arabic + Latin + numerals).
      The old sans/latin/mono slots now resolve to the same unified voice.
-     The generic serif fallback matches Tajarib's high-contrast serif voice. */
-  --font-sans: var(--font-tajarib), "Tajarib Typeface", ui-serif, Georgia, serif;
-  --font-latin: var(--font-tajarib), "Tajarib Typeface", ui-serif, Georgia, serif;
-  --font-mono: var(--font-tajarib), "Tajarib Typeface", ui-serif, Georgia, serif;
-  --font-display: var(--font-tajarib), "Tajarib Typeface", ui-serif, Georgia, serif;
+     The generic serif fallback only paints before the webfont swaps in. */
+  --font-sans: var(--font-sa-hazm), "SA Hazm", ui-serif, Georgia, serif;
+  --font-latin: var(--font-sa-hazm), "SA Hazm", ui-serif, Georgia, serif;
+  --font-mono: var(--font-sa-hazm), "SA Hazm", ui-serif, Georgia, serif;
+  --font-display: var(--font-sa-hazm), "SA Hazm", ui-serif, Georgia, serif;
   --ease-editorial: cubic-bezier(0.16, 1, 0.3, 1);
   /* Brand palette — extracted from the OraxRecordly logo */
   --color-orax-blue: #136cc8;
@@ -175,10 +175,10 @@
   }
   html {
     scroll-behavior: smooth;
-    /* Three real cuts of Tajarib ship with the site (400 / 500 / 700), so
+    /* Four real cuts of SA Hazm ship with the site (400 / 500 / 600 / 700), so
        hierarchy is drawn with size, colour and tracking on top of genuine
        weights — never with synthetic emboldening, which smears a connected
-       Arabic serif. */
+       Arabic face. */
     font-synthesis: none;
   }
   body {
