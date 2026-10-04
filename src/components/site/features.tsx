@@ -10,13 +10,25 @@ import { asset } from "@/lib/asset";
 
 /**
  * Real captures of the shipped app (public/images/app/*), each matched to the
- * capability its card describes:
- *   screen recording  -> the floating recording HUD with its source picker
- *   timeline editor   -> the editor with a real take loaded (timeline + frames)
- *   screenshots       -> the screenshot library on the dashboard
- *   image editor      -> the image editor with its pen/arrow/blur/text tools
- *   settings & Arabic -> the settings panel (appearance, language, screenshots)
- *   region capture    -> the drag-to-select capture overlay
+ * capability its card describes. Every entry is a genuine capture — nothing
+ * here is drawn or generated:
+ *   screen recording           -> the floating recording HUD (app-01)
+ *   timeline editor            -> the editor: preview, timeline, appearance (app-02)
+ *   screenshots                -> the screenshot library on the dashboard (app-03)
+ *   image editor               -> the image editor with its tool palette (app-05)
+ *   settings & Arabic          -> the editor settings panel (app-06)
+ *   region capture             -> the drag-to-select overlay (app-04)
+ *   shortcuts on screen        -> the editor settings panel again (app-06):
+ *                                 the key-cap badge is opt-in, lives in
+ *                                 Settings -> Cursor, and no capture of the
+ *                                 badge itself exists in this project. The card
+ *                                 therefore shows the panel that hosts the
+ *                                 setting, and its alt text says so, rather
+ *                                 than illustrating a badge that was never
+ *                                 photographed. (app-02 and app-06 are two
+ *                                 distinct captures of the same entry state;
+ *                                 app-02 is the editor+appearance view, app-06
+ *                                 the general settings tab.)
  */
 const FEATURE_MEDIA = [
   { image: "/images/app/app-01.jpg", index: "01" },
@@ -25,6 +37,7 @@ const FEATURE_MEDIA = [
   { image: "/images/app/app-05.jpg", index: "04" },
   { image: "/images/app/app-06.jpg", index: "05" },
   { image: "/images/app/app-04.jpg", index: "06" },
+  { image: "/images/app/app-06.jpg", index: "07" },
 ];
 
 export function Features() {

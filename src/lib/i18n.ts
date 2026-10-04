@@ -67,7 +67,7 @@ const ar = {
     label: "ومضاتٌ من الاستوديو",
     alts: [
       "لوحة التسجيل العائمة في OraxRecordly مع زر التسجيل واختيار المصدر",
-      "محرّر الفيديو مع الجدول الزمني ولوحة الخلفيات والإطار",
+      "محرّر الفيديو في OraxRecordly مع المعاينة والجدول الزمني ولوحة خلفيات المظهر",
       "مكتبة لقطات الشاشة في لوحة التحكم مع البحث والمجلدات",
       "محرّر الصور مع أدوات القلم والسهم والتظليل والتمويه والنص",
       "لوحة الإعدادات: المظهر واللغة وصيغة اللقطات وقالب اسم الملف",
@@ -104,7 +104,7 @@ const ar = {
   features: {
     heading1: "كلُّ ما تحتاجهُ حكايتُك،",
     heading2: "تحتَ سقفٍ واحد.",
-    side: "ستُّ أدواتٍ تعملُ بانسجامِ أوركسترا مُتقنة: كلٌّ يعرفُ دورَه، وجميعُها تصبو إلى إبهارِ جمهورك — من اللقطةِ الأولى حتى التصفيقِ الأخير.",
+    side: "سبعُ أدواتٍ تعملُ بانسجامِ أوركسترا مُتقنة: كلٌّ يعرفُ دورَه، وجميعُها تصبو إلى إبهارِ جمهورك — من اللقطةِ الأولى حتى التصفيقِ الأخير.",
     items: [
       {
         title: "تسجيلُ الشاشة",
@@ -114,7 +114,7 @@ const ar = {
       {
         title: "محرِّرُ الجدولِ الزمنيّ",
         category: "قصَّ، ادمجْ، قسِّمْ وغيّرِ السرعة — مع خلفياتٍ وإطارٍ يليقانِ بالمشهد",
-        alt: "محرّر الفيديو في OraxRecordly: الجدول الزمني ولوحة الخلفيات والإطار",
+        alt: "محرّر الفيديو في OraxRecordly: المعاينة والجدول الزمني ولوحة خلفيات المظهر والإطار",
       },
       {
         title: "لقطاتُ الشاشة",
@@ -135,6 +135,12 @@ const ar = {
         title: "التقاطُ منطقةٍ محدَّدة",
         category: "اسحبِ الإطارَ وحدِّدْ ما تريدُ بالضبط — ثم أكِّدْ بضغطةٍ واحدة",
         alt: "تحديد منطقة من الشاشة بالمقابض قبل تأكيد الالتقاط",
+      },
+      {
+        title: "الاختصاراتُ على الشاشة",
+        category:
+          "المفاتيحُ التي تضغطُها تظهرُ كشارةِ مفاتيحَ وتُدمَجُ في MP4 أو GIF المصدَّر، ليُعلِّمَ الدرسُ الاختصارَ نفسَه — متوقّفةٌ افتراضيّاً وتُشغَّلُ من الإعدادات ← المؤشر. وهي تحتاجُ التقاطَ ضغطاتِ المفاتيح، ولا يشغّلُهُ التطبيقُ إلا على ويندوز ولينكس — لا على ماك",
+        alt: "لوحة إعدادات المحرّر في OraxRecordly مع خيارات المؤشر والمظهر",
       },
     ],
   },
@@ -213,6 +219,10 @@ const ar = {
       { label: "بلا علامةٍ مائيّةٍ — إطلاقاً", cells: ["yes", "yes", "no", "no"] },
       { label: "تعليقاتٌ وسهامٌ وتظليلٌ داخلَ المحرِّر", cells: ["yes", "no", "yes", "no"] },
       { label: "تصدير MP4 وGIF", cells: ["yes", "partial", "yes", "partial"] },
+      {
+        label: "يُعلِّمُ الاختصارَ على الشاشة داخلَ الفيديو",
+        cells: ["yes", "no", "no", "no"],
+      },
       { label: "يعملُ دونَ اتصالٍ بالإنترنت", cells: ["yes", "yes", "yes", "no"] },
       { label: "واجهةٌ عربيّةٌ كاملةٌ (RTL)", cells: ["yes", "partial", "no", "no"] },
       {
@@ -266,10 +276,19 @@ const ar = {
     kinds: { new: "جديد", improve: "تحسين", fix: "إصلاح" },
     releases: [
       {
+        version: "v1.4.3",
+        date: "2026.10.04",
+        changes: [
+          { kind: "fix", text: "لم يعد التشغيل البارد يُخرج نافذةً بلا أثر: حارسٌ يُعيد إظهار الواجهة العائمة بعد 4 ثوانٍ ويفتح المحرِّر بعد 10" },
+          { kind: "new", text: "اختصاراتُ لوحةِ المفاتيح على الشاشة: شارةُ مفاتيحٍ اختياريّةٌ ومتوقّفةٌ افتراضيّاً، تُضبطُ من الإعدادات ← المؤشر وتُدمَجُ في MP4 وGIF المصدَّرَين" },
+          { kind: "fix", text: "خطأُ العرض يُظهرُ الآن لوحةً مقروءةً بمعتمةٍ كاملة مع إعادة التحميل ونسخ التفاصيل، بدلَ نافذةٍ فارغة" },
+        ],
+      },
+      {
         version: "v1.4.2",
         date: "2026.10.04",
         changes: [
-          { kind: "new", text: "خطُّ SA Hazm يحلُّ محلَّ ثماريان سيريف ديسبلاي في الواجهة كلِّها" },
+          { kind: "new", text: "خطُّ SA Hazm بأوزانِه الأربعة يحلُّ محلَّ خطِّ العرضِ السابق في الواجهة كلِّها" },
           { kind: "improve", text: "اختباراتُ الإلكترون صارت مستقلّةً عن المنصّة، فلا تتوقّفُ على نظامِ البناء" },
         ],
       },
@@ -351,7 +370,7 @@ const ar = {
       { note: "لا يوجد إصدار منشور بعد — تابِعْ صفحةَ الإصدارات" },
     ],
     toastTitle: "انطلقتْ رحلةُ التنزيل",
-    toastDesc: "جارٍ إحضارُ OraxRecordly v1.4.2 إلى {platform} — أهلاً بك في الحكاية.",
+    toastDesc: "جارٍ إحضارُ OraxRecordly v1.4.3 إلى {platform} — أهلاً بك في الحكاية.",
   },
 
   demo: {
@@ -379,7 +398,7 @@ const ar = {
   },
 
   sticky: {
-    title: "OraxRecordly v1.4.2",
+    title: "OraxRecordly v1.4.3",
     sub: "مجانيٌّ — بلا علاماتٍ مائيّة",
   },
 
@@ -460,7 +479,7 @@ const en: Dict = {
     label: "Flashes from the studio",
     alts: [
       "OraxRecordly's floating recording HUD with the record button and source picker",
-      "The video editor with the timeline, background panel and frame controls",
+      "The OraxRecordly editor with the preview, the timeline and the appearance panel",
       "The screenshot library on the dashboard with search and folders",
       "The image editor with its pen, arrow, highlighter, pixelate and text tools",
       "The settings panel: appearance, language, screenshot format and file-name template",
@@ -497,7 +516,7 @@ const en: Dict = {
   features: {
     heading1: "Everything your story needs,",
     heading2: "under one roof.",
-    side: "Six instruments playing in the harmony of a polished orchestra: each knows its part, and all of them aspire to dazzle your audience — from the first frame to the final applause.",
+    side: "Seven instruments playing in the harmony of a polished orchestra: each knows its part, and all of them aspire to dazzle your audience — from the first frame to the final applause.",
     items: [
       {
         title: "Screen Recording",
@@ -507,7 +526,7 @@ const en: Dict = {
       {
         title: "Timeline Editor",
         category: "Cut, merge, split and change speed — with backgrounds and a frame worthy of the scene",
-        alt: "The OraxRecordly video editor: timeline, background panel and frame controls",
+        alt: "The OraxRecordly editor: preview, timeline and the appearance panel with backgrounds and frame controls",
       },
       {
         title: "Screenshots",
@@ -528,6 +547,12 @@ const en: Dict = {
         title: "Region Capture",
         category: "Drag the frame and pick exactly what you mean — then confirm with one press",
         alt: "Dragging the handles to select a screen region before confirming the capture",
+      },
+      {
+        title: "Shortcuts on Screen",
+        category:
+          "The keys you press appear as key caps and burn into the exported MP4 or GIF, so a lesson can teach the shortcut itself — off by default, set in Settings → Cursor. It needs keystroke capture, which the app runs on Windows and Linux only — not on macOS",
+        alt: "The OraxRecordly editor settings panel with the Cursor and Appearance options",
       },
     ],
   },
@@ -606,6 +631,10 @@ const en: Dict = {
       { label: "No watermark — ever", cells: ["yes", "yes", "no", "no"] },
       { label: "Annotations and highlights inside the editor", cells: ["yes", "no", "yes", "no"] },
       { label: "MP4 & GIF export", cells: ["yes", "partial", "yes", "partial"] },
+      {
+        label: "Teaches the shortcut on screen, inside the video",
+        cells: ["yes", "no", "no", "no"],
+      },
       { label: "Works fully offline", cells: ["yes", "yes", "yes", "no"] },
       { label: "Complete Arabic interface (RTL)", cells: ["yes", "partial", "no", "no"] },
       {
@@ -659,10 +688,19 @@ const en: Dict = {
     kinds: { new: "NEW", improve: "IMPROVED", fix: "FIXED" },
     releases: [
       {
+        version: "v1.4.3",
+        date: "2026.10.04",
+        changes: [
+          { kind: "fix", text: "A cold launch can no longer come up with no visible window: a watchdog brings the overlay back at 4 seconds and opens the editor at 10 seconds" },
+          { kind: "new", text: "Keyboard shortcuts on screen: an opt-in key-cap badge, off by default, set in Settings → Cursor and burned into the exported MP4 and GIF" },
+          { kind: "fix", text: "A renderer error now shows a readable, opaque panel with Reload and Copy details instead of leaving a blank window" },
+        ],
+      },
+      {
         version: "v1.4.2",
         date: "2026.10.04",
         changes: [
-          { kind: "new", text: "The SA Hazm typeface replaces Thmanyah Serif Display across the whole interface" },
+          { kind: "new", text: "The SA Hazm typeface, in four weights, replaces the previous display face across the whole interface" },
           { kind: "improve", text: "Electron tests are now platform-agnostic, so they no longer depend on the build machine" },
         ],
       },
@@ -744,7 +782,7 @@ const en: Dict = {
       { note: "No build published yet — watch the releases page" },
     ],
     toastTitle: "The download has launched",
-    toastDesc: "Bringing OraxRecordly v1.4.2 to {platform} — welcome to the story.",
+    toastDesc: "Bringing OraxRecordly v1.4.3 to {platform} — welcome to the story.",
   },
 
   demo: {
@@ -772,7 +810,7 @@ const en: Dict = {
   },
 
   sticky: {
-    title: "OraxRecordly v1.4.2",
+    title: "OraxRecordly v1.4.3",
     sub: "Free — no watermarks",
   },
 

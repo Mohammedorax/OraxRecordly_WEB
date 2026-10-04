@@ -33,7 +33,7 @@ const JSON_LD = {
   operatingSystem: "Windows 10 (build 19041 or newer), Windows 11",
   description:
     "استوديو تسجيل الشاشة وتحرير الفيديو من أوراكس: التقط شاشتك بدقة 4K وستين إطاراً في الثانية، وحرّر بإيقاع خيالك، وشارك تحفتك بلا علامات مائية.",
-  softwareVersion: "1.4.2",
+  softwareVersion: "1.4.3",
   inLanguage: "ar",
   isAccessibleForFree: true,
   screenshot: absoluteUrl("/images/app/app-02.jpg"),
@@ -44,6 +44,7 @@ const JSON_LD = {
     "System audio and microphone capture",
     "Screenshots with a built-in image editor",
     "MP4 and GIF export",
+    "Opt-in on-screen keystroke overlay (Windows and Linux)",
     "Arabic-first interface with full RTL layout",
   ],
 };
