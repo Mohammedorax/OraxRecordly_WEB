@@ -6,11 +6,9 @@ import { Ticker } from "@/components/site/ticker";
 import { Statement, Stats } from "@/components/site/statement";
 import { Features } from "@/components/site/features";
 import { BeforeAfter } from "@/components/site/before-after";
-import { Testimonials } from "@/components/site/testimonials";
 import { Comparison } from "@/components/site/comparison";
 import { FAQ } from "@/components/site/faq";
 import { Changelog } from "@/components/site/changelog";
-import { Newsletter } from "@/components/site/newsletter";
 import { Footer } from "@/components/site/footer";
 import { Intro } from "@/components/site/intro";
 import { StickyCTA } from "@/components/site/sticky-cta";
@@ -69,11 +67,9 @@ export default function Home() {
           <Stats />
           <Features />
           <BeforeAfter />
-          <Testimonials />
           <Comparison />
           <FAQ />
           <Changelog />
-          <Newsletter />
         </main>
 
         <Footer />

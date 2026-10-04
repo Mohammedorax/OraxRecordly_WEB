@@ -126,9 +126,7 @@ export function Footer() {
   const f = t.footer;
 
   const contact: { label: string; href: string; copy?: boolean }[] = [
-    { label: "hello@oraxrecordly.app", href: "mailto:hello@oraxrecordly.app", copy: true },
-    { label: "support@oraxrecordly.app", href: "mailto:support@oraxrecordly.app", copy: true },
-    { label: "press@oraxrecordly.app", href: "mailto:press@oraxrecordly.app", copy: true },
+    { label: "orax2004@gmail.com", href: "mailto:orax2004@gmail.com", copy: true },
     { label: f.privacy, href: "#download" },
   ];
 
@@ -142,7 +140,7 @@ export function Footer() {
         <div className="border-b border-white/10 pb-16 md:pb-24">
           <Reveal className="mono mb-8 flex items-center gap-3 text-mink-d40">
             <span className="rec-dot" aria-hidden="true" />
-            <span dir="ltr">( 09 — GET STARTED )</span>
+            <span dir="ltr">( 07 — GET STARTED )</span>
           </Reveal>
           <div className="flex flex-col justify-between gap-10 md:flex-row md:items-end">
             <h2 className="font-display text-[clamp(2.6rem,7vw,6rem)] font-medium leading-[1.2]">
@@ -230,8 +228,8 @@ export function Footer() {
               <span dir="ltr">KEYBOARD — ?</span>
               <span className={monoLabel}>{f.keyboard}</span>
             </button>
-            <p className="mono" dir="ltr">
-              CRAFTED IN RIYADH / CAIRO — BLUE, RED &amp; WHITE
+            <p className="mono" dir={lang === "ar" ? "rtl" : "ltr"}>
+              {f.madeIn}
             </p>
           </div>
         </div>

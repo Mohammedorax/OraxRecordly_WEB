@@ -43,7 +43,6 @@ const ar = {
     { label: "عن أوراكس", href: "#about" },
     { label: "الميزات", href: "#features" },
     { label: "قبل / بعد", href: "#contrast" },
-    { label: "الأصوات", href: "#voices" },
     { label: "الميزان", href: "#compare" },
     { label: "الأسئلة الشائعة", href: "#faq" },
     { label: "سجلُّ الإصدارات", href: "#changelog" },
@@ -155,44 +154,6 @@ const ar = {
     editChip: "ORAX — AFTER",
     exportsCaption:
       "يُصدِّرُ الفيديو بصيغتَي MP4 وGIF، ويحفظُ اللقطاتَ PNG أو JPEG — بصيغٍ تناسبُ كلَّ منصةٍ وكلَّ شاشة",
-  },
-
-  testimonials: {
-    heading1: "قالوا عن أوراكس،",
-    heading2: "وتركوا الشهادة.",
-    side: "أربعةُ أصواتٍ من صنّاعِ المحتوى والتعليمِ والهندسة — يحكونَ تجربتَهم مع الأداةِ التي وعدْنا بأن تختفيَ أمامَ فنِّهم.",
-    prev: "الشهادة السابقة",
-    next: "الشهادة التالية",
-    items: [
-      {
-        quote:
-          "درّستُ عبر الشاشةِ سنواتٍ، ولم أجدْ أداةً تُحترِمُ وقتيَ كأوراكس: أضغطُ زرّاً واحداً، فيخرجُ الدرسُ مصقولاً كأنه فيلمٌ وثائقيّ. طلّابي ظنّوا أنني استأجرتُ مونتيراً — والسرُّ زرٌّ أزرقُ صغير.",
-        name: "ريم الحربي",
-        role: "مؤسِّسة أكاديميّة «نُقطة» التعليميّة",
-        initials: "رح",
-      },
-      {
-        quote:
-          "أرفعُ للفريقِ أخطاءَ الألعابِ التي أكتشفُها يوميّاً: قصٌّ على مرمى الإطار، وتصديرٌ يسبقُ أن يبردَ فنجانُ قهوتي. أوراكس ليس أداةً في سلسلةِ عملي — لقد صارَ العملي.",
-        name: "يوسف عبدالرحمن",
-        role: "مهندسُ برمجياتٍ ومُختبرُ ألعاب",
-        initials: "يع",
-      },
-      {
-        quote:
-          "المؤشّراتُ والتعليقاتُ التوضيحيّةُ وحدها اختصرتْ عليَّ ساعاتِ مونتاج. جمهوري صار يسألني: بأيِّ استوديو تُصوِّرين؟ أبتسمُ وأقول: الاستوديوُ كلُّهُ في نافذةٍ واحدة.",
-        name: "مها القحطاني",
-        role: "صانعةُ محتوىً تعليميّ — 2.4 مليون متابع",
-        initials: "مق",
-      },
-      {
-        quote:
-          "سجّلتُ دورةً كاملةً بمئةٍ وعشرينَ محاضرةً دون أن أعيدَ لقطةً واحدةً بسببِ الأداة. هذا هو المديحُ الحقيقيّ: أن تختفيَ الأداة، وتبقى المادة.",
-        name: "د. سلطان العامري",
-        role: "أستاذُ هندسةِ الحاسوب ومدرِّبٌ تقنيّ",
-        initials: "سع",
-      },
-    ],
   },
 
   comparison: {
@@ -315,40 +276,23 @@ const ar = {
     ],
   },
 
-  newsletter: {
-    heading1: "ديوانُ أوراكس:",
-    heading2: "رسالةٌ شهريّةٌ تليقُ بصانعِ المحتوى.",
-    para: "أسرارُ المونتاج، وقوالبُ حصريّةٌ قبلَ صدورِها، ودروسٌ مصغّرةٌ في فنِّ الحكاية البصريّة — تصلُكْ في رسالةٍ واحدةٍ أنيقةٍ كلَّ شهر، لا مزعجةً في كلِّ ساعة.",
-    emailLabel: "بريدك الإلكتروني",
-    button: "انضمْ إلى الديوان",
-    footnote: "رسالةٌ واحدةٌ شهريّاً — لا إزعاج، ولا مشاركةُ بريدِك مع أحد، وإلغاءٌ بضغطة",
-    toastTitle: "وصلتَ الديوان",
-    errorUnexpected: "حدثَ خطأٌ غيرُ متوقع",
-    errorNetwork: "تعذَّرَ الوصولُ إلى الخادم — جرِّبْ بعدَ لحظات",
-    api: {
-      invalid: "صيغةُ البريدِ الإلكترونيِّ غيرُ صحيحة",
-      duplicate: "بريدُك في الديوانِ من قبلُ — لا تنسَ أن تتفقّدَ رسائلَك",
-      welcome: "أهلاً بك في الديوان — أولُ رسالةٍ في طريقِها إليك",
-      server: "تعذَّر إكمالُ الطلب — جرِّبْ بعدَ لحظات",
-    },
-  },
-
   footer: {
-    heading1: "كلُّ إبداعٍ عظيمٍ",
-    heading2: "بدأ بلقطةٍ واحدة.",
+    heading1: "كلُّ إبداعٍ",
+    heading2: "بدأ بلقطةٍ.",
     bio: "استوديو التّسجيلِ والتّحريرِ لِمَن يرى الشاشةَ لوحةً والزّمنَ مادّةً خام: صُنّاعُ محتوى، ومعلّمون، ومطوّرون — يحوّلون ومضةَ الفكرِ إلى مشهدٍ خالد.",
     socialsTitle: "تواصل معنا",
     contactTitle: "البريد والدعم",
     privacy: "بلاغات الخصوصية",
     copyright: "© 2026 OraxRecordly — جميعُ الحقوقِ محفوظة",
     keyboard: "اختصاراتُ لوحةِ المفاتيح",
+    madeIn: "صُنع في اليمن",
     logoAlt: "شعار OraxRecordly",
     socials: [
       { label: "X / تويتر", href: "https://x.com" },
       { label: "يوتيوب", href: "https://youtube.com" },
       { label: "إنستغرام", href: "https://instagram.com" },
       { label: "دريبل", href: "https://dribbble.com" },
-      { label: "جيت هاب", href: "https://github.com" },
+      { label: "جيت هاب — Mohammedorax", href: "https://github.com/Mohammedorax" },
     ],
     copyToastTitle: "نُسِخَ البريد",
     copyToastDesc: "بين يديك الآن، بلا تحديدٍ ولا لَفٍّ ودوران.",
@@ -455,7 +399,6 @@ const en: Dict = {
     { label: "About", href: "#about" },
     { label: "Features", href: "#features" },
     { label: "Before / After", href: "#contrast" },
-    { label: "Voices", href: "#voices" },
     { label: "The Balance", href: "#compare" },
     { label: "FAQ", href: "#faq" },
     { label: "Changelog", href: "#changelog" },
@@ -567,44 +510,6 @@ const en: Dict = {
     editChip: "ORAX — AFTER",
     exportsCaption:
       "Exports video as MP4 or GIF, and saves stills as PNG or JPEG — in formats to fit every platform and every screen",
-  },
-
-  testimonials: {
-    heading1: "They spoke of Orax,",
-    heading2: "and left their testimony.",
-    side: "Four voices from content makers, educators and engineers — telling of the tool we promised would disappear before their art.",
-    prev: "Previous testimonial",
-    next: "Next testimonial",
-    items: [
-      {
-        quote:
-          "I have taught through screens for years and never found a tool that respects my time like Orax: one press of a button and the lesson comes out polished like a documentary. My students thought I hired an editor — the secret is one little blue button.",
-        name: "Reem Al-Harbi",
-        role: "Founder of Nuqta Academy",
-        initials: "RH",
-      },
-      {
-        quote:
-          "I file the game bugs I discover daily to my team: cuts to the exact frame, exports faster than my coffee cools. Orax is not a link in my workflow — it has become the workflow.",
-        name: "Yousef Abdulrahman",
-        role: "Software engineer & game tester",
-        initials: "YA",
-      },
-      {
-        quote:
-          "The cursors and annotations alone saved me hours of editing. My audience started asking which studio I shoot in. I smile and say: the whole studio fits in one window.",
-        name: "Maha Al-Qahtani",
-        role: "Educational content maker — 2.4M followers",
-        initials: "MQ",
-      },
-      {
-        quote:
-          "I recorded an entire course of a hundred and twenty lectures without re-shooting a single take because of the tool. That is real praise: the tool disappears, and the material remains.",
-        name: "Dr. Sultan Al-Amri",
-        role: "Professor of computer engineering & technical trainer",
-        initials: "SA",
-      },
-    ],
   },
 
   comparison: {
@@ -727,26 +632,8 @@ const en: Dict = {
     ],
   },
 
-  newsletter: {
-    heading1: "The Orax divan:",
-    heading2: "a monthly letter worthy of its maker.",
-    para: "Editing secrets, exclusive templates before release, and miniature lessons in the art of visual storytelling — delivered in one elegant message each month, not an annoying one every hour.",
-    emailLabel: "Your email address",
-    button: "Join the divan",
-    footnote: "One message a month — no noise, your address shared with no one, cancel in one press",
-    toastTitle: "Welcome to the divan",
-    errorUnexpected: "An unexpected error occurred",
-    errorNetwork: "The server could not be reached — try again in a moment",
-    api: {
-      invalid: "That email address doesn't look right",
-      duplicate: "Your address is already in the divan — don't forget to check your inbox",
-      welcome: "Welcome to the divan — the first letter is on its way",
-      server: "The request could not be completed — try again in a moment",
-    },
-  },
-
   footer: {
-    heading1: "Every great creation",
+    heading1: "Every creation",
     heading2: "began with a single frame.",
     bio: "The recording and editing studio for those who see the screen as a canvas and time as raw material: content makers, educators and developers — turning the flash of an idea into a scene that lasts.",
     socialsTitle: "Follow along",
@@ -754,13 +641,14 @@ const en: Dict = {
     privacy: "Privacy notices",
     copyright: "© 2026 OraxRecordly — All rights reserved",
     keyboard: "Keyboard shortcuts",
+    madeIn: "MADE IN YEMEN",
     logoAlt: "OraxRecordly logo",
     socials: [
       { label: "X / Twitter", href: "https://x.com" },
       { label: "YouTube", href: "https://youtube.com" },
       { label: "Instagram", href: "https://instagram.com" },
       { label: "Dribbble", href: "https://dribbble.com" },
-      { label: "GitHub", href: "https://github.com" },
+      { label: "GitHub — Mohammedorax", href: "https://github.com/Mohammedorax" },
     ],
     copyToastTitle: "Address copied",
     copyToastDesc: "In your hands now — no selecting, no circling around.",

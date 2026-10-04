@@ -615,22 +615,6 @@ html.js-alive .rv-inner {
   transform: translateY(0);
 }
 
-/* ============ Testimonial quote swap ============ */
-@keyframes quote-in {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.quote-in {
-  animation: quote-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
 /* ============ Ticker (text marquee) ============ */
 .ticker {
   overflow: hidden;
@@ -705,9 +689,6 @@ html.js-alive .rv-inner {
   }
   .intro-curtain {
     display: none;
-  }
-  .quote-in {
-    animation: none;
   }
   [data-magnetic] {
     transform: none !important;
