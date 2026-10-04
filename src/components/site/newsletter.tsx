@@ -75,7 +75,7 @@ export function Newsletter() {
     >
       <div className="mx-auto max-w-3xl text-center">
         <Reveal className="mono text-mink-50">
-          <Scramble text="( 09 — THE DIVAN LETTER )" />
+          <Scramble text="( 08 — THE DIVAN LETTER )" />
         </Reveal>
 
         <h2 className="mt-6 font-display text-4xl font-medium leading-tight md:text-6xl">

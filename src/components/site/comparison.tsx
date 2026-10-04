@@ -76,7 +76,7 @@ export function Comparison() {
       <div className="flex flex-wrap items-end justify-between gap-6">
         <div>
           <Reveal className="mono text-mink-50">
-            <Scramble text="( 06 — THE BALANCE )" />
+            <Scramble text="( 05 — THE BALANCE )" />
           </Reveal>
           <h2 className="mt-6 font-display text-4xl font-medium leading-tight md:text-6xl">
             <Reveal delay={100}>{t.comparison.heading1}</Reveal>

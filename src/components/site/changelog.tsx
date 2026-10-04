@@ -25,7 +25,7 @@ export function Changelog() {
         {/* Sticky header column */}
         <div className="lg:sticky lg:top-32 lg:self-start">
           <Reveal className="mono text-mink-50">
-            <Scramble text="( 08 — CHANGELOG )" />
+            <Scramble text="( 07 — CHANGELOG )" />
           </Reveal>
           <h2 className="mt-6 font-display text-4xl font-medium leading-tight md:text-6xl">
             <Reveal delay={100}>{t.changelog.heading1}</Reveal>

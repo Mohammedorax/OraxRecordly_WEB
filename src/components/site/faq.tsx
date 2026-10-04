@@ -24,7 +24,7 @@ export function FAQ() {
         {/* Sticky header column */}
         <div>
           <Reveal className="mono text-mink-50">
-            <Scramble text="( 07 — FAQ )" />
+            <Scramble text="( 06 — FAQ )" />
           </Reveal>
           <h2 className="mt-6 font-display text-4xl font-medium leading-tight md:text-6xl">
             <Reveal delay={100}>{t.faq.heading1}</Reveal>

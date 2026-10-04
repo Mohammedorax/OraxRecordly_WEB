@@ -7,7 +7,6 @@ import { Statement, Stats } from "@/components/site/statement";
 import { Features } from "@/components/site/features";
 import { BeforeAfter } from "@/components/site/before-after";
 import { Testimonials } from "@/components/site/testimonials";
-import { Pricing } from "@/components/site/pricing";
 import { Comparison } from "@/components/site/comparison";
 import { FAQ } from "@/components/site/faq";
 import { Changelog } from "@/components/site/changelog";
@@ -43,12 +42,6 @@ const JSON_LD = {
     "Instant export — MP4, GIF, WebM",
     "120+ effects and templates",
   ],
-  offers: {
-    "@type": "AggregateOffer",
-    lowPrice: "0",
-    priceCurrency: "USD",
-    offerCount: "3",
-  },
   aggregateRating: {
     "@type": "AggregateRating",
     ratingValue: "4.9",
@@ -77,7 +70,6 @@ export default function Home() {
           <Features />
           <BeforeAfter />
           <Testimonials />
-          <Pricing />
           <Comparison />
           <FAQ />
           <Changelog />

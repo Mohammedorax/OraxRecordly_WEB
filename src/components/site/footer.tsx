@@ -142,7 +142,7 @@ export function Footer() {
         <div className="border-b border-white/10 pb-16 md:pb-24">
           <Reveal className="mono mb-8 flex items-center gap-3 text-mink-d40">
             <span className="rec-dot" aria-hidden="true" />
-            <span dir="ltr">( 10 — GET STARTED )</span>
+            <span dir="ltr">( 09 — GET STARTED )</span>
           </Reveal>
           <div className="flex flex-col justify-between gap-10 md:flex-row md:items-end">
             <h2 className="font-display text-[clamp(2.6rem,7vw,6rem)] font-medium leading-[1.2]">
