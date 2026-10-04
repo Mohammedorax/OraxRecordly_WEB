@@ -27,13 +27,14 @@ const ALL_RELEASES = "https://github.com/Mohammedorax/OraxRecordly/releases";
 
 /**
  * Only Windows has a published build today (`OraxRecordly-windows-x64.exe`,
- * 161,439,133 bytes ≈ 154 MiB, release v1.4.3). macOS and Linux are listed so
+ * 161,438,870 bytes ≈ 153.96 MiB, release v1.4.4). macOS and Linux are listed so
  * those visitors land on the releases page — never a download we cannot serve.
  *
  * The size is the real Content-Length the release asset serves, in the same
- * decimal MB the vendor pages use (161,439,133 bytes → 161.4 MB). v1.4.3 is
- * the first build whose cold launch is guarded: v1.4.2 could come up with no
- * visible window, so `latest` must never resolve back to it.
+ * decimal MB the vendor pages use (161,438,870 bytes → 161.4 MB). v1.4.4 is
+ * the build that fixes the root cause of a launch coming up with no visible
+ * window; v1.4.3 could only guard it after the fact, and v1.4.2 and earlier
+ * could come up with no window at all, so `latest` must never resolve back.
  */
 const PLATFORMS = [
   {
@@ -152,7 +153,7 @@ export function DownloadCTA({
         <DialogContent className="rounded-3xl border-black/10 p-8 sm:max-w-md">
           <DialogHeader>
             <p className="mono text-mink-50" dir="ltr">
-              DOWNLOAD — v1.4.3
+              DOWNLOAD — v1.4.4
             </p>
             <DialogTitle className="mt-2 text-start font-display text-3xl font-medium">
               {t.download.title}

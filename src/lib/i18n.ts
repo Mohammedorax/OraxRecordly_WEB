@@ -237,6 +237,15 @@ const ar = {
     kinds: { new: "جديد", improve: "تحسين", fix: "إصلاح" },
     releases: [
       {
+        version: "v1.4.4",
+        date: "2026.10.04",
+        changes: [
+          { kind: "fix", text: "إصلاحُ السببِ الجذريِّ لنافذةٍ تُطلَقُ بلا أثر: كان أوّلُ رسمٍ يقرأُ السمةَ المحفوظةَ قراءةً مانعة، ومستمعُها يُسجَّلُ في وقتٍ متأخّر، فإن سبقَه الظهورُ تعطَّلَ العرضُ ولم تُقدِّمِ النافذةُ إطاراً واحداً طوالَ عمرِها — صارَ التسجيلُ الآن فورَ الاستيرادِ وقبلَ أن تُحمَّلَ أيُّ نافذة" },
+          { kind: "fix", text: "إن رفضَ المُركِّبُ السطحَ الشفّافَ فعلاً، يُعيدُ مسبارٌ واحدٌ (بعد ~1.2 ثانية من ظهور الواجهة العائمة) تقديمَ الشريطِ نفسِه معتماً، بدلَ انتظارِ نافذةِ المحرِّر" },
+          { kind: "fix", text: "النافذةُ التي ثبُتَ أنها لم تُقدِّمْ إطاراً تُحسَبُ الآن غيرَ ظاهرة، فيبقى ضمانُ التشغيلِ الباردِ قائماً" },
+        ],
+      },
+      {
         version: "v1.4.3",
         date: "2026.10.04",
         changes: [
@@ -314,7 +323,7 @@ const ar = {
       { note: "لا يوجد إصدار منشور بعد — تابِعْ صفحةَ الإصدارات" },
     ],
     toastTitle: "انطلقتْ رحلةُ التنزيل",
-    toastDesc: "جارٍ إحضارُ OraxRecordly v1.4.3 إلى {platform} — أهلاً بك في الحكاية.",
+    toastDesc: "جارٍ إحضارُ OraxRecordly v1.4.4 إلى {platform} — أهلاً بك في الحكاية.",
   },
 
   demo: {
@@ -342,7 +351,7 @@ const ar = {
   },
 
   sticky: {
-    title: "OraxRecordly v1.4.3",
+    title: "OraxRecordly v1.4.4",
     sub: "مجانيٌّ — بلا علاماتٍ مائيّة",
   },
 
@@ -593,6 +602,15 @@ const en: Dict = {
     kinds: { new: "NEW", improve: "IMPROVED", fix: "FIXED" },
     releases: [
       {
+        version: "v1.4.4",
+        date: "2026.10.04",
+        changes: [
+          { kind: "fix", text: "The root cause of a launch that could come up with no visible window: the first render read the saved theme through a blocking call whose listener was registered too late, so if that render won the race the window never presented a frame for its whole lifetime — the channel is now registered at import time, before any window can load" },
+          { kind: "fix", text: "If the compositor genuinely refuses the transparent surface, a one-shot probe (~1.2s after the overlay appears) re-presents the same bar opaque instead of waiting for the editor window" },
+          { kind: "fix", text: "A window proven to have presented no frame now counts as not visible, so the cold-launch guarantee still fires" },
+        ],
+      },
+      {
         version: "v1.4.3",
         date: "2026.10.04",
         changes: [
@@ -670,7 +688,7 @@ const en: Dict = {
       { note: "No build published yet — watch the releases page" },
     ],
     toastTitle: "The download has launched",
-    toastDesc: "Bringing OraxRecordly v1.4.3 to {platform} — welcome to the story.",
+    toastDesc: "Bringing OraxRecordly v1.4.4 to {platform} — welcome to the story.",
   },
 
   demo: {
@@ -698,7 +716,7 @@ const en: Dict = {
   },
 
   sticky: {
-    title: "OraxRecordly v1.4.3",
+    title: "OraxRecordly v1.4.4",
     sub: "Free — no watermarks",
   },
 
