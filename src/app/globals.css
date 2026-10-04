@@ -6,12 +6,13 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  /* ONE typeface everywhere — Thmanyah Serif Display (Arabic + Latin + numerals).
-     The old sans/latin/mono slots now resolve to the same unified voice. */
-  --font-sans: var(--font-thmanyah), "Thmanyah Serif Display", ui-serif, Georgia, serif;
-  --font-latin: var(--font-thmanyah), "Thmanyah Serif Display", ui-serif, Georgia, serif;
-  --font-mono: var(--font-thmanyah), "Thmanyah Serif Display", ui-serif, Georgia, serif;
-  --font-display: var(--font-thmanyah), "Thmanyah Serif Display", ui-serif, Georgia, serif;
+  /* ONE typeface everywhere — Tajarib Typeface (Arabic + Latin + numerals).
+     The old sans/latin/mono slots now resolve to the same unified voice.
+     The generic serif fallback matches Tajarib's high-contrast serif voice. */
+  --font-sans: var(--font-tajarib), "Tajarib Typeface", ui-serif, Georgia, serif;
+  --font-latin: var(--font-tajarib), "Tajarib Typeface", ui-serif, Georgia, serif;
+  --font-mono: var(--font-tajarib), "Tajarib Typeface", ui-serif, Georgia, serif;
+  --font-display: var(--font-tajarib), "Tajarib Typeface", ui-serif, Georgia, serif;
   --ease-editorial: cubic-bezier(0.16, 1, 0.3, 1);
   /* Brand palette — extracted from the OraxRecordly logo */
   --color-orax-blue: #136cc8;

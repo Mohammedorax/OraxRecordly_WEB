@@ -8,18 +8,25 @@ import { DICTS } from "@/lib/i18n";
 import { asset, SITE_URL } from "@/lib/asset";
 
 /**
- * Thmanyah Serif Display — THE single typeface of the whole site.
+ * Tajarib Typeface — THE single typeface of the whole site.
  * Covers Arabic + Latin + both digit systems + full diacritics, so every
  * text — display, body, labels, numerals — renders in one unified voice.
  *
- * `next/font/local` fingerprints and rewrites the file into /_next/static,
- * which Next serves under basePath automatically — so the font follows the
+ * All three shipped weights are registered so the design's existing scale
+ * maps onto real cuts instead of synthetic bolding:
+ * Regular → 400, Medium → 500, Bold → 700.
+ *
+ * `next/font/local` fingerprints and rewrites the files into /_next/static,
+ * which Next serves under basePath automatically — so the fonts follow the
  * GitHub Pages subpath with no extra work.
  */
-const thmanyah = localFont({
-  src: "../fonts/ThmanyahSerifDisplay-Medium.otf",
-  variable: "--font-thmanyah",
-  weight: "500",
+const tajarib = localFont({
+  src: [
+    { path: "../fonts/TajaribTypeface-Regular.otf", weight: "400", style: "normal" },
+    { path: "../fonts/TajaribTypeface-Medium.otf", weight: "500", style: "normal" },
+    { path: "../fonts/TajaribTypeface-Bold.otf", weight: "700", style: "normal" },
+  ],
+  variable: "--font-tajarib",
   display: "swap",
   preload: true,
 });
@@ -99,7 +106,7 @@ try{
           <style>{`.intro-curtain{display:none!important}`}</style>
         </noscript>
       </head>
-      <body className={`${thmanyah.variable} antialiased bg-paper text-ink`}>
+      <body className={`${tajarib.variable} antialiased bg-paper text-ink`}>
         <ThemeProvider>
           <I18nProvider initialLang="ar">{children}</I18nProvider>
         </ThemeProvider>
