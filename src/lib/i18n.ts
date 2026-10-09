@@ -237,6 +237,17 @@ const ar = {
     kinds: { new: "جديد", improve: "تحسين", fix: "إصلاح" },
     releases: [
       {
+        version: "v1.4.6",
+        date: "2026.10.10",
+        changes: [
+          { kind: "fix", text: "لا نافذةَ سوداءَ بعد الآن أثناء التصدير — كانت ffmpeg تفتحُ نافذةَ أوامرَ تعرضُ مسارَ الملفِ المؤقّت." },
+          { kind: "new", text: "تسجيلاتُك وصادراتُك في مجلدٍ ظاهر: Videos\\OraxRecordly، مع نقلٍ آمنٍ لمرّةٍ واحدة." },
+          { kind: "new", text: "شريطُ تقدّمٍ في شريطِ المهامّ، وإشعارٌ عند انتهاءِ التصديرِ بضغطةٍ تُظهرُ الملفّ." },
+          { kind: "improve", text: "لا نومَ للجهازِ أثناء التصدير، وإلغاءٌ أنهى العملياتِ العالقة." },
+          { kind: "improve", text: "تقديرُ حجمِ الملفِّ قبل التصدير، وسجلُّ آخرِ الصادرات، وتذكّرُ إعداداتِك." },
+        ],
+      },
+      {
         version: "v1.4.5",
         date: "2026.10.06",
         changes: [
@@ -319,7 +330,7 @@ const ar = {
       { note: "لا يوجد إصدار منشور بعد — تابِعْ صفحةَ الإصدارات" },
     ],
     toastTitle: "انطلقتْ رحلةُ التنزيل",
-    toastDesc: "جارٍ إحضارُ OraxRecordly v1.4.5 إلى {platform} — أهلاً بك في الحكاية.",
+    toastDesc: "جارٍ إحضارُ OraxRecordly v1.4.6 إلى {platform} — أهلاً بك في الحكاية.",
   },
 
   demo: {
@@ -347,7 +358,7 @@ const ar = {
   },
 
   sticky: {
-    title: "OraxRecordly v1.4.5",
+    title: "OraxRecordly v1.4.6",
     sub: "مجانيٌّ — بلا علاماتٍ مائيّة",
   },
 
@@ -598,6 +609,17 @@ const en: Dict = {
     kinds: { new: "NEW", improve: "IMPROVED", fix: "FIXED" },
     releases: [
       {
+        version: "v1.4.6",
+        date: "2026.10.10",
+        changes: [
+          { kind: "fix", text: "No more black console window during export — ffmpeg was showing its command line with the temp path." },
+          { kind: "new", text: "Recordings and exports live in a visible folder: Videos\\OraxRecordly, moved safely once." },
+          { kind: "new", text: "Taskbar progress, a desktop notification when an export finishes, and one click to reveal the file." },
+          { kind: "improve", text: "The machine no longer sleeps mid-export, and cancelling now cleans up every child process." },
+          { kind: "improve", text: "Pre-export size estimate, a recent-exports list, and remembered export settings." },
+        ],
+      },
+      {
         version: "v1.4.5",
         date: "2026.10.06",
         changes: [
@@ -680,7 +702,7 @@ const en: Dict = {
       { note: "No build published yet — watch the releases page" },
     ],
     toastTitle: "The download has launched",
-    toastDesc: "Bringing OraxRecordly v1.4.5 to {platform} — welcome to the story.",
+    toastDesc: "Bringing OraxRecordly v1.4.6 to {platform} — welcome to the story.",
   },
 
   demo: {
@@ -708,7 +730,7 @@ const en: Dict = {
   },
 
   sticky: {
-    title: "OraxRecordly v1.4.5",
+    title: "OraxRecordly v1.4.6",
     sub: "Free — no watermarks",
   },
 
