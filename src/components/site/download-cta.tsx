@@ -27,14 +27,11 @@ const ALL_RELEASES = "https://github.com/Mohammedorax/OraxRecordly/releases";
 
 /**
  * Only Windows has a published build today (`OraxRecordly-windows-x64.exe`,
- * 161,438,870 bytes ≈ 153.96 MiB, release v1.4.4). macOS and Linux are listed so
+ * 161,441,567 bytes ≈ 153.96 MiB, release v1.4.6). macOS and Linux are listed so
  * those visitors land on the releases page — never a download we cannot serve.
  *
  * The size is the real Content-Length the release asset serves, in the same
- * decimal MB the vendor pages use (161,438,870 bytes → 161.4 MB). v1.4.4 is
- * the build that fixes the root cause of a launch coming up with no visible
- * window; v1.4.3 could only guard it after the fact, and v1.4.2 and earlier
- * could come up with no window at all, so `latest` must never resolve back.
+ * decimal MB the vendor pages use (161,441,567 bytes → 161.4 MB).
  */
 const PLATFORMS = [
   {
