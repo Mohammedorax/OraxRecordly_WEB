@@ -237,6 +237,15 @@ const ar = {
     kinds: { new: "جديد", improve: "تحسين", fix: "إصلاح" },
     releases: [
       {
+        version: "v1.5.1",
+        date: "2026.10.10",
+        changes: [
+          { kind: "new", text: "المقاطعُ المنتهيةُ المصدرةُ تُحفَظ الآن في المجلدِ الأساسي Videos\\OraxRecordly مباشرة، فتراها فوراً." },
+          { kind: "new", text: "المقاطعُ الخامُ وملفاتُ الصوتِ تُكتَب داخل مجلد Cache فرعي، فيبقى المجلدُ الأساسيُّ لِما أنجزتَه." },
+          { kind: "fix", text: "لم يعد يظهر رابطُ الملفّ أو مسارُه عند مرورِ المؤشر على مقطع: التلميحُ يعرضُ اسمَ المقطعِ فقط." },
+        ],
+      },
+      {
         version: "v1.5.0",
         date: "2026.10.10",
         changes: [
@@ -366,7 +375,7 @@ const ar = {
       { note: "لا يوجد إصدار منشور بعد — تابِعْ صفحةَ الإصدارات" },
     ],
     toastTitle: "انطلقتْ رحلةُ التنزيل",
-    toastDesc: "جارٍ إحضارُ OraxRecordly v1.5.0 إلى {platform} — أهلاً بك في الحكاية.",
+    toastDesc: "جارٍ إحضارُ OraxRecordly v1.5.1 إلى {platform} — أهلاً بك في الحكاية.",
   },
 
   demo: {
@@ -394,7 +403,7 @@ const ar = {
   },
 
   sticky: {
-    title: "OraxRecordly v1.5.0",
+    title: "OraxRecordly v1.5.1",
     sub: "مجانيٌّ — بلا علاماتٍ مائيّة",
   },
 
@@ -645,6 +654,15 @@ const en: Dict = {
     kinds: { new: "NEW", improve: "IMPROVED", fix: "FIXED" },
     releases: [
       {
+        version: "v1.5.1",
+        date: "2026.10.10",
+        changes: [
+          { kind: "new", text: "A finished export is saved straight into the main Videos\\OraxRecordly folder, so you see it immediately." },
+          { kind: "new", text: "Raw footage and its audio sidecars are written to a Cache subfolder, keeping the main folder for what you finished." },
+          { kind: "fix", text: "Hovering a clip no longer shows a file link or path: the tooltip shows the clip name." },
+        ],
+      },
+      {
         version: "v1.5.0",
         date: "2026.10.10",
         changes: [
@@ -774,7 +792,7 @@ const en: Dict = {
       { note: "No build published yet — watch the releases page" },
     ],
     toastTitle: "The download has launched",
-    toastDesc: "Bringing OraxRecordly v1.5.0 to {platform} — welcome to the story.",
+    toastDesc: "Bringing OraxRecordly v1.5.1 to {platform} — welcome to the story.",
   },
 
   demo: {
@@ -802,7 +820,7 @@ const en: Dict = {
   },
 
   sticky: {
-    title: "OraxRecordly v1.5.0",
+    title: "OraxRecordly v1.5.1",
     sub: "Free — no watermarks",
   },
 
