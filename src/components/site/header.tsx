@@ -317,7 +317,7 @@ export function Header() {
             <Scramble text="ORAXRECORDLY — REC / EDIT / SHARE" />
           </p>
           <p className="mono text-mink-50" dir="ltr">
-            v1.5.1 — 2026
+            v1.5.2 — 2026
           </p>
         </div>
       </nav>

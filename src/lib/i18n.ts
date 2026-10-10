@@ -237,6 +237,15 @@ const ar = {
     kinds: { new: "جديد", improve: "تحسين", fix: "إصلاح" },
     releases: [
       {
+        version: "v1.5.2",
+        date: "2026.10.10",
+        changes: [
+          { kind: "fix", text: "بعد انتهاءِ التصديرِ بنجاحٍ كان المحررُ يتحوّلُ إلى شاشةٍ سوداءَ برسالةِ play() ويُخرجُك من عملك؛ الآن يبقى المحررُ كما هو ويظهرُ إشعارُ النجاحِ فقط." },
+          { kind: "fix", text: "إزالةُ ظهورِ رابطِ الملفّ أو مسارِه في أيِّ تلميحٍ للنافذة، مهما مرّ المؤشرُ على عنصرِ الفيديو." },
+          { kind: "improve", text: "معاينةُ المحررِ تتوقّفُ عن الرسمِ أثناء التسجيل، فيقلُّ الحملُ وتتحسّنُ السلاسةُ والاستجابةُ وسرعةُ الجهاز." },
+        ],
+      },
+      {
         version: "v1.5.1",
         date: "2026.10.10",
         changes: [
@@ -375,7 +384,7 @@ const ar = {
       { note: "لا يوجد إصدار منشور بعد — تابِعْ صفحةَ الإصدارات" },
     ],
     toastTitle: "انطلقتْ رحلةُ التنزيل",
-    toastDesc: "جارٍ إحضارُ OraxRecordly v1.5.1 إلى {platform} — أهلاً بك في الحكاية.",
+    toastDesc: "جارٍ إحضارُ OraxRecordly v1.5.2 إلى {platform} — أهلاً بك في الحكاية.",
   },
 
   demo: {
@@ -403,7 +412,7 @@ const ar = {
   },
 
   sticky: {
-    title: "OraxRecordly v1.5.1",
+    title: "OraxRecordly v1.5.2",
     sub: "مجانيٌّ — بلا علاماتٍ مائيّة",
   },
 
@@ -654,6 +663,15 @@ const en: Dict = {
     kinds: { new: "NEW", improve: "IMPROVED", fix: "FIXED" },
     releases: [
       {
+        version: "v1.5.2",
+        date: "2026.10.10",
+        changes: [
+          { kind: "fix", text: "A successful export used to drop the editor onto a black screen with the play() message and out of your work; the editor now stays open and you just get the success notice." },
+          { kind: "fix", text: "No window tooltip can show a file link or path any more, whichever video element the cursor passes over." },
+          { kind: "improve", text: "The editor preview stops drawing while a recording runs, so the machine stays responsive and smoother." },
+        ],
+      },
+      {
         version: "v1.5.1",
         date: "2026.10.10",
         changes: [
@@ -792,7 +810,7 @@ const en: Dict = {
       { note: "No build published yet — watch the releases page" },
     ],
     toastTitle: "The download has launched",
-    toastDesc: "Bringing OraxRecordly v1.5.1 to {platform} — welcome to the story.",
+    toastDesc: "Bringing OraxRecordly v1.5.2 to {platform} — welcome to the story.",
   },
 
   demo: {
@@ -820,7 +838,7 @@ const en: Dict = {
   },
 
   sticky: {
-    title: "OraxRecordly v1.5.1",
+    title: "OraxRecordly v1.5.2",
     sub: "Free — no watermarks",
   },
 
