@@ -27,11 +27,11 @@ const ALL_RELEASES = "https://github.com/Mohammedorax/OraxRecordly/releases";
 
 /**
  * Only Windows has a published build today (`OraxRecordly-windows-x64.exe`,
- * 161,440,173 bytes ≈ 153.96 MiB, release v1.4.7). macOS and Linux are listed so
+ * 161,441,958 bytes ≈ 153.96 MiB, release v1.4.8). macOS and Linux are listed so
  * those visitors land on the releases page — never a download we cannot serve.
  *
  * The size is the real Content-Length the release asset serves, in the same
- * decimal MB the vendor pages use (161,440,173 bytes → 161.4 MB).
+ * decimal MB the vendor pages use (161,441,958 bytes → 161.4 MB).
  */
 const PLATFORMS = [
   {
