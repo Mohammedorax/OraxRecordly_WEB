@@ -237,6 +237,15 @@ const ar = {
     kinds: { new: "جديد", improve: "تحسين", fix: "إصلاح" },
     releases: [
       {
+        version: "v1.4.7",
+        date: "2026.10.10",
+        changes: [
+          { kind: "fix", text: "فتحُ التسجيلاتِ من مسارٍ بصيغةِ ويندوز القصيرة (مثل C:\\Users\\RUNNER~1) كان يُرفَض؛ الآن يُقرأ الملفّ من مكانه الحقيقيّ." },
+          { kind: "fix", text: "إن بدأت النافذةُ قبل اكتمالِ جسرِ النظام، يُعيدُ التطبيقُ تحميلَها مرّةً واحدةً تلقائياً بدلَ ظهورِ شاشةِ الخطأ." },
+          { kind: "improve", text: "اختبارٌ حقيقيٌّ للتطبيقِ كاملاً (تشغيلٌ وتصديرٌ والتحقّقُ من الملفّ الناتج) ضمن مسارِ الجودة." },
+        ],
+      },
+      {
         version: "v1.4.6",
         date: "2026.10.10",
         changes: [
@@ -330,7 +339,7 @@ const ar = {
       { note: "لا يوجد إصدار منشور بعد — تابِعْ صفحةَ الإصدارات" },
     ],
     toastTitle: "انطلقتْ رحلةُ التنزيل",
-    toastDesc: "جارٍ إحضارُ OraxRecordly v1.4.6 إلى {platform} — أهلاً بك في الحكاية.",
+    toastDesc: "جارٍ إحضارُ OraxRecordly v1.4.7 إلى {platform} — أهلاً بك في الحكاية.",
   },
 
   demo: {
@@ -358,7 +367,7 @@ const ar = {
   },
 
   sticky: {
-    title: "OraxRecordly v1.4.6",
+    title: "OraxRecordly v1.4.7",
     sub: "مجانيٌّ — بلا علاماتٍ مائيّة",
   },
 
@@ -609,6 +618,15 @@ const en: Dict = {
     kinds: { new: "NEW", improve: "IMPROVED", fix: "FIXED" },
     releases: [
       {
+        version: "v1.4.7",
+        date: "2026.10.10",
+        changes: [
+          { kind: "fix", text: "Opening a recording from a Windows short path (C:\\Users\\RUNNER~1) was refused; the real location is now used." },
+          { kind: "fix", text: "If a window starts before the system bridge is ready, the app reloads it once instead of showing the error screen." },
+          { kind: "improve", text: "A real end-to-end test of the running app (boot, export, and verify the output file) in the quality pipeline." },
+        ],
+      },
+      {
         version: "v1.4.6",
         date: "2026.10.10",
         changes: [
@@ -702,7 +720,7 @@ const en: Dict = {
       { note: "No build published yet — watch the releases page" },
     ],
     toastTitle: "The download has launched",
-    toastDesc: "Bringing OraxRecordly v1.4.6 to {platform} — welcome to the story.",
+    toastDesc: "Bringing OraxRecordly v1.4.7 to {platform} — welcome to the story.",
   },
 
   demo: {
@@ -730,7 +748,7 @@ const en: Dict = {
   },
 
   sticky: {
-    title: "OraxRecordly v1.4.6",
+    title: "OraxRecordly v1.4.7",
     sub: "Free — no watermarks",
   },
 
