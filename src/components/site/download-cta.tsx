@@ -150,7 +150,7 @@ export function DownloadCTA({
         <DialogContent className="rounded-3xl border-black/10 p-8 sm:max-w-md">
           <DialogHeader>
             <p className="mono text-mink-50" dir="ltr">
-              DOWNLOAD — v1.5.2
+              DOWNLOAD — v1.6.0
             </p>
             <DialogTitle className="mt-2 text-start font-display text-3xl font-medium">
               {t.download.title}

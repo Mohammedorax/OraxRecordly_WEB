@@ -237,6 +237,16 @@ const ar = {
     kinds: { new: "جديد", improve: "تحسين", fix: "إصلاح" },
     releases: [
       {
+        version: "v1.6.0",
+        date: "2026.10.10",
+        changes: [
+          { kind: "new", text: "شريطُ اختصاراتٍ جديد في مساحةِ التحرير: يُشعلُ ظهورَ المفاتيحِ في الفيديو، ويختارُ سطراً أو سطرين، ويبدّلُ الشكلَ — دون فتحِ الإعدادات." },
+          { kind: "new", text: "ثلاثةُ أشكالٍ لعرضِ الاختصارات: كبسولة، شريطٌ بعرضِ الإطار، أو نصٌّ فقط بلا خلفية." },
+          { kind: "new", text: "سطرٌ ثانٍ يعرضُ الاختصاراتِ التي سبقت الحالية، ولونُ تمييزٍ تختارُه من لوحةِ الإعدادات." },
+          { kind: "improve", text: "الشريطُ نفسُه يمكن إخفاؤه إن لم تردْه، ويبقى مخفيّاً مع زرٍّ صغيرٍ لإرجاعه." },
+        ],
+      },
+      {
         version: "v1.5.2",
         date: "2026.10.10",
         changes: [
@@ -384,7 +394,7 @@ const ar = {
       { note: "لا يوجد إصدار منشور بعد — تابِعْ صفحةَ الإصدارات" },
     ],
     toastTitle: "انطلقتْ رحلةُ التنزيل",
-    toastDesc: "جارٍ إحضارُ OraxRecordly v1.5.2 إلى {platform} — أهلاً بك في الحكاية.",
+    toastDesc: "جارٍ إحضارُ OraxRecordly v1.6.0 إلى {platform} — أهلاً بك في الحكاية.",
   },
 
   demo: {
@@ -412,7 +422,7 @@ const ar = {
   },
 
   sticky: {
-    title: "OraxRecordly v1.5.2",
+    title: "OraxRecordly v1.6.0",
     sub: "مجانيٌّ — بلا علاماتٍ مائيّة",
   },
 
@@ -663,6 +673,16 @@ const en: Dict = {
     kinds: { new: "NEW", improve: "IMPROVED", fix: "FIXED" },
     releases: [
       {
+        version: "v1.6.0",
+        date: "2026.10.10",
+        changes: [
+          { kind: "new", text: "A new shortcut bar in the editing area: turn the on-screen keys on, choose one line or two, and switch the look without opening settings." },
+          { kind: "new", text: "Three looks for the shortcut display: a capsule, a full-width bar, or plain text with no plate." },
+          { kind: "new", text: "An optional second line showing the shortcuts pressed just before the current one, plus an accent colour of your choice." },
+          { kind: "improve", text: "The bar itself can be hidden if you do not want it, and it stays hidden behind a small chip that brings it back." },
+        ],
+      },
+      {
         version: "v1.5.2",
         date: "2026.10.10",
         changes: [
@@ -810,7 +830,7 @@ const en: Dict = {
       { note: "No build published yet — watch the releases page" },
     ],
     toastTitle: "The download has launched",
-    toastDesc: "Bringing OraxRecordly v1.5.2 to {platform} — welcome to the story.",
+    toastDesc: "Bringing OraxRecordly v1.6.0 to {platform} — welcome to the story.",
   },
 
   demo: {
@@ -838,7 +858,7 @@ const en: Dict = {
   },
 
   sticky: {
-    title: "OraxRecordly v1.5.2",
+    title: "OraxRecordly v1.6.0",
     sub: "Free — no watermarks",
   },
 
