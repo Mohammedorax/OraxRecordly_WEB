@@ -237,6 +237,15 @@ const ar = {
     kinds: { new: "جديد", improve: "تحسين", fix: "إصلاح" },
     releases: [
       {
+        version: "v1.5.0",
+        date: "2026.10.10",
+        changes: [
+          { kind: "new", text: "من لوحة المشاريع يمكنك فتح أي تسجيل خام في المحرر مباشرة: نقرةٌ مزدوجةٌ على البطاقة، أو «تحرير في المحرر» من قائمة البطاقة." },
+          { kind: "new", text: "نافذةُ معاينةِ الملفِّ صار فيها زرُّ «تحرير في المحرر»، فلا تبقى عالقاً في المشاهدةِ وحدها." },
+          { kind: "improve", text: "مسارٌ واحدٌ لفتحِ الوسائطِ في المحرر: الاستيرادُ وفتحُ تسجيلٍ من اللوحةِ يتركان المحررَ في الحالةِ ذاتها." },
+        ],
+      },
+      {
         version: "v1.4.9",
         date: "2026.10.10",
         changes: [
@@ -357,7 +366,7 @@ const ar = {
       { note: "لا يوجد إصدار منشور بعد — تابِعْ صفحةَ الإصدارات" },
     ],
     toastTitle: "انطلقتْ رحلةُ التنزيل",
-    toastDesc: "جارٍ إحضارُ OraxRecordly v1.4.9 إلى {platform} — أهلاً بك في الحكاية.",
+    toastDesc: "جارٍ إحضارُ OraxRecordly v1.5.0 إلى {platform} — أهلاً بك في الحكاية.",
   },
 
   demo: {
@@ -385,7 +394,7 @@ const ar = {
   },
 
   sticky: {
-    title: "OraxRecordly v1.4.9",
+    title: "OraxRecordly v1.5.0",
     sub: "مجانيٌّ — بلا علاماتٍ مائيّة",
   },
 
@@ -636,6 +645,15 @@ const en: Dict = {
     kinds: { new: "NEW", improve: "IMPROVED", fix: "FIXED" },
     releases: [
       {
+        version: "v1.5.0",
+        date: "2026.10.10",
+        changes: [
+          { kind: "new", text: "Open any raw recording straight in the editor from the projects dashboard: double-click the card, or use Edit in editor from its menu." },
+          { kind: "new", text: "The raw-file preview now offers Edit in editor, so watching a clip is no longer a dead end." },
+          { kind: "improve", text: "One path loads media into the editor: importing a file and opening a recording both leave the editor in the same state." },
+        ],
+      },
+      {
         version: "v1.4.9",
         date: "2026.10.10",
         changes: [
@@ -756,7 +774,7 @@ const en: Dict = {
       { note: "No build published yet — watch the releases page" },
     ],
     toastTitle: "The download has launched",
-    toastDesc: "Bringing OraxRecordly v1.4.9 to {platform} — welcome to the story.",
+    toastDesc: "Bringing OraxRecordly v1.5.0 to {platform} — welcome to the story.",
   },
 
   demo: {
@@ -784,7 +802,7 @@ const en: Dict = {
   },
 
   sticky: {
-    title: "OraxRecordly v1.4.9",
+    title: "OraxRecordly v1.5.0",
     sub: "Free — no watermarks",
   },
 
