@@ -237,6 +237,14 @@ const ar = {
     kinds: { new: "جديد", improve: "تحسين", fix: "إصلاح" },
     releases: [
       {
+        version: "v1.11.1",
+        date: "2026.10.13",
+        changes: [
+          { kind: "improve", text: "تحصينُ التحقّق: قيودُ اختبارٍ جديدةٌ تحرسُ مسارَ حفظِ المشروع مع الرموزِ المبهمة (المشروعُ يُحفظُ بالمسارِ الحقيقيِّ لا بالرابط)، ومراجعةٌ كاملةٌ أُعيدت على كلِّ الوظائف: الأنواع · 1761 اختبار وحدة · جودةُ الشيفرة · البناء · وستةُ اختباراتِ تشغيلٍ حقيقيٍّ على التطبيق." },
+          { kind: "improve", text: "لا تغييرَ في سلوكِ التطبيق عن 1.11.0 — الإصدارُ مطابقٌ للحالةِ المُتحقَّق منها بالضبط." },
+        ],
+      },
+      {
         version: "v1.11.0",
         date: "2026.10.13",
         changes: [
@@ -508,7 +516,7 @@ const ar = {
       { note: "لا يوجد إصدار منشور بعد — تابِعْ صفحةَ الإصدارات" },
     ],
     toastTitle: "انطلقتْ رحلةُ التنزيل",
-    toastDesc: "جارٍ إحضارُ OraxRecordly v1.11.0 إلى {platform} — أهلاً بك في الحكاية.",
+    toastDesc: "جارٍ إحضارُ OraxRecordly v1.11.1 إلى {platform} — أهلاً بك في الحكاية.",
   },
 
   demo: {
@@ -536,7 +544,7 @@ const ar = {
   },
 
   sticky: {
-    title: "OraxRecordly v1.11.0",
+    title: "OraxRecordly v1.11.1",
     sub: "مجانيٌّ — بلا علاماتٍ مائيّة",
   },
 
@@ -786,6 +794,14 @@ const en: Dict = {
     para: "Every release passes through here: what we added, what we improved, what we fixed — with its date and its name. Trust is not bought with ads; it is built one line atop another.",
     kinds: { new: "NEW", improve: "IMPROVED", fix: "FIXED" },
     releases: [
+      {
+        version: "v1.11.1",
+        date: "2026.10.13",
+        changes: [
+          { kind: "improve", text: "Verification hardened: new test locks guard the project save path against the opaque media handles (a project is saved with the real path, never the URL), and the whole app was re-verified - types, 1761 unit tests, code quality, the build, and the six end-to-end specs on the real application." },
+          { kind: "improve", text: "No behaviour change from 1.11.0 - this release matches the verified state exactly." },
+        ],
+      },
       {
         version: "v1.11.0",
         date: "2026.10.13",
@@ -1058,7 +1074,7 @@ const en: Dict = {
       { note: "No build published yet — watch the releases page" },
     ],
     toastTitle: "The download has launched",
-    toastDesc: "Bringing OraxRecordly v1.11.0 to {platform} — welcome to the story.",
+    toastDesc: "Bringing OraxRecordly v1.11.1 to {platform} — welcome to the story.",
   },
 
   demo: {
@@ -1086,7 +1102,7 @@ const en: Dict = {
   },
 
   sticky: {
-    title: "OraxRecordly v1.11.0",
+    title: "OraxRecordly v1.11.1",
     sub: "Free — no watermarks",
   },
 
