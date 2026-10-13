@@ -237,6 +237,17 @@ const ar = {
     kinds: { new: "جديد", improve: "تحسين", fix: "إصلاح" },
     releases: [
       {
+        version: "v1.7.0",
+        date: "2026.10.13",
+        changes: [
+          { kind: "new", text: "انتقالاتُ تلاشٍ تلقائيةٌ بين المقاطع: عند كلِّ نقطةٍ تقصُّ فيها مقطعاً، يتلاشى النصفان عبر الأسود بدل القفزةِ المباشرة — بمدةٍ تختارُها أنت (120 إلى 2000 ملّي ثانية، الافتراضي 320)." },
+          { kind: "new", text: "تحكّمٌ كامل في قسمِ الانتقالات ضمن الإعدادات: تشغيلٌ أو إيقاف، وشريطٌ لضبطِ طولِ التلاشي. والانتقالُ نفسُه تراه في المعاينةِ وفي الملفِّ المُصدَّر — كلاهما يقرأُ النموذجَ نفسَه." },
+          { kind: "fix", text: "إصلاحُ اختيارِ الشاشة: التطبيقُ الآن يتحققُ من مقياسِ كلِّ شاشةٍ وموضعها الفيزيائي، فيُميّز لوحَ 4K بمقياسِ 200% عن لوحِ 1080p بمقياسِ 100% — بدل أن يُسلّمك شاشةً أخرى على أجهزةِ المقاييسِ المختلطة." },
+          { kind: "improve", text: "لم يبقَ التطبيقُ يسرقُ التركيزَ من برنامجِك عند بدءِ التسجيل: لا يرفعُ النافذةَ المختارةَ إلا إن كانت مصغَّرةً أو مخفيّة." },
+          { kind: "improve", text: "لا يمكنُ أن يضيعَ تسجيلٌ جارٍ بسببِ إغلاقِ النوافذ: يعيدُ التطبيقُ أدواتِ التحكّمِ بدل أن يخرج، وتبقى أيقونةُ النظامِ طريقاً دائماً للإيقاف." },
+        ],
+      },
+      {
         version: "v1.6.3",
         date: "2026.10.13",
         changes: [
@@ -419,7 +430,7 @@ const ar = {
       { note: "لا يوجد إصدار منشور بعد — تابِعْ صفحةَ الإصدارات" },
     ],
     toastTitle: "انطلقتْ رحلةُ التنزيل",
-    toastDesc: "جارٍ إحضارُ OraxRecordly v1.6.3 إلى {platform} — أهلاً بك في الحكاية.",
+    toastDesc: "جارٍ إحضارُ OraxRecordly v1.7.0 إلى {platform} — أهلاً بك في الحكاية.",
   },
 
   demo: {
@@ -447,7 +458,7 @@ const ar = {
   },
 
   sticky: {
-    title: "OraxRecordly v1.6.3",
+    title: "OraxRecordly v1.7.0",
     sub: "مجانيٌّ — بلا علاماتٍ مائيّة",
   },
 
@@ -698,6 +709,17 @@ const en: Dict = {
     kinds: { new: "NEW", improve: "IMPROVED", fix: "FIXED" },
     releases: [
       {
+        version: "v1.7.0",
+        date: "2026.10.13",
+        changes: [
+          { kind: "new", text: "Automatic fade transitions between clips: at every point where you cut a clip apart, the two halves fade through black instead of jumping, with a length you choose (120 to 2000 ms, 320 by default)." },
+          { kind: "new", text: "A dedicated transitions section in the settings: on or off, plus a slider for the fade length. The same fade you see in the preview is the one written into the exported file — both read one model." },
+          { kind: "fix", text: "Screen selection fixed: the app now checks each display's scale factor and physical position, so a 4K panel at 200% is told apart from a 1080p panel at 100% instead of handing back another screen on mixed-DPI machines." },
+          { kind: "improve", text: "The app no longer steals focus from your program when a recording starts: the chosen window is only raised when it is minimized or hidden." },
+          { kind: "improve", text: "An in-flight recording can no longer be lost to closing windows: the app brings its controls back instead of quitting, and the tray icon always remains a way to stop." },
+        ],
+      },
+      {
         version: "v1.6.3",
         date: "2026.10.13",
         changes: [
@@ -880,7 +902,7 @@ const en: Dict = {
       { note: "No build published yet — watch the releases page" },
     ],
     toastTitle: "The download has launched",
-    toastDesc: "Bringing OraxRecordly v1.6.3 to {platform} — welcome to the story.",
+    toastDesc: "Bringing OraxRecordly v1.7.0 to {platform} — welcome to the story.",
   },
 
   demo: {
@@ -908,7 +930,7 @@ const en: Dict = {
   },
 
   sticky: {
-    title: "OraxRecordly v1.6.3",
+    title: "OraxRecordly v1.7.0",
     sub: "Free — no watermarks",
   },
 
