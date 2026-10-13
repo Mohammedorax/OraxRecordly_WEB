@@ -176,7 +176,7 @@ export function Footer() {
               </p>
             </Reveal>
             <Reveal delay={180} className="mt-6 flex flex-wrap gap-2">
-              {[t.labels.tagWindows, t.labels.tag64Bit, "AGPL-3.0", "v1.12.0"].map((tag) => (
+              {[t.labels.tagWindows, t.labels.tag64Bit, "AGPL-3.0", "v1.12.1"].map((tag) => (
                 <span
                   key={tag}
                   dir="ltr"

@@ -229,6 +229,14 @@ const ar = {
     kinds: { new: "جديد", improve: "تحسين", fix: "إصلاح" },
     releases: [
       {
+        version: "v1.12.1",
+        date: "2026.10.14",
+        changes: [
+          { kind: "fix", text: "شريط التسجيل فيه زرُّ التقاطٍ واحد فقط: كان زرُّ «تصوير منطقة» الذي أضفناه سابقاً يجاور زرَّ لقطة الشاشة، وكلاهما يفتح منتقي المنطقة نفسَه فيبدوان مكرَّرين. الآن خيارُ «تصوير منطقة» (أو إلغاؤها) داخل قائمة لقطة الشاشة نفسِها، وموضعٌ واحد لا غير — وهذا مُثبَّتٌ باختبار واجهة." },
+          { kind: "fix", text: "اسمُ المقطعِ وتاريخُه لم يعودا يُحرقان في الفيديو المُصدَّر افتراضيّاً: كانا يُرسمان كشريطٍ داكن أسفلَ كلِّ إطار، والخيارُ يخصُّك لا أن تكتشفه في ملفِّك. التصديرُ يظلُّ يعرض تشغيلَه إن أردته." },
+        ],
+      },
+      {
         version: "v1.12.0",
         date: "2026.10.14",
         changes: [
@@ -549,7 +557,7 @@ const ar = {
       { note: "لا يوجد إصدار منشور بعد — تابِعْ صفحةَ الإصدارات" },
     ],
     toastTitle: "انطلقتْ رحلةُ التنزيل",
-    toastDesc: "جارٍ إحضارُ OraxRecordly v1.12.0 إلى {platform} — أهلاً بك في الحكاية.",
+    toastDesc: "جارٍ إحضارُ OraxRecordly v1.12.1 إلى {platform} — أهلاً بك في الحكاية.",
   },
 
   demo: {
@@ -577,7 +585,7 @@ const ar = {
   },
 
   sticky: {
-    title: "OraxRecordly v1.12.0",
+    title: "OraxRecordly v1.12.1",
     sub: "مجانيٌّ — بلا علاماتٍ مائيّة",
   },
 
@@ -819,6 +827,14 @@ const en: Dict = {
     para: "Every release passes through here: what we added, what we improved, what we fixed — with its date and its name. Trust is not bought with ads; it is built one line atop another.",
     kinds: { new: "NEW", improve: "IMPROVED", fix: "FIXED" },
     releases: [
+      {
+        version: "v1.12.1",
+        date: "2026.10.14",
+        changes: [
+          { kind: "fix", text: "The recording bar has a single capture control: the record-a-region button added earlier sat next to the screenshot button and both opened the same area selector, which read as a duplicate. Recording a region (or clearing it) is now an entry inside the screenshot menu - one position, pinned by a UI test." },
+          { kind: "fix", text: "The clip name and date are no longer burned into exported videos by default: they were drawn as a dark bar across the bottom of every frame, and that is your decision to make rather than something to discover in your file. The export dialog still offers it." },
+        ],
+      },
       {
         version: "v1.12.0",
         date: "2026.10.14",
@@ -1140,7 +1156,7 @@ const en: Dict = {
       { note: "No build published yet — watch the releases page" },
     ],
     toastTitle: "The download has launched",
-    toastDesc: "Bringing OraxRecordly v1.12.0 to {platform} — welcome to the story.",
+    toastDesc: "Bringing OraxRecordly v1.12.1 to {platform} — welcome to the story.",
   },
 
   demo: {
@@ -1168,7 +1184,7 @@ const en: Dict = {
   },
 
   sticky: {
-    title: "OraxRecordly v1.12.0",
+    title: "OraxRecordly v1.12.1",
     sub: "Free — no watermarks",
   },
 
