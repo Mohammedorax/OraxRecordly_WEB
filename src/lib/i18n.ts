@@ -237,10 +237,17 @@ const ar = {
     kinds: { new: "جديد", improve: "تحسين", fix: "إصلاح" },
     releases: [
       {
+        version: "v1.8.2",
+        date: "2026.10.13",
+        changes: [
+          { kind: "fix", text: "علاجُ الملفِ الأسود: على الأجهزةِ التي لا يرسمُ فيها مسارُ العرضِ الحديثُ أيَّ صورة، كان التصديرُ ينجحُ بصمتٍ ويُخرجُ ملفاً بلا صورة. الآن يُعادُ التصديرُ تلقائياً مرةً واحدةً على المسارِ القديم، وإن بقيَ أسودَ يظهرُ تحذيرٌ صريحٌ بدل رسالةِ نجاح." },
+        ],
+      },
+      {
         version: "v1.8.1",
         date: "2026.10.13",
         changes: [
-          { kind: "improve", text: "تشخيصٌ جديدٌ لجودةِ التصدير: يقيسُ التطبيقُ سطوعَ الإطاراتِ التي رسمَها فعلاً ويسجّلُه، فلم يبقَ ممكنًا أن يخرجَ ملفٌّ أسودُ بصمت. وقد كشف هذا أن بعضَ الأجهزة (بلا تسريعِ رسومٍ فعلي) ترسمُ إطاراتٍ سوداءَ قبل الترميز — والعملُ على إصلاحِه جارٍ." },
+          { kind: "improve", text: "تشخيصٌ جديدٌ لجودةِ التصدير: يقيسُ التطبيقُ سطوعَ الإطاراتِ التي رسمَها فعلاً ويسجّلُه، فلم يبقَ ممكنًا أن يخرجَ ملفٌّ أسودُ بصمت. وقد كشف هذا أن بعضَ الأجهزة (بلا تسريعِ رسومٍ فعلي) ترسمُ إطاراتٍ سوداءَ قبل الترميز." },
         ],
       },
       {
@@ -456,7 +463,7 @@ const ar = {
       { note: "لا يوجد إصدار منشور بعد — تابِعْ صفحةَ الإصدارات" },
     ],
     toastTitle: "انطلقتْ رحلةُ التنزيل",
-    toastDesc: "جارٍ إحضارُ OraxRecordly v1.8.1 إلى {platform} — أهلاً بك في الحكاية.",
+    toastDesc: "جارٍ إحضارُ OraxRecordly v1.8.2 إلى {platform} — أهلاً بك في الحكاية.",
   },
 
   demo: {
@@ -484,7 +491,7 @@ const ar = {
   },
 
   sticky: {
-    title: "OraxRecordly v1.8.1",
+    title: "OraxRecordly v1.8.2",
     sub: "مجانيٌّ — بلا علاماتٍ مائيّة",
   },
 
@@ -735,10 +742,17 @@ const en: Dict = {
     kinds: { new: "NEW", improve: "IMPROVED", fix: "FIXED" },
     releases: [
       {
+        version: "v1.8.2",
+        date: "2026.10.13",
+        changes: [
+          { kind: "fix", text: "Black exports are handled: on machines where the modern renderer draws nothing, the export used to succeed silently and produce a file with no picture. It is now retried once on the legacy pipeline automatically, and if it is still black you get an explicit warning instead of a success message." },
+        ],
+      },
+      {
         version: "v1.8.1",
         date: "2026.10.13",
         changes: [
-          { kind: "improve", text: "A new export-quality check: the app measures the brightness of the frames it actually rendered and records it, so a black export can no longer happen silently. It already revealed that some machines (without real GPU acceleration) render black frames before encoding — work on that fix is in progress." },
+          { kind: "improve", text: "A new export-quality check: the app measures the brightness of the frames it actually rendered and records it, so a black export can no longer happen silently. It already revealed that some machines (without real GPU acceleration) render black frames before encoding." },
         ],
       },
       {
@@ -954,7 +968,7 @@ const en: Dict = {
       { note: "No build published yet — watch the releases page" },
     ],
     toastTitle: "The download has launched",
-    toastDesc: "Bringing OraxRecordly v1.8.1 to {platform} — welcome to the story.",
+    toastDesc: "Bringing OraxRecordly v1.8.2 to {platform} — welcome to the story.",
   },
 
   demo: {
@@ -982,7 +996,7 @@ const en: Dict = {
   },
 
   sticky: {
-    title: "OraxRecordly v1.8.1",
+    title: "OraxRecordly v1.8.2",
     sub: "Free — no watermarks",
   },
 
