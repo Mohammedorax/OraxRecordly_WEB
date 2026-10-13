@@ -237,6 +237,13 @@ const ar = {
     kinds: { new: "جديد", improve: "تحسين", fix: "إصلاح" },
     releases: [
       {
+        version: "v1.8.1",
+        date: "2026.10.13",
+        changes: [
+          { kind: "improve", text: "تشخيصٌ جديدٌ لجودةِ التصدير: يقيسُ التطبيقُ سطوعَ الإطاراتِ التي رسمَها فعلاً ويسجّلُه، فلم يبقَ ممكنًا أن يخرجَ ملفٌّ أسودُ بصمت. وقد كشف هذا أن بعضَ الأجهزة (بلا تسريعِ رسومٍ فعلي) ترسمُ إطاراتٍ سوداءَ قبل الترميز — والعملُ على إصلاحِه جارٍ." },
+        ],
+      },
+      {
         version: "v1.8.0",
         date: "2026.10.13",
         changes: [
@@ -449,7 +456,7 @@ const ar = {
       { note: "لا يوجد إصدار منشور بعد — تابِعْ صفحةَ الإصدارات" },
     ],
     toastTitle: "انطلقتْ رحلةُ التنزيل",
-    toastDesc: "جارٍ إحضارُ OraxRecordly v1.8.0 إلى {platform} — أهلاً بك في الحكاية.",
+    toastDesc: "جارٍ إحضارُ OraxRecordly v1.8.1 إلى {platform} — أهلاً بك في الحكاية.",
   },
 
   demo: {
@@ -477,7 +484,7 @@ const ar = {
   },
 
   sticky: {
-    title: "OraxRecordly v1.8.0",
+    title: "OraxRecordly v1.8.1",
     sub: "مجانيٌّ — بلا علاماتٍ مائيّة",
   },
 
@@ -728,6 +735,13 @@ const en: Dict = {
     kinds: { new: "NEW", improve: "IMPROVED", fix: "FIXED" },
     releases: [
       {
+        version: "v1.8.1",
+        date: "2026.10.13",
+        changes: [
+          { kind: "improve", text: "A new export-quality check: the app measures the brightness of the frames it actually rendered and records it, so a black export can no longer happen silently. It already revealed that some machines (without real GPU acceleration) render black frames before encoding — work on that fix is in progress." },
+        ],
+      },
+      {
         version: "v1.8.0",
         date: "2026.10.13",
         changes: [
@@ -940,7 +954,7 @@ const en: Dict = {
       { note: "No build published yet — watch the releases page" },
     ],
     toastTitle: "The download has launched",
-    toastDesc: "Bringing OraxRecordly v1.8.0 to {platform} — welcome to the story.",
+    toastDesc: "Bringing OraxRecordly v1.8.1 to {platform} — welcome to the story.",
   },
 
   demo: {
@@ -968,7 +982,7 @@ const en: Dict = {
   },
 
   sticky: {
-    title: "OraxRecordly v1.8.0",
+    title: "OraxRecordly v1.8.1",
     sub: "Free — no watermarks",
   },
 
