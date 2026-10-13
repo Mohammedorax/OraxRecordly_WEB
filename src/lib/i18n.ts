@@ -229,6 +229,14 @@ const ar = {
     kinds: { new: "جديد", improve: "تحسين", fix: "إصلاح" },
     releases: [
       {
+        version: "v1.11.2",
+        date: "2026.10.13",
+        changes: [
+          { kind: "fix", text: "علامةُ المقطع لم تعُد تحرقُ رابطَ المعاينة داخلَ الفيديو: كان اسمُ المقطع في الملفِ المُصدَّر يظهر كرابطٍ كاملٍ أسفلَ الإطار طوالَ المقطع (video?path=C%3A%5C…)، لأن مُنسِّقَ الاسم كان يقتطعُ القيمةَ عند آخر «/» فيلتقطُ الاستعلامَ كلَّه بدلَ اسمِ الملف. الآن يُحلُّ رابطُ المعاينة إلى مسارِ الملفِ الحقيقيّ أولاً، وإن تعذّر استخراجُ اسمٍ نظيفٍ لا تُرسمُ أيُّ علامةٍ إطلاقاً بدلَ طباعةِ عنوان." },
+          { kind: "improve", text: "يشمل الإصلاحُ المسارَين (الحديث والقديم) وملفاتَ GIF أيضاً، لأن الجميعَ يعتمدُ على مُنسِّقِ النصّ نفسِه." },
+        ],
+      },
+      {
         version: "v1.11.1",
         date: "2026.10.13",
         changes: [
@@ -531,7 +539,7 @@ const ar = {
       { note: "لا يوجد إصدار منشور بعد — تابِعْ صفحةَ الإصدارات" },
     ],
     toastTitle: "انطلقتْ رحلةُ التنزيل",
-    toastDesc: "جارٍ إحضارُ OraxRecordly v1.11.1 إلى {platform} — أهلاً بك في الحكاية.",
+    toastDesc: "جارٍ إحضارُ OraxRecordly v1.11.2 إلى {platform} — أهلاً بك في الحكاية.",
   },
 
   demo: {
@@ -559,7 +567,7 @@ const ar = {
   },
 
   sticky: {
-    title: "OraxRecordly v1.11.1",
+    title: "OraxRecordly v1.11.2",
     sub: "مجانيٌّ — بلا علاماتٍ مائيّة",
   },
 
@@ -801,6 +809,14 @@ const en: Dict = {
     para: "Every release passes through here: what we added, what we improved, what we fixed — with its date and its name. Trust is not bought with ads; it is built one line atop another.",
     kinds: { new: "NEW", improve: "IMPROVED", fix: "FIXED" },
     releases: [
+      {
+        version: "v1.11.2",
+        date: "2026.10.13",
+        changes: [
+          { kind: "fix", text: "The clip label no longer burns the preview address into the video: the exported file showed a full URL across the bottom of every frame (video?path=C%3A%5C...) because the name formatter split the value at the last slash and kept the whole query instead of the file name. The preview URL is now resolved to the real file first, and when no clean name can be established nothing is drawn rather than an address." },
+          { kind: "improve", text: "The fix covers both export pipelines and GIF, since they all share the one text builder." },
+        ],
+      },
       {
         version: "v1.11.1",
         date: "2026.10.13",
@@ -1104,7 +1120,7 @@ const en: Dict = {
       { note: "No build published yet — watch the releases page" },
     ],
     toastTitle: "The download has launched",
-    toastDesc: "Bringing OraxRecordly v1.11.1 to {platform} — welcome to the story.",
+    toastDesc: "Bringing OraxRecordly v1.11.2 to {platform} — welcome to the story.",
   },
 
   demo: {
@@ -1132,7 +1148,7 @@ const en: Dict = {
   },
 
   sticky: {
-    title: "OraxRecordly v1.11.1",
+    title: "OraxRecordly v1.11.2",
     sub: "Free — no watermarks",
   },
 
