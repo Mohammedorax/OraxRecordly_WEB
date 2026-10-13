@@ -25,9 +25,9 @@ const DURATION = 84; // 01:24 — the demo's editorial runtime
  * library the captures land in.
  */
 const SCENES = [
-  { img: "/images/app/app-01.jpg", meta: "SCENE 01 — RECORD", start: 0 },
-  { img: "/images/app/app-02.jpg", meta: "SCENE 02 — EDIT", start: DURATION / 3 },
-  { img: "/images/app/app-03.jpg", meta: "SCENE 03 — CAPTURE", start: (DURATION / 3) * 2 },
+  { img: "/images/app/app-01.jpg", start: 0 },
+  { img: "/images/app/app-02.jpg", start: DURATION / 3 },
+  { img: "/images/app/app-03.jpg", start: (DURATION / 3) * 2 },
 ];
 
 function fmt(t: number) {
@@ -108,8 +108,8 @@ export function DemoDialog({ listen = false }: { listen?: boolean }) {
           <span className="grid size-8 place-items-center rounded-full bg-ink text-paper transition-colors duration-500 ease-editorial group-hover:bg-orax-blue">
             <Play className={cn("size-3.5 fill-current", playFlip)} />
           </span>
-          <span className="mono" dir="ltr">
-            WATCH THE DEMO — 01:24
+          <span className={cn("mono", lang === "ar" && "mono-ar")}>
+            {t.demo.button}
           </span>
         </button>
       </DialogTrigger>
@@ -140,11 +140,13 @@ export function DemoDialog({ listen = false }: { listen?: boolean }) {
 
           {/* Scene chip */}
           <div
-            className="mono absolute start-4 top-4 flex items-center gap-3 rounded-full bg-black/55 px-4 py-2 text-white/85 backdrop-blur-sm"
-            dir="ltr"
+            className={cn(
+              "mono absolute start-4 top-4 flex items-center gap-3 rounded-full bg-black/55 px-4 py-2 text-white/85 backdrop-blur-sm",
+              lang === "ar" && "mono-ar"
+            )}
           >
             <span className={cn("rec-dot", !playing && "opacity-30")} />
-            {SCENES[sceneIdx].meta}
+            {t.demo.scenes[sceneIdx]}
           </div>
 
           {/* Center play / pause */}

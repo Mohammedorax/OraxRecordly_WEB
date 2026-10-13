@@ -13,6 +13,7 @@ import { Scramble } from "./scramble";
 
 /** Live REC clock — ticks from page mount, editorial nod to the product. */
 function RecClock() {
+  const { t: labels } = useI18n();
   const [t, setT] = useState(0);
 
   useEffect(() => {
@@ -23,7 +24,7 @@ function RecClock() {
   const p = (n: number) => String(n).padStart(2, "0");
   return (
     <span className="mono hidden text-white md:block" dir="ltr">
-      REC — {p(Math.floor(t / 3600))}:{p(Math.floor(t / 60) % 60)}:
+      {labels.labels.recIndicator} {p(Math.floor(t / 3600))}:{p(Math.floor(t / 60) % 60)}:
       {p(t % 60)}
     </span>
   );
@@ -314,7 +315,7 @@ export function Header() {
         >
           <p className="mono flex items-center gap-3 text-mink-50">
             <span className="rec-dot" aria-hidden="true" />
-            <Scramble text="ORAXRECORDLY — REC / EDIT / SHARE" />
+            <Scramble text={t.labels.brandTagline} />
           </p>
           <p className="mono text-mink-50" dir="ltr">
             v1.11.1 — 2026

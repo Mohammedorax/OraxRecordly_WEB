@@ -41,8 +41,8 @@ const PLATFORMS = [
     href: WINDOWS_INSTALLER,
     direct: true,
   },
-  { name: "macOS", icon: Laptop, meta: "NO BUILD YET", href: ALL_RELEASES, direct: false },
-  { name: "Linux", icon: Terminal, meta: "NO BUILD YET", href: ALL_RELEASES, direct: false },
+  { name: "macOS", icon: Laptop, meta: "", href: ALL_RELEASES, direct: false },
+  { name: "Linux", icon: Terminal, meta: "", href: ALL_RELEASES, direct: false },
 ];
 
 type Variant = "button" | "compact" | "link";
@@ -187,9 +187,9 @@ export function DownloadCTA({
                   <span className="flex shrink-0 flex-col items-end gap-1">
                     <span
                       className="mono whitespace-nowrap text-mink-50 group-hover:text-white/60"
-                      dir="ltr"
+                      dir={p.meta ? "ltr" : undefined}
                     >
-                      {p.meta}
+                      {p.meta || t.labels.noBuildYet}
                     </span>
                     <DirArrow
                       className="size-4 opacity-0 transition-opacity duration-500 group-hover:opacity-100"

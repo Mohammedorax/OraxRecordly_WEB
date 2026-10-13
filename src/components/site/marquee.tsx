@@ -65,7 +65,7 @@ export function Marquee() {
           {t.marquee.label}
         </h2>
         <span className="mono text-mink-60" dir="ltr">
-          <Scramble text="SHOWCASE" />
+          <Scramble text={t.labels.showcase} />
         </span>
       </Reveal>
 

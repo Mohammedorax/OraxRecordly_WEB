@@ -2,7 +2,6 @@ import { Cursor } from "@/components/site/cursor";
 import { Header } from "@/components/site/header";
 import { Hero } from "@/components/site/hero";
 import { Marquee } from "@/components/site/marquee";
-import { Ticker } from "@/components/site/ticker";
 import { Statement, Stats } from "@/components/site/statement";
 import { Features } from "@/components/site/features";
 import { BeforeAfter } from "@/components/site/before-after";
@@ -62,7 +61,6 @@ export default function Home() {
         <main id="main" className="flex-1">
           <Hero />
           <Marquee />
-          <Ticker />
           <Statement />
           <Stats />
           <Features />

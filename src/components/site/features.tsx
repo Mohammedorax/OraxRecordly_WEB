@@ -53,7 +53,7 @@ export function Features() {
       <div className="flex flex-wrap items-end justify-between gap-6">
         <div>
           <Reveal className="mono text-mink-50">
-            <span dir="ltr">( 02 — FEATURES )</span>
+            <span>{t.labels.features}</span>
           </Reveal>
           <h2 className="mt-6 font-display text-4xl font-medium leading-tight md:text-6xl">
             <Reveal delay={100}>{t.features.heading1}</Reveal>

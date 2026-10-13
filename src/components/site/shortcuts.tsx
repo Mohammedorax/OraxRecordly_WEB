@@ -81,7 +81,7 @@ export function Shortcuts() {
       <DialogContent className="rounded-3xl border-black/10 p-8 sm:max-w-md">
         <DialogHeader>
           <p className="mono text-mink-50" dir="ltr">
-            ORAXRECORDLY — KEYBOARD FIRST
+            {t.labels.keyboardFirst}
           </p>
           <DialogTitle className="mt-2 text-start font-display text-3xl font-medium">
             {t.shortcuts.title}

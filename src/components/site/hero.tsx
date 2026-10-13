@@ -19,7 +19,7 @@ export function Hero() {
     >
       {/* Top metadata */}
       <Reveal className="mono text-mink-60" delay={100}>
-        <span dir="ltr">ORAXRECORDLY — EST. 2026</span>
+        <span>{t.labels.tagline}</span>
       </Reveal>
 
       {/* Brand lockup — the logo, in its true colors */}

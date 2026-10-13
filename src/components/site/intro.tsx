@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { asset } from "@/lib/asset";
+import { useI18n } from "./i18n-provider";
 
 /**
  * First-visit curtain — a white stage that carries the logo for a beat,
@@ -12,6 +13,7 @@ import { asset } from "@/lib/asset";
  * so no animation plays behind it — then `orax:go` sets them free.
  */
 export function Intro() {
+  const { t } = useI18n();
   const curtainRef = useRef<HTMLDivElement>(null);
   const [done, setDone] = useState(false);
 
@@ -62,7 +64,7 @@ export function Intro() {
       />
       <p className="mono flex items-center gap-3 text-black/50">
         <span className="rec-dot" />
-        <span dir="ltr">ORAXRECORDLY — EST. 2026</span>
+        <span>{t.labels.tagline}</span>
       </p>
     </div>
   );

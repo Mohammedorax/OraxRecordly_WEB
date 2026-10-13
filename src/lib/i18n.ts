@@ -74,11 +74,6 @@ const ar = {
     ],
   },
 
-  ticker: {
-    aria: "شريط عبارات أوراكس",
-    phrases: ["سجِّلْ بحرِّيَّة", "حرِّرْ بذكاء", "شارِكْ بثقة", "أبْهِرْ بلا حدود"],
-  },
-
   statement: {
     parts: [
       { text: "هنا لا تُسجَّلُ اللقطاتُ فحسب — " },
@@ -87,7 +82,6 @@ const ar = {
         text: " ضغطةٌ واحدةٌ تلتقطُ ما تراهُ العين، ومحرِّرٌ يفهمُ إيقاعَ خيالِك يقصُّ ويَلمُّ ويُزيِّن، حتى يخرجَ العملُ من بوتقةِ التحريرِ ناصعاً — جاهزاً ليُروى للعالم.",
       },
     ],
-    para: "صنعْنا كلَّ تفصيلةٍ في أوراكس لتؤدّيَ دورَها بصمتٍ وكفاءة: خوارزمياتُ ضغطٍ تحفظُ نقاءَ كلِّ إطارٍ كما التقطتْهُ العين، وأدواتُ قصٍّ أمضى من مبضعِ الجرّاح، وواجهةٌ تعرفُ متى تختفي ليتقدَّمَ فنُّك إلى الواجهة. أنتَ تحكي — ونحنْ نتكفَّلُ بالباقي.",
   },
 
   stats: {
@@ -95,7 +89,7 @@ const ar = {
     labels: [
       "دقّةُ 4K وستّونَ إطاراً في الثانية",
       "صيغتا تصدير: MP4 وGIF",
-      "أحدَ عشرَ نمطاً للمؤشّر",
+      "ستّةُ أنماطٍ للمؤشّر",
       "علامةٌ مائيّة — ولا واحدة",
     ],
   },
@@ -103,7 +97,7 @@ const ar = {
   features: {
     heading1: "كلُّ ما تحتاجهُ حكايتُك،",
     heading2: "تحتَ سقفٍ واحد.",
-    side: "سبعُ أدواتٍ تعملُ بانسجامِ أوركسترا مُتقنة: كلٌّ يعرفُ دورَه، وجميعُها تصبو إلى إبهارِ جمهورك — من اللقطةِ الأولى حتى التصفيقِ الأخير.",
+    side: "سبعُ أدواتٍ تعملُ بانسجامِ.",
     items: [
       {
         title: "تسجيلُ الشاشة",
@@ -145,13 +139,11 @@ const ar = {
   },
 
   beforeAfter: {
-    heading1: "من الخامِ،",
-    heading2: "إلى المبهر.",
-    side: "اسحبِ الفاصلَ بيدِك وشاهدْ: هذا ما تفعلهُ أوراكس بلقطةٍ خامٍ في ثوانٍ — المشهدُ نفسُه، بعد أن مرَّ على يدِ المونتير.",
+    heading1: "من الخامِ إلى المبهر.",
     dragHint: "اسحبِ الفاصلَ يميناً ويساراً — أو استخدمْ أسهمَ لوحةِ المفاتيح",
     sliderLabel: "شريط المقارنة بين اللقطة الخام والمونتاج النهائي",
-    rawChip: "RAW — BEFORE",
-    editChip: "ORAX — AFTER",
+    rawChip: "الخام — قبل",
+    editChip: "أوراكس — بعد",
     exportsCaption:
       "يُصدِّرُ الفيديو بصيغتَي MP4 وGIF، ويحفظُ اللقطاتَ PNG أو JPEG — بصيغٍ تناسبُ كلَّ منصةٍ وكلَّ شاشة",
   },
@@ -486,8 +478,31 @@ const ar = {
     ],
   },
 
+  labels: {
+    tagline: "أوراكس — تأسّس 2026",
+    recIndicator: "تسجيل —",
+    brandTagline: "أوراكس — تسجيل / تحرير / مشاركة",
+    keyboardFirst: "أوراكس — لوحة المفاتيح أولاً",
+    keyboardHint: "لوحة المفاتيح — ؟",
+    about: "( 01 — عن أوراكس )",
+    features: "( 02 — الميزات )",
+    rawToRemarkable: "( 03 — من الخام إلى المبهر )",
+    balance: "( 04 — الميزان )",
+    faq: "( 05 — الأسئلة الشائعة )",
+    changelog: "( 06 — سجل الإصدارات )",
+    getStarted: "( 07 — ابدأ الآن )",
+    shippedContinuously: "يُشحَن باستمرار — منذ 2026",
+    showcase: "معرض",
+    noBuildYet: "لا إصدار بعد",
+    tagWindows: "ويندوز",
+    tag64Bit: "64 بت",
+    statMetas: ["التقاط بدقة فائقة", "صيغ التصدير", "أنماط المؤشّر", "بلا علامة مائية"],
+    showAllReleases: "كلُّ الإصدارات",
+    showFewerReleases: "عرض أقل",
+  },
+
   footer: {
-    heading1: "كلُّ إبداعٍ",
+    heading1: "كلُّ إبـــــــداعٍ",
     heading2: "بدأ بلقطةٍ.",
     bio: "استوديو التّسجيلِ والتّحريرِ لِمَن يرى الشاشةَ لوحةً والزّمنَ مادّةً خام: صُنّاعُ محتوى، ومعلّمون، ومطوّرون — يحوّلون ومضةَ الفكرِ إلى مشهدٍ خالد.",
     contactTitle: "البريد والدعم",
@@ -520,7 +535,7 @@ const ar = {
   },
 
   demo: {
-    button: "شاهد العرض — 01:24",
+    button: "شاهد العرض",
     play: "تشغيل",
     pause: "إيقاف مؤقت",
     timeline: "شريط التقدم",
@@ -632,11 +647,6 @@ const en: Dict = {
     ],
   },
 
-  ticker: {
-    aria: "Orax phrases ribbon",
-    phrases: ["Record freely", "Edit wisely", "Share confidently", "Dazzle without limits"],
-  },
-
   statement: {
     parts: [
       { text: "Here, footage is not merely recorded — " },
@@ -645,7 +655,6 @@ const en: Dict = {
         text: " One click captures what the eye sees, and an editor that understands the rhythm of your imagination cuts, gathers and polishes, until the work leaves the editing crucible radiant — ready to be told to the world.",
       },
     ],
-    para: "We built every detail of Orax to do its job in silence and with efficiency: compression algorithms that keep every frame as pure as the eye caught it, cutting tools sharper than a surgeon's scalpel, and an interface that knows when to step aside so your art takes the stage. You tell the story — we carry the rest.",
   },
 
   stats: {
@@ -653,7 +662,7 @@ const en: Dict = {
     labels: [
       "4K at sixty frames per second",
       "Two export formats: MP4 & GIF",
-      "Eleven cursor styles",
+      "Six cursor styles",
       "Watermarks — not one",
     ],
   },
@@ -703,9 +712,7 @@ const en: Dict = {
   },
 
   beforeAfter: {
-    heading1: "From the raw,",
-    heading2: "to the remarkable.",
-    side: "Drag the divider with your own hand and watch: this is what Orax does to raw footage in seconds — the very same scene, after it passed through the editor's hands.",
+    heading1: "From raw to remarkable.",
     dragHint: "Drag the divider left and right — or use your arrow keys",
     sliderLabel: "Comparison slider between raw footage and the final edit",
     rawChip: "RAW — BEFORE",
@@ -1044,6 +1051,29 @@ const en: Dict = {
     ],
   },
 
+  labels: {
+    tagline: "ORAXRECORDLY — EST. 2026",
+    recIndicator: "REC —",
+    brandTagline: "ORAXRECORDLY — REC / EDIT / SHARE",
+    keyboardFirst: "ORAXRECORDLY — KEYBOARD FIRST",
+    keyboardHint: "KEYBOARD — ?",
+    about: "( 01 — ABOUT ORAXRECORDLY )",
+    features: "( 02 — FEATURES )",
+    rawToRemarkable: "( 03 — RAW TO REMARKABLE )",
+    balance: "( 04 — THE BALANCE )",
+    faq: "( 05 — FAQ )",
+    changelog: "( 06 — CHANGELOG )",
+    getStarted: "( 07 — GET STARTED )",
+    shippedContinuously: "SHIPPED CONTINUOUSLY — SINCE 2026",
+    showcase: "SHOWCASE",
+    noBuildYet: "NO BUILD YET",
+    tagWindows: "WINDOWS",
+    tag64Bit: "64-BIT",
+    statMetas: ["ULTRA HD CAPTURE", "EXPORT FORMATS", "CURSOR STYLES", "NO WATERMARKS"],
+    showAllReleases: "All releases",
+    showFewerReleases: "Show fewer",
+  },
+
   footer: {
     heading1: "Every creation",
     heading2: "began with a single frame.",
@@ -1078,7 +1108,7 @@ const en: Dict = {
   },
 
   demo: {
-    button: "Watch the demo — 01:24",
+    button: "Watch the demo",
     play: "Play",
     pause: "Pause",
     timeline: "Progress bar",

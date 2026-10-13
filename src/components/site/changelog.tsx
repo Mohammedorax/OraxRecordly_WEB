@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { Reveal } from "./reveal";
 import { Scramble } from "./scramble";
 import { cn } from "@/lib/utils";
@@ -13,8 +14,24 @@ const KIND_CLASS: Record<ChangeKind, string> = {
   fix: "border-orax-red/30 bg-orax-red/10 text-orax-red",
 };
 
+/**
+ * The log is a summary, not an archive: the three latest releases with their
+ * three most important lines, and the full history one click away. A wall of
+ * every change ever shipped buries the news the page is actually carrying.
+ */
+const COLLAPSED_RELEASE_COUNT = 3;
+const COLLAPSED_CHANGE_COUNT = 3;
+
 export function Changelog() {
   const { t, monoLabel } = useI18n();
+  const [expanded, setExpanded] = useState(false);
+  const allReleases = t.changelog.releases;
+  const releases = expanded
+    ? allReleases
+    : allReleases.slice(0, COLLAPSED_RELEASE_COUNT);
+  const hasMore =
+    allReleases.length > COLLAPSED_RELEASE_COUNT ||
+    allReleases.some((release) => release.changes.length > COLLAPSED_CHANGE_COUNT);
 
   return (
     <section
@@ -25,7 +42,7 @@ export function Changelog() {
         {/* Sticky header column */}
         <div className="lg:sticky lg:top-32 lg:self-start">
           <Reveal className="mono text-mink-50">
-            <Scramble text="( 06 — CHANGELOG )" />
+            <Scramble text={t.labels.changelog} />
           </Reveal>
           <h2 className="mt-6 font-display text-4xl font-medium leading-tight md:text-6xl">
             <Reveal delay={100}>{t.changelog.heading1}</Reveal>
@@ -41,14 +58,14 @@ export function Changelog() {
           <Reveal delay={380}>
             <p className="mono mt-8 flex items-center gap-3 text-mink-40">
               <span className="rec-dot" aria-hidden="true" />
-              <span dir="ltr">SHIPPED CONTINUOUSLY — SINCE 2026</span>
+              <span>{t.labels.shippedContinuously}</span>
             </p>
           </Reveal>
         </div>
 
         {/* Timeline column */}
         <div className="relative border-s border-ink/10 ps-8 md:ps-12">
-          {t.changelog.releases.map((release, i) => (
+          {releases.map((release, i) => (
             <Reveal key={release.version} delay={i * 90} className="relative pb-14 last:pb-0">
               {/* Timeline node */}
               <span
@@ -78,7 +95,10 @@ export function Changelog() {
               </div>
 
               <ul className="mt-5 space-y-3">
-                {release.changes.map((change, j) => (
+                {(expanded
+                  ? release.changes
+                  : release.changes.slice(0, COLLAPSED_CHANGE_COUNT)
+                ).map((change, j) => (
                   <li
                     key={j}
                     className="flex items-start gap-3 text-[15px] leading-relaxed"
@@ -98,6 +118,25 @@ export function Changelog() {
               </ul>
             </Reveal>
           ))}
+
+          {hasMore && (
+            <Reveal className="pt-2">
+              <button
+                type="button"
+                data-cursor
+                onClick={() => setExpanded((value) => !value)}
+                aria-expanded={expanded}
+                className="mono inline-flex items-center gap-3 rounded-full border border-ink/15 px-5 py-2.5 text-mink-60 transition-colors duration-500 ease-editorial hover:border-orax-blue hover:text-orax-blue"
+              >
+                <span>
+                  {expanded ? t.labels.showFewerReleases : t.labels.showAllReleases}
+                </span>
+                <span dir="ltr" className="tabular-nums">
+                  {allReleases.length}
+                </span>
+              </button>
+            </Reveal>
+          )}
         </div>
       </div>
     </section>

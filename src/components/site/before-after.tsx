@@ -35,24 +35,16 @@ export function BeforeAfter() {
       id="contrast"
       className="scroll-mt-24 border-t border-ink/10 px-6 py-24 md:px-24 md:py-32"
     >
-      {/* Section header */}
+      {/* Section header — one line, as the owner asked: raw to remarkable */}
       <div className="flex flex-wrap items-end justify-between gap-6">
         <div>
           <Reveal className="mono text-mink-50">
-            <span dir="ltr">( 03 — RAW TO REMARKABLE )</span>
+            <span>{t.labels.rawToRemarkable}</span>
           </Reveal>
           <h2 className="mt-6 font-display text-4xl font-medium leading-tight md:text-6xl">
             <Reveal delay={100}>{t.beforeAfter.heading1}</Reveal>
-            <Reveal delay={220} className="text-mink-35">
-              {t.beforeAfter.heading2}
-            </Reveal>
           </h2>
         </div>
-        <Reveal delay={300}>
-          <p className="max-w-xs leading-loose text-ink-soft">
-            {t.beforeAfter.side}
-          </p>
-        </Reveal>
       </div>
 
       {/* The comparison stage — timelines read left-to-right in every language */}

@@ -65,7 +65,7 @@ export function RecWidget() {
           aria-hidden="true"
         />
         <span dir="ltr" className="tabular-nums">
-          REC — {fmt(sec)}
+          {t.labels.recIndicator} {fmt(sec)}
         </span>
       </button>
       <p className={monoLabel + " text-mink-35"}>{t.hero.recCaption}</p>

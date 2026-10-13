@@ -140,7 +140,7 @@ export function Footer() {
         <div className="border-b border-white/10 pb-16 md:pb-24">
           <Reveal className="mono mb-8 flex items-center gap-3 text-mink-d40">
             <span className="rec-dot" aria-hidden="true" />
-            <span dir="ltr">( 07 — GET STARTED )</span>
+            <span>{t.labels.getStarted}</span>
           </Reveal>
           <div className="flex flex-col justify-between gap-10 md:flex-row md:items-end">
             <h2 className="font-display text-[clamp(2.6rem,7vw,6rem)] font-medium leading-[1.2]">
@@ -176,7 +176,7 @@ export function Footer() {
               </p>
             </Reveal>
             <Reveal delay={180} className="mt-6 flex flex-wrap gap-2">
-              {["WINDOWS", "64-BIT", "AGPL-3.0", "v1.11.1"].map((tag) => (
+              {[t.labels.tagWindows, t.labels.tag64Bit, "AGPL-3.0", "v1.11.1"].map((tag) => (
                 <span
                   key={tag}
                   dir="ltr"
@@ -212,7 +212,7 @@ export function Footer() {
               data-cursor-label={lang === "ar" ? "اختصارات" : "Keys"}
               className="mono inline-flex items-center gap-2 transition-colors duration-500 ease-editorial hover:text-orax-blue-bright"
             >
-              <span dir="ltr">KEYBOARD — ?</span>
+              <span>{t.labels.keyboardHint}</span>
               <span className={monoLabel}>{f.keyboard}</span>
             </button>
             <p className="mono" dir={lang === "ar" ? "rtl" : "ltr"}>
