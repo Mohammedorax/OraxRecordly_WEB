@@ -237,6 +237,14 @@ const ar = {
     kinds: { new: "جديد", improve: "تحسين", fix: "إصلاح" },
     releases: [
       {
+        version: "v1.6.3",
+        date: "2026.10.13",
+        changes: [
+          { kind: "improve", text: "أداء: لم يعد التطبيقُ يعيدُ بناءَ معاينةِ المحررِ بعد كلِّ تصديرٍ ناجح — كان ذلك يعني سياقَ عرضٍ جديداً وإعادةَ ترجمةِ التظليلِ وتحميلَ الفيديو من جديد، ويظهرُ للمستخدم كتجمُّدٍ وميضِ تحميلٍ بعد انتهاءِ التصدير. يُعادُ البناءُ الآن فقط عندما يختلفُ مسارُ العرضِ المُستخدَم فعلاً." },
+          { kind: "improve", text: "قياسٌ جديدٌ لاستجابةِ المحررِ في اختباراتِ الجودة: عشرُ عملياتِ تقسيمٍ وتكبيرٍ متتاليةٍ تحافظُ على 60 إطاراً في الثانيةِ بلا أيِّ مهمةٍ حاجزة، مع ضمانِ بقاءِ المعاينةِ بعد التصدير." },
+        ],
+      },
+      {
         version: "v1.6.2",
         date: "2026.10.13",
         changes: [
@@ -411,7 +419,7 @@ const ar = {
       { note: "لا يوجد إصدار منشور بعد — تابِعْ صفحةَ الإصدارات" },
     ],
     toastTitle: "انطلقتْ رحلةُ التنزيل",
-    toastDesc: "جارٍ إحضارُ OraxRecordly v1.6.2 إلى {platform} — أهلاً بك في الحكاية.",
+    toastDesc: "جارٍ إحضارُ OraxRecordly v1.6.3 إلى {platform} — أهلاً بك في الحكاية.",
   },
 
   demo: {
@@ -439,7 +447,7 @@ const ar = {
   },
 
   sticky: {
-    title: "OraxRecordly v1.6.2",
+    title: "OraxRecordly v1.6.3",
     sub: "مجانيٌّ — بلا علاماتٍ مائيّة",
   },
 
@@ -690,6 +698,14 @@ const en: Dict = {
     kinds: { new: "NEW", improve: "IMPROVED", fix: "FIXED" },
     releases: [
       {
+        version: "v1.6.3",
+        date: "2026.10.13",
+        changes: [
+          { kind: "improve", text: "Performance: a successful export no longer rebuilds the editor preview — that meant a new rendering context, shader recompiles and a full video reload, felt as a freeze and a loading flash right after exporting. The preview is only rebuilt when the export actually ran on a different renderer pipeline." },
+          { kind: "improve", text: "The quality suite now measures editor responsiveness: ten consecutive split and zoom edits hold 60 frames per second with no blocking task, and the export spec guarantees the preview stays mounted." },
+        ],
+      },
+      {
         version: "v1.6.2",
         date: "2026.10.13",
         changes: [
@@ -864,7 +880,7 @@ const en: Dict = {
       { note: "No build published yet — watch the releases page" },
     ],
     toastTitle: "The download has launched",
-    toastDesc: "Bringing OraxRecordly v1.6.2 to {platform} — welcome to the story.",
+    toastDesc: "Bringing OraxRecordly v1.6.3 to {platform} — welcome to the story.",
   },
 
   demo: {
@@ -892,7 +908,7 @@ const en: Dict = {
   },
 
   sticky: {
-    title: "OraxRecordly v1.6.2",
+    title: "OraxRecordly v1.6.3",
     sub: "Free — no watermarks",
   },
 
