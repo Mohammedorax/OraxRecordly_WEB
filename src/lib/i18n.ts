@@ -237,6 +237,15 @@ const ar = {
     kinds: { new: "جديد", improve: "تحسين", fix: "إصلاح" },
     releases: [
       {
+        version: "v1.9.0",
+        date: "2026.10.13",
+        changes: [
+          { kind: "new", text: "تصويرُ منطقة ترسمُها بنفسك: زرٌّ في شريط الإطلاق يفتح منتقي المنطقة (نفسُ الذي تستخدمُه لاقتناصِ لقطة)، والمستطيلُ الذي ترسمُه يُقتصُّ إليه التسجيلُ بالكامل — فتُصوَّرُ تلك المنطقةُ وحدها مهما تنقّلتَ بين البرامج بعدها." },
+          { kind: "improve", text: "المنطقةُ تُرسَلُ بوحداتٍ فيزيائيةٍ نسبةً إلى الشاشة، فتبقى دقيقةً على الشاشاتِ المُقاسة (Scaling) بدل أن تنحرف بمقدارِ نسبةِ التكبير." },
+          { kind: "improve", text: "الاقتصاصُ يُثبَّتُ طوالَ التسجيلِ، والمسارُ القديمُ لتصويرِ الشاشةِ كاملةً لم يتغيّر إطلاقاً إن لم ترسم منطقة." },
+        ],
+      },
+      {
         version: "v1.8.2",
         date: "2026.10.13",
         changes: [
@@ -463,7 +472,7 @@ const ar = {
       { note: "لا يوجد إصدار منشور بعد — تابِعْ صفحةَ الإصدارات" },
     ],
     toastTitle: "انطلقتْ رحلةُ التنزيل",
-    toastDesc: "جارٍ إحضارُ OraxRecordly v1.8.2 إلى {platform} — أهلاً بك في الحكاية.",
+    toastDesc: "جارٍ إحضارُ OraxRecordly v1.9.0 إلى {platform} — أهلاً بك في الحكاية.",
   },
 
   demo: {
@@ -491,7 +500,7 @@ const ar = {
   },
 
   sticky: {
-    title: "OraxRecordly v1.8.2",
+    title: "OraxRecordly v1.9.0",
     sub: "مجانيٌّ — بلا علاماتٍ مائيّة",
   },
 
@@ -742,6 +751,15 @@ const en: Dict = {
     kinds: { new: "NEW", improve: "IMPROVED", fix: "FIXED" },
     releases: [
       {
+        version: "v1.9.0",
+        date: "2026.10.13",
+        changes: [
+          { kind: "new", text: "Record a region you draw: a button in the launch bar opens the same picker used for a region screenshot, and the rectangle you draw crops the whole recording — only that part is captured, however you move between programs afterwards." },
+          { kind: "improve", text: "The region is sent in monitor-relative physical pixels, so it stays exact on scaled displays instead of drifting by the scale factor." },
+          { kind: "improve", text: "The crop is fixed for the whole take (unlike a window crop, which is re-derived every frame), and the full-screen path is unchanged when no region is drawn." },
+        ],
+      },
+      {
         version: "v1.8.2",
         date: "2026.10.13",
         changes: [
@@ -968,7 +986,7 @@ const en: Dict = {
       { note: "No build published yet — watch the releases page" },
     ],
     toastTitle: "The download has launched",
-    toastDesc: "Bringing OraxRecordly v1.8.2 to {platform} — welcome to the story.",
+    toastDesc: "Bringing OraxRecordly v1.9.0 to {platform} — welcome to the story.",
   },
 
   demo: {
@@ -996,7 +1014,7 @@ const en: Dict = {
   },
 
   sticky: {
-    title: "OraxRecordly v1.8.2",
+    title: "OraxRecordly v1.9.0",
     sub: "Free — no watermarks",
   },
 
