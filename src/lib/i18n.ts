@@ -237,6 +237,15 @@ const ar = {
     kinds: { new: "جديد", improve: "تحسين", fix: "إصلاح" },
     releases: [
       {
+        version: "v1.7.1",
+        date: "2026.10.13",
+        changes: [
+          { kind: "new", text: "نجاةٌ من انهيار الواجهة: إن تعطّل مُشغِّلُ المحرر فإنه يُعيدُ تحميلَه ويعيدُك تلقائياً إلى مشروعك المحفوظ — بدل نافذةٍ ميتة. وإعادةُ التحميل محكومةٌ بسقفٍ زمني فلا تدورُ في حلقةٍ لا تنتهي." },
+          { kind: "new", text: "إن تعطّل مُشغِّلُ واجهةِ التسجيل أثناءَ تسجيلٍ جارٍ، يُوقِفُ التطبيقُ الالتقاطَ أولاً فيُحفَظ ما وصل إلى القرص، ثم يُعيدُ التحميل — فلا يضيعُ التسجيلُ صامتاً." },
+          { kind: "new", text: "فحصُ مساحةِ القرص قبل التسجيلٍ وقبل التصدير: إن كانت المساحةُ الحرةُ أقلَّ من الحدّ اللازم يرفضُ التطبيقُ البدءَ فوراً برسالةٍ واضحةٍ تُبيّن المتاح — بدل أن يتوقّفَ التسجيلُ أو التصديرُ بعد دقائق." },
+        ],
+      },
+      {
         version: "v1.7.0",
         date: "2026.10.13",
         changes: [
@@ -430,7 +439,7 @@ const ar = {
       { note: "لا يوجد إصدار منشور بعد — تابِعْ صفحةَ الإصدارات" },
     ],
     toastTitle: "انطلقتْ رحلةُ التنزيل",
-    toastDesc: "جارٍ إحضارُ OraxRecordly v1.7.0 إلى {platform} — أهلاً بك في الحكاية.",
+    toastDesc: "جارٍ إحضارُ OraxRecordly v1.7.1 إلى {platform} — أهلاً بك في الحكاية.",
   },
 
   demo: {
@@ -458,7 +467,7 @@ const ar = {
   },
 
   sticky: {
-    title: "OraxRecordly v1.7.0",
+    title: "OraxRecordly v1.7.1",
     sub: "مجانيٌّ — بلا علاماتٍ مائيّة",
   },
 
@@ -709,6 +718,15 @@ const en: Dict = {
     kinds: { new: "NEW", improve: "IMPROVED", fix: "FIXED" },
     releases: [
       {
+        version: "v1.7.1",
+        date: "2026.10.13",
+        changes: [
+          { kind: "new", text: "Recovery from a renderer crash: if the editor's renderer dies it reloads and puts you straight back into your saved project instead of leaving a dead window. Reloads are rate-limited so the app can never spin in a crash loop." },
+          { kind: "new", text: "If the recording window's renderer dies during a recording, the app stops the capture first so whatever reached the disk is kept, then reloads — a take is never lost silently." },
+          { kind: "new", text: "Free-space check before recording and before exporting: when the disk cannot hold the result the app refuses immediately with a clear message showing what is available, instead of failing after minutes of work." },
+        ],
+      },
+      {
         version: "v1.7.0",
         date: "2026.10.13",
         changes: [
@@ -902,7 +920,7 @@ const en: Dict = {
       { note: "No build published yet — watch the releases page" },
     ],
     toastTitle: "The download has launched",
-    toastDesc: "Bringing OraxRecordly v1.7.0 to {platform} — welcome to the story.",
+    toastDesc: "Bringing OraxRecordly v1.7.1 to {platform} — welcome to the story.",
   },
 
   demo: {
@@ -930,7 +948,7 @@ const en: Dict = {
   },
 
   sticky: {
-    title: "OraxRecordly v1.7.0",
+    title: "OraxRecordly v1.7.1",
     sub: "Free — no watermarks",
   },
 
