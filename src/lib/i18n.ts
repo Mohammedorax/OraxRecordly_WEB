@@ -237,6 +237,16 @@ const ar = {
     kinds: { new: "جديد", improve: "تحسين", fix: "إصلاح" },
     releases: [
       {
+        version: "v1.8.0",
+        date: "2026.10.13",
+        changes: [
+          { kind: "new", text: "المزجُ المتقاطع: بدلَ التلاشي عبر الأسود، يمكنُك الآن أن تختارَ أن يذوبَ المقطعُ في المقطعِ التالي مباشرةً — يثبتُ المقطعُ الصادرُ على إطارِه الأخير بينما يظهرُ التالي فوقه تدريجياً، بنفسِ الطولِ الذي تختارُه (120 إلى 2000 ملّي ثانية)." },
+          { kind: "new", text: "ثلاثةُ خياراتٍ للانتقال في الإعدادات: بلا انتقال · تلاشٍ عبر الأسود · مزجٌ متقاطع — مع شريطٍ واحدٍ لطولِ الانتقال." },
+          { kind: "fix", text: "إصلاحٌ حقيقيّ في المعاينة: كان الانتقالُ يُقاسُ على ساعةِ المصدرِ لا على الخطِّ الزمني، فلم يكن يظهرُ في مكانِ القطعِ بمجردِ أن تقصَّ أو تسرّع. الآن المعاينةُ والملفُّ المُصدَّرُ يتقاسمان الساعةَ الصحيحة." },
+          { kind: "improve", text: "اختبارٌ شاملٌ جديد يُثبِتُ أن الانتقالَ يصلُ إلى الملفّ فعلاً: يُصدِّرُ مشروعاً من مقطعين ويقيسُ سطوعَ الإطارِ عند القطع — التلاشي عبر الأسود 0.0 (سوادٌ تام) والمزجُ المتقاطع 124.1 (صورةٌ حقيقية)." },
+        ],
+      },
+      {
         version: "v1.7.1",
         date: "2026.10.13",
         changes: [
@@ -439,7 +449,7 @@ const ar = {
       { note: "لا يوجد إصدار منشور بعد — تابِعْ صفحةَ الإصدارات" },
     ],
     toastTitle: "انطلقتْ رحلةُ التنزيل",
-    toastDesc: "جارٍ إحضارُ OraxRecordly v1.7.1 إلى {platform} — أهلاً بك في الحكاية.",
+    toastDesc: "جارٍ إحضارُ OraxRecordly v1.8.0 إلى {platform} — أهلاً بك في الحكاية.",
   },
 
   demo: {
@@ -467,7 +477,7 @@ const ar = {
   },
 
   sticky: {
-    title: "OraxRecordly v1.7.1",
+    title: "OraxRecordly v1.8.0",
     sub: "مجانيٌّ — بلا علاماتٍ مائيّة",
   },
 
@@ -718,6 +728,16 @@ const en: Dict = {
     kinds: { new: "NEW", improve: "IMPROVED", fix: "FIXED" },
     releases: [
       {
+        version: "v1.8.0",
+        date: "2026.10.13",
+        changes: [
+          { kind: "new", text: "Cross-dissolve: instead of fading through black you can now have one clip dissolve straight into the next — the outgoing clip holds on its last frame while the incoming one appears over it, at the length you choose (120 to 2000 ms)." },
+          { kind: "new", text: "Three transition styles in the settings: none, through black, and cross-dissolve — with a single slider for the length." },
+          { kind: "fix", text: "A real preview bug fixed: the transition was sampled on the source clock instead of the timeline clock, so it never appeared where the cut was as soon as you trimmed or sped anything up. The preview and the exported file now share the correct clock." },
+          { kind: "improve", text: "A new end-to-end proof that the transition reaches the file: it exports a two-clip project and measures the frame at the cut — through-black is 0.0 luma (pure black), cross-dissolve is 124.1 (a real picture)." },
+        ],
+      },
+      {
         version: "v1.7.1",
         date: "2026.10.13",
         changes: [
@@ -920,7 +940,7 @@ const en: Dict = {
       { note: "No build published yet — watch the releases page" },
     ],
     toastTitle: "The download has launched",
-    toastDesc: "Bringing OraxRecordly v1.7.1 to {platform} — welcome to the story.",
+    toastDesc: "Bringing OraxRecordly v1.8.0 to {platform} — welcome to the story.",
   },
 
   demo: {
@@ -948,7 +968,7 @@ const en: Dict = {
   },
 
   sticky: {
-    title: "OraxRecordly v1.7.1",
+    title: "OraxRecordly v1.8.0",
     sub: "Free — no watermarks",
   },
 
