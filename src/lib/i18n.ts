@@ -237,6 +237,15 @@ const ar = {
     kinds: { new: "جديد", improve: "تحسين", fix: "إصلاح" },
     releases: [
       {
+        version: "v1.9.1",
+        date: "2026.10.13",
+        changes: [
+          { kind: "fix", text: "المزجُ المتقاطعُ يعملُ الآن على المسارِ القديمِ أيضاً: كان يتدرّجُ إلى تلاشٍ عبر الأسود على الأجهزةِ التي تعتمدُ على مسارِ المعالج، فيختلفُ شكلُ المشروعِ نفسِه بين جهازٍ وآخر. الآن المسارانِ يذوبانِ بالطريقةِ ذاتها (123.4 مقابل 124.1 في القياس الفعلي)." },
+          { kind: "improve", text: "هندسةُ الانتقالات: لا يمكنُ أن يتداخلَ تلاشيانِ على مقطعٍ أقصرَ من ملّي ثانيتين، والمزجُ المتقاطعُ يتوقّفُ عند القطعِ التالي بدل أن يبتلعَ المقطعَ الذي بعده." },
+          { kind: "improve", text: "التشخيصُ يسجّلُ الآن إن كان معرّفُ الشاشةِ المطلوبةِ قد حُلَّ فعلاً، فلا يبدو الرجوعُ الصامتُ إلى الشاشةِ الأساسية كأنه تنفيذٌ لاختيارك." },
+        ],
+      },
+      {
         version: "v1.9.0",
         date: "2026.10.13",
         changes: [
@@ -472,7 +481,7 @@ const ar = {
       { note: "لا يوجد إصدار منشور بعد — تابِعْ صفحةَ الإصدارات" },
     ],
     toastTitle: "انطلقتْ رحلةُ التنزيل",
-    toastDesc: "جارٍ إحضارُ OraxRecordly v1.9.0 إلى {platform} — أهلاً بك في الحكاية.",
+    toastDesc: "جارٍ إحضارُ OraxRecordly v1.9.1 إلى {platform} — أهلاً بك في الحكاية.",
   },
 
   demo: {
@@ -500,7 +509,7 @@ const ar = {
   },
 
   sticky: {
-    title: "OraxRecordly v1.9.0",
+    title: "OraxRecordly v1.9.1",
     sub: "مجانيٌّ — بلا علاماتٍ مائيّة",
   },
 
@@ -751,6 +760,15 @@ const en: Dict = {
     kinds: { new: "NEW", improve: "IMPROVED", fix: "FIXED" },
     releases: [
       {
+        version: "v1.9.1",
+        date: "2026.10.13",
+        changes: [
+          { kind: "fix", text: "Cross-dissolve now works on the legacy pipeline too: on machines that rely on the processor path it degraded to a fade through black, so the same project looked different from one machine to another. Both pipelines now dissolve identically (123.4 against 124.1 in the actual measurement)." },
+          { kind: "improve", text: "Transition geometry: two fades can no longer overlap on a clip shorter than two milliseconds, and a dissolve stops at the next cut instead of swallowing the clip after it." },
+          { kind: "improve", text: "The capture diagnostics now record whether the requested display id was resolved again, so a silent fall back to the primary screen cannot read as if your choice was honoured." },
+        ],
+      },
+      {
         version: "v1.9.0",
         date: "2026.10.13",
         changes: [
@@ -986,7 +1004,7 @@ const en: Dict = {
       { note: "No build published yet — watch the releases page" },
     ],
     toastTitle: "The download has launched",
-    toastDesc: "Bringing OraxRecordly v1.9.0 to {platform} — welcome to the story.",
+    toastDesc: "Bringing OraxRecordly v1.9.1 to {platform} — welcome to the story.",
   },
 
   demo: {
@@ -1014,7 +1032,7 @@ const en: Dict = {
   },
 
   sticky: {
-    title: "OraxRecordly v1.9.0",
+    title: "OraxRecordly v1.9.1",
     sub: "Free — no watermarks",
   },
 
