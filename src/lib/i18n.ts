@@ -237,6 +237,25 @@ const ar = {
     kinds: { new: "جديد", improve: "تحسين", fix: "إصلاح" },
     releases: [
       {
+        version: "v1.10.1",
+        date: "2026.10.13",
+        changes: [
+          { kind: "improve", text: "ترتيبُ التسجيلاتِ القديمة: المقاطعُ التي سُجِّلت قبل أن ننقلَ التصويرَ إلى مجلد Cache كانت في الجذر مختلطةً مع الملفاتِ المُصدَّرة، فتُنقلُ الآن مرةً واحدةً ويُحدَّثُ مسارُها في كلِّ مشروعٍ يستخدمُها، فلا يتعطّلُ شيء." },
+          { kind: "improve", text: "لا يُنقلُ إلا ما صوّره البرنامج (الأسماءُ التي تبدأ بـ recording-)، فتبقى الملفاتُ المُصدَّرة والمستوردة كما هي، ولا كتابةَ فوق أي ملفٍ بالاسمِ نفسِه." },
+        ],
+      },
+      {
+        version: "v1.10.0",
+        date: "2026.10.13",
+        changes: [
+          { kind: "new", text: "خيارُ الاستمرارِ في العمل بالخلفية: إغلاقُ النافذة يُبقي Recordly في منطقة الإشعارات مستعداً للتسجيل، ولا ينقطعُ تسجيلٌ جارٍ بإغلاق نافذة. الإعدادُ في قسم الإعدادات العامة." },
+          { kind: "new", text: "أيقونةُ النظام صارت مُعرَّبةً بالكامل، وفيها أثناء التسجيل: إظهارُ التحكم · إيقافُ التسجيل · إيقافُ التسجيل والخروج (كي لا يضيعَ التسجيلُ عند الخروج)." },
+          { kind: "fix", text: "خياراتُ التلاشي والمزج بين المقاطع صارت في قسم «المشهد» — مكانها الطبيعي — بدل أن تكون مخفيةً داخل قسم تنسيق المؤشر، حيث لم يجدها أحد." },
+          { kind: "improve", text: "الخطوطُ في تنسيق النص صارت من خطوط الجهاز نفسِه، وحُذف خيارُ إضافة خطوط من Google Fonts: لا يُنزَّلُ أيُّ شيءٍ لتنسيقِ نص." },
+          { kind: "fix", text: "المحررُ يفتح على التكبير بثقة: بعضُ مديري النوافذ كان يتجاهلُ طلبَ التكبير قبل إظهارِ النافذة، فأصبح الطلبُ بعد الإظهارِ مع بديلٍ يملأُ مساحةَ العمل إن تُجوهل الطلب." },
+        ],
+      },
+      {
         version: "v1.9.1",
         date: "2026.10.13",
         changes: [
@@ -481,7 +500,7 @@ const ar = {
       { note: "لا يوجد إصدار منشور بعد — تابِعْ صفحةَ الإصدارات" },
     ],
     toastTitle: "انطلقتْ رحلةُ التنزيل",
-    toastDesc: "جارٍ إحضارُ OraxRecordly v1.9.1 إلى {platform} — أهلاً بك في الحكاية.",
+    toastDesc: "جارٍ إحضارُ OraxRecordly v1.10.1 إلى {platform} — أهلاً بك في الحكاية.",
   },
 
   demo: {
@@ -509,7 +528,7 @@ const ar = {
   },
 
   sticky: {
-    title: "OraxRecordly v1.9.1",
+    title: "OraxRecordly v1.10.1",
     sub: "مجانيٌّ — بلا علاماتٍ مائيّة",
   },
 
@@ -760,6 +779,25 @@ const en: Dict = {
     kinds: { new: "NEW", improve: "IMPROVED", fix: "FIXED" },
     releases: [
       {
+        version: "v1.10.1",
+        date: "2026.10.13",
+        changes: [
+          { kind: "improve", text: "Old recordings are tidied up: takes recorded before footage moved into the Cache folder sat in the root mixed with your exports. They are moved once now, and every project that uses them is repointed in the same pass, so nothing breaks." },
+          { kind: "improve", text: "Only what the recorder produced moves (names that start with recording-), so exports and imported media stay put, and no file is ever overwritten by one with the same name." },
+        ],
+      },
+      {
+        version: "v1.10.0",
+        date: "2026.10.13",
+        changes: [
+          { kind: "new", text: "Keep running in the background: closing the window leaves Recordly in the notification area, ready to record again, and a recording is never cut short by closing a window. The setting lives in the general settings section." },
+          { kind: "new", text: "The notification-area menu is fully translated, and while recording it offers show controls, stop recording, and stop recording and quit - so leaving cannot lose a take." },
+          { kind: "fix", text: "The fade and dissolve choices between clips moved to the Scene section, where they belong, instead of being hidden inside the cursor-overlay section where nobody found them." },
+          { kind: "improve", text: "Text formatting now lists the fonts installed on your machine, and the Google Fonts import option is gone: nothing is downloaded to format a caption." },
+          { kind: "fix", text: "The editor opens maximized reliably: some window managers ignored the request made before the window was shown, so it is now made afterwards, with the work area used if it is ignored." },
+        ],
+      },
+      {
         version: "v1.9.1",
         date: "2026.10.13",
         changes: [
@@ -1004,7 +1042,7 @@ const en: Dict = {
       { note: "No build published yet — watch the releases page" },
     ],
     toastTitle: "The download has launched",
-    toastDesc: "Bringing OraxRecordly v1.9.1 to {platform} — welcome to the story.",
+    toastDesc: "Bringing OraxRecordly v1.10.1 to {platform} — welcome to the story.",
   },
 
   demo: {
@@ -1032,7 +1070,7 @@ const en: Dict = {
   },
 
   sticky: {
-    title: "OraxRecordly v1.9.1",
+    title: "OraxRecordly v1.10.1",
     sub: "Free — no watermarks",
   },
 
