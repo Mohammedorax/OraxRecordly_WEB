@@ -237,6 +237,14 @@ const ar = {
     kinds: { new: "جديد", improve: "تحسين", fix: "إصلاح" },
     releases: [
       {
+        version: "v1.11.0",
+        date: "2026.10.13",
+        changes: [
+          { kind: "improve", text: "رابطُ المعاينة لم يعُد يحمل مسارَ ملفك: كان كلُّ رابطٍ ينتهي بالمسارِ الكامل، فيظهرُ ترتيبُ مجلداتك في كلِّ سمةِ مصدرٍ وتلميحٍ وسجلٍّ ولقطةِ شاشة. الآن يحملُ الرابطُ رمزاً مُبْهَماً (بصمةٌ بملحٍ عشوائيٍّ لكل تشغيل)، ويبقى الرابطُ القديمُ صالحاً." },
+          { kind: "improve", text: "وُحِّدت خمسُ نسخٍ من قارئ الرابط في مكانٍ واحد، فصار شكلُ الرابط مفهومًا في موضعٍ واحدٍ فقط، ولا يُسبّبُ فشلُ القراءة خطأً أثناء العرض." },
+        ],
+      },
+      {
         version: "v1.10.1",
         date: "2026.10.13",
         changes: [
@@ -500,7 +508,7 @@ const ar = {
       { note: "لا يوجد إصدار منشور بعد — تابِعْ صفحةَ الإصدارات" },
     ],
     toastTitle: "انطلقتْ رحلةُ التنزيل",
-    toastDesc: "جارٍ إحضارُ OraxRecordly v1.10.1 إلى {platform} — أهلاً بك في الحكاية.",
+    toastDesc: "جارٍ إحضارُ OraxRecordly v1.11.0 إلى {platform} — أهلاً بك في الحكاية.",
   },
 
   demo: {
@@ -528,7 +536,7 @@ const ar = {
   },
 
   sticky: {
-    title: "OraxRecordly v1.10.1",
+    title: "OraxRecordly v1.11.0",
     sub: "مجانيٌّ — بلا علاماتٍ مائيّة",
   },
 
@@ -778,6 +786,14 @@ const en: Dict = {
     para: "Every release passes through here: what we added, what we improved, what we fixed — with its date and its name. Trust is not bought with ads; it is built one line atop another.",
     kinds: { new: "NEW", improve: "IMPROVED", fix: "FIXED" },
     releases: [
+      {
+        version: "v1.11.0",
+        date: "2026.10.13",
+        changes: [
+          { kind: "improve", text: "Preview URLs no longer contain your file path: every one used to end with the full path, putting your folder layout into every src attribute, tooltip, log line and screenshot. A URL now carries an opaque handle (a hash under a random per-run salt), and older links still work." },
+          { kind: "improve", text: "Five copies of the URL parser became one, so the URL shape is understood in a single place, and a failed lookup returns nothing instead of throwing while the editor renders." },
+        ],
+      },
       {
         version: "v1.10.1",
         date: "2026.10.13",
@@ -1042,7 +1058,7 @@ const en: Dict = {
       { note: "No build published yet — watch the releases page" },
     ],
     toastTitle: "The download has launched",
-    toastDesc: "Bringing OraxRecordly v1.10.1 to {platform} — welcome to the story.",
+    toastDesc: "Bringing OraxRecordly v1.11.0 to {platform} — welcome to the story.",
   },
 
   demo: {
@@ -1070,7 +1086,7 @@ const en: Dict = {
   },
 
   sticky: {
-    title: "OraxRecordly v1.10.1",
+    title: "OraxRecordly v1.11.0",
     sub: "Free — no watermarks",
   },
 
