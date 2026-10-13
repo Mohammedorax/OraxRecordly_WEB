@@ -229,6 +229,16 @@ const ar = {
     kinds: { new: "جديد", improve: "تحسين", fix: "إصلاح" },
     releases: [
       {
+        version: "v1.12.0",
+        date: "2026.10.14",
+        changes: [
+          { kind: "new", text: "زرُّ لقطةِ الشاشة صار زراً واحداً بخيارات: كان يظهر زرّان متجاوران (كاميرا + سهم) فبدا مكرراً. الآن زرٌّ واحد، والخياراتُ داخله، مع تعليمِ آخرِ وضعٍ استخدمتَه." },
+          { kind: "improve", text: "تحريرٌ أسلس: زمنُ التشغيل كان يُحدِّث حالةَ المحرّر مع كلِّ إطار (60 مرة/ث) فيُعاد رسمُ الشجرةِ كاملةً أثناءَ التشغيل. الآن يُحدَّث 30 مرة/ث مع تصريفِ القيمةِ الأخيرة، فالتوقّفُ والتنقّلُ يهبطان على الزمنِ الدقيق، والمعاينةُ ترسمُ بإطاراتها الكاملة." },
+          { kind: "fix", text: "مستوياتُ الجودةِ صارت حقيقية: كانت medium وgood وhigh تُخرج معدّلَ بتّ واحداً لا يتغيّر (لم يكن يُميَّز إلا source)، فاختيارُ الجودةِ لم يكن يُغيّر شيئاً. الآن high هو المرجعُ المعايَر، وgood ‏85%، وmedium ‏70% — أي جودةٌ أعلى عند الطلب، وملفاتٌ أصغرُ وترميزٌ أسرعُ في المستوياتِ الأدنى." },
+          { kind: "fix", text: "اسمُ المقطعِ وتاريخُه داخلَ الفيديو: تحقّقنا منهما على فيديو مُصدَّرٍ فعليّاً — الزاويةُ السفلى 118.2 مع العلامة مقابل 138.0 بدونها (أي أن العلامةَ مرسومةٌ حقاً)، وباقي الإطارِ لا يتغيّر. ومشروعٌ مصدرُه رابطُ معاينةٍ يُصدَّر بلا أيِّ عنوانٍ مطبوع." },
+        ],
+      },
+      {
         version: "v1.11.2",
         date: "2026.10.13",
         changes: [
@@ -539,7 +549,7 @@ const ar = {
       { note: "لا يوجد إصدار منشور بعد — تابِعْ صفحةَ الإصدارات" },
     ],
     toastTitle: "انطلقتْ رحلةُ التنزيل",
-    toastDesc: "جارٍ إحضارُ OraxRecordly v1.11.2 إلى {platform} — أهلاً بك في الحكاية.",
+    toastDesc: "جارٍ إحضارُ OraxRecordly v1.12.0 إلى {platform} — أهلاً بك في الحكاية.",
   },
 
   demo: {
@@ -567,7 +577,7 @@ const ar = {
   },
 
   sticky: {
-    title: "OraxRecordly v1.11.2",
+    title: "OraxRecordly v1.12.0",
     sub: "مجانيٌّ — بلا علاماتٍ مائيّة",
   },
 
@@ -809,6 +819,16 @@ const en: Dict = {
     para: "Every release passes through here: what we added, what we improved, what we fixed — with its date and its name. Trust is not bought with ads; it is built one line atop another.",
     kinds: { new: "NEW", improve: "IMPROVED", fix: "FIXED" },
     releases: [
+      {
+        version: "v1.12.0",
+        date: "2026.10.14",
+        changes: [
+          { kind: "new", text: "The screenshot control is one button with its modes inside: it used to render as two buttons side by side (a camera and a caret), which read as a duplicate. The mode you used last is marked." },
+          { kind: "improve", text: "Smoother editing: the playback position set editor state on every animation frame (60/s), re-rendering the whole editor while playing. It now updates at 30/s with a trailing update, so pausing and seeking still land on the exact time while the preview keeps drawing every frame." },
+          { kind: "fix", text: "Quality tiers are real: medium, good and high all produced the same bitrate (only source was different), so picking a quality changed nothing. High is still the tuned reference, good is 85% and medium 70% - more quality when you ask for it, and smaller files with faster encoding on the lower tiers." },
+          { kind: "fix", text: "Clip name and date inside the video: verified on a real export - the bottom-left corner measures 118.2 with the label against 138.0 without it (the pill is genuinely drawn) and the rest of the frame is unchanged. A project whose source is a preview URL exports with no address printed on it." },
+        ],
+      },
       {
         version: "v1.11.2",
         date: "2026.10.13",
@@ -1120,7 +1140,7 @@ const en: Dict = {
       { note: "No build published yet — watch the releases page" },
     ],
     toastTitle: "The download has launched",
-    toastDesc: "Bringing OraxRecordly v1.11.2 to {platform} — welcome to the story.",
+    toastDesc: "Bringing OraxRecordly v1.12.0 to {platform} — welcome to the story.",
   },
 
   demo: {
@@ -1148,7 +1168,7 @@ const en: Dict = {
   },
 
   sticky: {
-    title: "OraxRecordly v1.11.2",
+    title: "OraxRecordly v1.12.0",
     sub: "Free — no watermarks",
   },
 
