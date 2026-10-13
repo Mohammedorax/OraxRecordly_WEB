@@ -237,6 +237,14 @@ const ar = {
     kinds: { new: "جديد", improve: "تحسين", fix: "إصلاح" },
     releases: [
       {
+        version: "v1.6.1",
+        date: "2026.10.13",
+        changes: [
+          { kind: "improve", text: "أدواتُ الاختصاراتِ انتقلت إلى الشريطِ السفليِّ نفسِه مع أزرارِ التشغيل: زرُّ لوحةِ مفاتيحٍ يفتحُ كلَّ الخيارات — الحرقُ في الفيديو، سطرٌ أو سطران، الشكل، واللون — بلا صفٍّ إضافيٍّ يأخذُ من مساحةِ التحرير." },
+          { kind: "improve", text: "ويمكن إزالةُ الزرِّ من الشريطِ وإرجاعُه بضغطة، وتبقى كلُّ الخياراتِ في لوحةِ الإعدادات." },
+        ],
+      },
+      {
         version: "v1.6.0",
         date: "2026.10.10",
         changes: [
@@ -394,7 +402,7 @@ const ar = {
       { note: "لا يوجد إصدار منشور بعد — تابِعْ صفحةَ الإصدارات" },
     ],
     toastTitle: "انطلقتْ رحلةُ التنزيل",
-    toastDesc: "جارٍ إحضارُ OraxRecordly v1.6.0 إلى {platform} — أهلاً بك في الحكاية.",
+    toastDesc: "جارٍ إحضارُ OraxRecordly v1.6.1 إلى {platform} — أهلاً بك في الحكاية.",
   },
 
   demo: {
@@ -422,7 +430,7 @@ const ar = {
   },
 
   sticky: {
-    title: "OraxRecordly v1.6.0",
+    title: "OraxRecordly v1.6.1",
     sub: "مجانيٌّ — بلا علاماتٍ مائيّة",
   },
 
@@ -673,6 +681,14 @@ const en: Dict = {
     kinds: { new: "NEW", improve: "IMPROVED", fix: "FIXED" },
     releases: [
       {
+        version: "v1.6.1",
+        date: "2026.10.13",
+        changes: [
+          { kind: "improve", text: "The shortcut controls moved into the playback bar next to play and split: one keyboard button opens everything — burn into the video, one line or two, the shape, and the colour — with no extra row taking height from the editing area." },
+          { kind: "improve", text: "The button can be removed from that bar and brought back with one click, and every option stays available in the settings panel." },
+        ],
+      },
+      {
         version: "v1.6.0",
         date: "2026.10.10",
         changes: [
@@ -830,7 +846,7 @@ const en: Dict = {
       { note: "No build published yet — watch the releases page" },
     ],
     toastTitle: "The download has launched",
-    toastDesc: "Bringing OraxRecordly v1.6.0 to {platform} — welcome to the story.",
+    toastDesc: "Bringing OraxRecordly v1.6.1 to {platform} — welcome to the story.",
   },
 
   demo: {
@@ -858,7 +874,7 @@ const en: Dict = {
   },
 
   sticky: {
-    title: "OraxRecordly v1.6.0",
+    title: "OraxRecordly v1.6.1",
     sub: "Free — no watermarks",
   },
 
