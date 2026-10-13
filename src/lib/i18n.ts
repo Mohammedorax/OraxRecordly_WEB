@@ -237,6 +237,15 @@ const ar = {
     kinds: { new: "جديد", improve: "تحسين", fix: "إصلاح" },
     releases: [
       {
+        version: "v1.6.2",
+        date: "2026.10.13",
+        changes: [
+          { kind: "fix", text: "إصلاحُ اختيارِ الشاشة: كان التطبيقُ يقارنُ إحداثياتٍ منطقيةً بأخرى فيزيائية، فتفشلُ المطابقةُ مع أيِّ شاشةٍ مُقاسَة (Scaling) وقد يُسجِّلُ شاشةً غيرَ التي اخترتَها. الآن يُثبَّت المقبضُ الصحيحُ بثلاثِ استراتيجياتٍ مُتحقَّقٍ منها، ويُسجَّلُ الاختيارُ في تشخيصِ الالتقاط." },
+          { kind: "fix", text: "أثناء التسجيلِ ينتقلُ التطبيقُ إلى أيقوناتِ ويندوز المخفية (شريط النظام) بأيقونةِ تسجيلٍ وزرِّ «إيقاف»، بدل أن تختفي النافذةُ بلا أثرٍ يُنقرُ عليه، ويُزالُ الرمزُ عند انتهاءِ التسجيل." },
+          { kind: "improve", text: "المحررُ يُفتحُ الآن مكبَّراً (Maximized) بدل نافذةٍ بحجمِ مساحةِ العمل، فيبدو واضحاً على الشاشاتِ الكبيرةِ والمُقاسَة." },
+        ],
+      },
+      {
         version: "v1.6.1",
         date: "2026.10.13",
         changes: [
@@ -402,7 +411,7 @@ const ar = {
       { note: "لا يوجد إصدار منشور بعد — تابِعْ صفحةَ الإصدارات" },
     ],
     toastTitle: "انطلقتْ رحلةُ التنزيل",
-    toastDesc: "جارٍ إحضارُ OraxRecordly v1.6.1 إلى {platform} — أهلاً بك في الحكاية.",
+    toastDesc: "جارٍ إحضارُ OraxRecordly v1.6.2 إلى {platform} — أهلاً بك في الحكاية.",
   },
 
   demo: {
@@ -430,7 +439,7 @@ const ar = {
   },
 
   sticky: {
-    title: "OraxRecordly v1.6.1",
+    title: "OraxRecordly v1.6.2",
     sub: "مجانيٌّ — بلا علاماتٍ مائيّة",
   },
 
@@ -681,6 +690,15 @@ const en: Dict = {
     kinds: { new: "NEW", improve: "IMPROVED", fix: "FIXED" },
     releases: [
       {
+        version: "v1.6.2",
+        date: "2026.10.13",
+        changes: [
+          { kind: "fix", text: "Screen choice fixed: the app compared logical coordinates with physical ones, so the match failed on any scaled display and it could record a different screen than the one you picked. The right monitor handle is now pinned through three validated strategies, and the chosen match is recorded in the capture diagnostics." },
+          { kind: "fix", text: "While recording, the app now moves into the Windows hidden-icons area with a recording icon and a Stop action instead of the window vanishing with nothing left to click; the entry is removed when the recording ends." },
+          { kind: "improve", text: "The editor opens maximized instead of sized to the work area, so it reads clearly on large and scaled displays." },
+        ],
+      },
+      {
         version: "v1.6.1",
         date: "2026.10.13",
         changes: [
@@ -846,7 +864,7 @@ const en: Dict = {
       { note: "No build published yet — watch the releases page" },
     ],
     toastTitle: "The download has launched",
-    toastDesc: "Bringing OraxRecordly v1.6.1 to {platform} — welcome to the story.",
+    toastDesc: "Bringing OraxRecordly v1.6.2 to {platform} — welcome to the story.",
   },
 
   demo: {
@@ -874,7 +892,7 @@ const en: Dict = {
   },
 
   sticky: {
-    title: "OraxRecordly v1.6.1",
+    title: "OraxRecordly v1.6.2",
     sub: "Free — no watermarks",
   },
 
