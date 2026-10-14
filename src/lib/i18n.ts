@@ -229,6 +229,14 @@ const ar = {
     kinds: { new: "جديد", improve: "تحسين", fix: "إصلاح" },
     releases: [
       {
+        version: "v1.12.2",
+        date: "2026.10.14",
+        changes: [
+          { kind: "new", text: "تقريرُ التصدير القابلُ للنسخ: بعد كلِّ تصديرٍ يظهر زرُّ «نسخ تقرير التصدير» ينسخ نصّاً يبيّن أين ذهب الوقت (تحميل البيانات · تهيئة المصيّر · فكّ الترميز · رسم الإطارات · انتظار المرمّز · الإنهاء) ونسبةَ كلِّ مرحلة، ومعدّلَ الإطارات الفعليّ، والمسارَ والمرمّزَ المستخدَمين، وسطوعَ الإطارات المُقاس. وبهذا تُحلّ مسألةُ «التصدير بطيء» بأرقامٍ حقيقيّةٍ من جهازك بدل التخمين." },
+          { kind: "improve", text: "التقريرُ نصٌّ بسيطٌ (مفتاح: قيمة) بلغةٍ محايدةٍ يسهل لصقه ومقارنةُ تشغيلين، ويُدرج نسخةَ التطبيق من الحزمة نفسِها، ويصدر أيضاً عند فشل التصدير مع سببِ الفشل." },
+        ],
+      },
+      {
         version: "v1.12.1",
         date: "2026.10.14",
         changes: [
@@ -557,7 +565,7 @@ const ar = {
       { note: "لا يوجد إصدار منشور بعد — تابِعْ صفحةَ الإصدارات" },
     ],
     toastTitle: "انطلقتْ رحلةُ التنزيل",
-    toastDesc: "جارٍ إحضارُ OraxRecordly v1.12.1 إلى {platform} — أهلاً بك في الحكاية.",
+    toastDesc: "جارٍ إحضارُ OraxRecordly v1.12.2 إلى {platform} — أهلاً بك في الحكاية.",
   },
 
   demo: {
@@ -585,7 +593,7 @@ const ar = {
   },
 
   sticky: {
-    title: "OraxRecordly v1.12.1",
+    title: "OraxRecordly v1.12.2",
     sub: "مجانيٌّ — بلا علاماتٍ مائيّة",
   },
 
@@ -827,6 +835,14 @@ const en: Dict = {
     para: "Every release passes through here: what we added, what we improved, what we fixed — with its date and its name. Trust is not bought with ads; it is built one line atop another.",
     kinds: { new: "NEW", improve: "IMPROVED", fix: "FIXED" },
     releases: [
+      {
+        version: "v1.12.2",
+        date: "2026.10.14",
+        changes: [
+          { kind: "new", text: "A copyable export report: after every export a 'Copy export report' action copies a summary of where the time went (metadata load, renderer init, decode loop, render frames, encode wait, finalization) with each phase's share, the real frames per second, the pipeline and encoder used, and the measured frame brightness. That turns 'exporting is slow' into real numbers from your machine instead of guesswork." },
+          { kind: "improve", text: "The report is plain key: value text, language-neutral and easy to paste or compare between two runs. It carries the app version from the packaged build, and a failed export gets a report too, with the reason." },
+        ],
+      },
       {
         version: "v1.12.1",
         date: "2026.10.14",
@@ -1156,7 +1172,7 @@ const en: Dict = {
       { note: "No build published yet — watch the releases page" },
     ],
     toastTitle: "The download has launched",
-    toastDesc: "Bringing OraxRecordly v1.12.1 to {platform} — welcome to the story.",
+    toastDesc: "Bringing OraxRecordly v1.12.2 to {platform} — welcome to the story.",
   },
 
   demo: {
@@ -1184,7 +1200,7 @@ const en: Dict = {
   },
 
   sticky: {
-    title: "OraxRecordly v1.12.1",
+    title: "OraxRecordly v1.12.2",
     sub: "Free — no watermarks",
   },
 

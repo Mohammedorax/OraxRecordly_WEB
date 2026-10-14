@@ -318,7 +318,7 @@ export function Header() {
             <Scramble text={t.labels.brandTagline} />
           </p>
           <p className="mono text-mink-50" dir="ltr">
-            v1.12.1 — 2026
+            v1.12.2 — 2026
           </p>
         </div>
       </nav>
