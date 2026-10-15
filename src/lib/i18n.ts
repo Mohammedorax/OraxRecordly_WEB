@@ -569,6 +569,10 @@ const ar = {
       deb: "— دبيان وأوبنتو وما يتفرّع عنها",
       rpm: "— فيدورا وريد هات وأوبن سوزي",
     },
+    macFormats: {
+      arm64: "— أبل سيليكون (غير موقّع)",
+      x64: "— معالجات إنتل (غير موقّع)",
+    },
     toastTitle: "انطلقتْ رحلةُ التنزيل",
     toastDesc: "جارٍ إحضارُ OraxRecordly v1.12.2 إلى {platform} — أهلاً بك في الحكاية.",
   },
@@ -1180,6 +1184,10 @@ const en: Dict = {
       AppImage: "- runs on every distribution, nothing to install",
       deb: "- Debian, Ubuntu and their descendants",
       rpm: "- Fedora, RHEL and openSUSE",
+    },
+    macFormats: {
+      arm64: "- Apple Silicon (unsigned)",
+      x64: "- Intel Macs (unsigned)",
     },
     toastTitle: "The download has launched",
     toastDesc: "Bringing OraxRecordly v1.12.2 to {platform} — welcome to the story.",

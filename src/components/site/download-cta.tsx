@@ -38,6 +38,15 @@ const LINUX_VARIANTS = [
   { name: "rpm", asset: "OraxRecordly-linux-x64.rpm" },
 ] as const;
 
+/**
+ * The macOS disk images are published unsigned (no Apple Developer account), so
+ * the note next to each one says so and the release ships the Gatekeeper steps.
+ */
+const MAC_VARIANTS = [
+  { name: "arm64", asset: "OraxRecordly-macos-arm64-unsigned.dmg" },
+  { name: "x64", asset: "OraxRecordly-macos-x64-unsigned.dmg" },
+] as const;
+
 /** Secondary destination: every release, every platform. */
 const ALL_RELEASES = "https://github.com/Mohammedorax/OraxRecordly/releases";
 
@@ -57,7 +66,7 @@ const PLATFORMS = [
     href: WINDOWS_INSTALLER,
     direct: true,
   },
-  { name: "macOS", icon: Laptop, meta: "", href: ALL_RELEASES, direct: false },
+  { name: "macOS", icon: Laptop, meta: "dmg", href: ALL_RELEASES, direct: false },
   // Linux has builds now, so it must not read as "no build yet"; the three
   // formats are offered as their own links below the row.
   { name: "Linux", icon: Terminal, meta: "AppImage · deb · rpm", href: ALL_RELEASES, direct: false },
@@ -219,7 +228,8 @@ export function DownloadCTA({
                 {/*
                   * Linux ships three packages rather than one, so each format gets
                   * its own real download link instead of hiding behind a releases
-                  * page the visitor then has to search.
+                  * page the visitor then has to search. macOS does the same for its
+                  * two architectures, and says plainly that it is unsigned.
                   */}
                 {p.name === "Linux" ? (
                   <div className="mt-2 flex flex-wrap gap-2 ps-2">
@@ -236,6 +246,23 @@ export function DownloadCTA({
                           {" "}
                           {t.download.linuxFormats[variant.name]}
                         </span>
+                      </a>
+                    ))}
+                  </div>
+                ) : null}
+
+                {p.name === "macOS" ? (
+                  <div className="mt-2 flex flex-wrap gap-2 ps-2">
+                    {MAC_VARIANTS.map((variant) => (
+                      <a
+                        key={variant.name}
+                        href={`${LINUX_ASSET_BASE}/${variant.asset}`}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="mono rounded-full border border-ink/15 px-3 py-1 text-xs text-ink-soft transition-colors duration-500 ease-editorial hover:border-orax-blue hover:text-orax-blue"
+                      >
+                        {variant.name}
+                        <span className="text-mink-40"> {t.download.macFormats[variant.name]}</span>
                       </a>
                     ))}
                   </div>
