@@ -22,16 +22,32 @@ import { cn } from "@/lib/utils";
 const WINDOWS_INSTALLER =
   "https://github.com/Mohammedorax/OraxRecordly/releases/latest/download/OraxRecordly-windows-x64.exe";
 
+/**
+ * The three Linux packages the release pipeline publishes, each a real direct
+ * download of the newest release:
+ *
+ *   AppImage  runs on any distribution without installing anything
+ *   deb       Debian, Ubuntu, Mint, Pop!_OS, Kali
+ *   rpm       Fedora, RHEL, openSUSE
+ */
+const LINUX_ASSET_BASE =
+  "https://github.com/Mohammedorax/OraxRecordly/releases/latest/download";
+const LINUX_VARIANTS = [
+  { name: "AppImage", asset: "OraxRecordly-linux-x64.AppImage" },
+  { name: "deb", asset: "OraxRecordly-linux-x64.deb" },
+  { name: "rpm", asset: "OraxRecordly-linux-x64.rpm" },
+] as const;
+
 /** Secondary destination: every release, every platform. */
 const ALL_RELEASES = "https://github.com/Mohammedorax/OraxRecordly/releases";
 
 /**
- * Only Windows has a published build today (`OraxRecordly-windows-x64.exe`,
- * 161,441,958 bytes ≈ 153.96 MiB, release v1.4.8). macOS and Linux are listed so
- * those visitors land on the releases page — never a download we cannot serve.
+ * What the release pipeline actually publishes today: the Windows installer and
+ * the three Linux packages. macOS is listed so those visitors land on the
+ * releases page — never a download we cannot serve.
  *
  * The size is the real Content-Length the release asset serves, in the same
- * decimal MB the vendor pages use (161,441,958 bytes → 161.4 MB).
+ * decimal MB the vendor pages use.
  */
 const PLATFORMS = [
   {
@@ -42,7 +58,9 @@ const PLATFORMS = [
     direct: true,
   },
   { name: "macOS", icon: Laptop, meta: "", href: ALL_RELEASES, direct: false },
-  { name: "Linux", icon: Terminal, meta: "", href: ALL_RELEASES, direct: false },
+  // Linux has builds now, so it must not read as "no build yet"; the three
+  // formats are offered as their own links below the row.
+  { name: "Linux", icon: Terminal, meta: "AppImage · deb · rpm", href: ALL_RELEASES, direct: false },
 ];
 
 type Variant = "button" | "compact" | "link";
@@ -197,6 +215,31 @@ export function DownloadCTA({
                     />
                   </span>
                 </a>
+
+                {/*
+                  * Linux ships three packages rather than one, so each format gets
+                  * its own real download link instead of hiding behind a releases
+                  * page the visitor then has to search.
+                  */}
+                {p.name === "Linux" ? (
+                  <div className="mt-2 flex flex-wrap gap-2 ps-2">
+                    {LINUX_VARIANTS.map((variant) => (
+                      <a
+                        key={variant.name}
+                        href={`${LINUX_ASSET_BASE}/${variant.asset}`}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="mono rounded-full border border-ink/15 px-3 py-1 text-xs text-ink-soft transition-colors duration-500 ease-editorial hover:border-orax-blue hover:text-orax-blue"
+                      >
+                        {variant.name}
+                        <span className="text-mink-40">
+                          {" "}
+                          {t.download.linuxFormats[variant.name]}
+                        </span>
+                      </a>
+                    ))}
+                  </div>
+                ) : null}
               </li>
             ))}
           </ul>

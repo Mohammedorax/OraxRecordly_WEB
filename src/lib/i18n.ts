@@ -564,6 +564,11 @@ const ar = {
       { note: "لا يوجد إصدار منشور بعد — تابِعْ صفحةَ الإصدارات" },
       { note: "لا يوجد إصدار منشور بعد — تابِعْ صفحةَ الإصدارات" },
     ],
+    linuxFormats: {
+      AppImage: "— يعمل في كل التوزيعات بلا تثبيت",
+      deb: "— دبيان وأوبنتو وما يتفرّع عنها",
+      rpm: "— فيدورا وريد هات وأوبن سوزي",
+    },
     toastTitle: "انطلقتْ رحلةُ التنزيل",
     toastDesc: "جارٍ إحضارُ OraxRecordly v1.12.2 إلى {platform} — أهلاً بك في الحكاية.",
   },
@@ -1171,6 +1176,11 @@ const en: Dict = {
       { note: "No build published yet — watch the releases page" },
       { note: "No build published yet — watch the releases page" },
     ],
+    linuxFormats: {
+      AppImage: "- runs on every distribution, nothing to install",
+      deb: "- Debian, Ubuntu and their descendants",
+      rpm: "- Fedora, RHEL and openSUSE",
+    },
     toastTitle: "The download has launched",
     toastDesc: "Bringing OraxRecordly v1.12.2 to {platform} — welcome to the story.",
   },
