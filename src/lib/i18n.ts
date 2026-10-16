@@ -229,6 +229,14 @@ const ar = {
     kinds: { new: "جديد", improve: "تحسين", fix: "إصلاح" },
     releases: [
       {
+        version: "v1.13.4",
+        date: "2026.10.16",
+        changes: [
+          { kind: "new", text: "تصوير المنطقة على ماك: صار الاقتصاص ممكناً هناك أيضاً، فالمساعد يقصّ كل إطار كما يفعل مع نافذة متتبَّعة. ولهذا عاد خيار «تصوير منطقة» إلى القائمة على ماك بعد أن كان مقتصراً على ويندوز." },
+          { kind: "new", text: "صوت النظام على لينكس — واي لاند أيضاً: تُفعَّل ميزتا التقاط PipeWire وحلقة PulseAudio، وهما شرط ظهور خيار «مشاركة صوت النظام» في بوابة لينكس. وإن أعادت البوابة بثّاً بلا مسار صوتي يقول البرنامج ذلك بوضوح ويُغلق الخيار بدل أن يُسجّل صمتاً." },
+        ],
+      },
+      {
         version: "v1.13.3",
         date: "2026.10.16",
         changes: [
@@ -263,14 +271,6 @@ const ar = {
           { kind: "improve", text: "تحرير أسلس: زمن التشغيل يُحدَّث 30 مرة/ث مع تصريف القيمة الأخيرة، فتهبط المعاينة بإطاراتها الكاملة. وقياسُ تجزّؤ الإطارات على مصدر 4K يعطي 41 إطاراً/ث عند p95 = 41 ملّي ثانية." },
           { kind: "fix", text: "مستويات الجودة صارت حقيقية: had medium وgood وhigh معدّلَ بتّ واحداً، فاختيار الجودة لم يكن يغيّر شيئاً." },
           { kind: "fix", text: "اسم المقطع وتاريخه لم يعودا يُحرقان في الفيديو المُصدَّر افتراضيّاً، وقد تُحقّق من ذلك على ملف مُصدَّر فعليّ." },
-        ],
-      },
-      {
-        version: "v1.11.0",
-        date: "2026.10.13",
-        changes: [
-          { kind: "improve", text: "روابط المعاينة لم تعُد تحمل مسار ملفك: صار كل رابط رمزاً مبهمًا لا يكشف ترتيب مجلداتك." },
-          { kind: "improve", text: "وُحِّدت خمس نسخٍ من قارئ الرابط في مكان واحد، وفشل القراءة لم يعُد يُسقط الملف." },
         ],
       },
     ],
@@ -351,7 +351,7 @@ const ar = {
       x64: "— معالجات إنتل (غير موقّع)",
     },
     toastTitle: "انطلقتْ رحلةُ التنزيل",
-    toastDesc: "جارٍ إحضارُ OraxRecordly v1.13.3 إلى {platform} — أهلاً بك في الحكاية.",
+    toastDesc: "جارٍ إحضارُ OraxRecordly v1.13.4 إلى {platform} — أهلاً بك في الحكاية.",
   },
 
   demo: {
@@ -379,7 +379,7 @@ const ar = {
   },
 
   sticky: {
-    title: "OraxRecordly v1.13.3",
+    title: "OraxRecordly v1.13.4",
     sub: "مجانيٌّ — بلا علاماتٍ مائيّة",
   },
 
@@ -622,6 +622,14 @@ const en: Dict = {
     kinds: { new: "NEW", improve: "IMPROVED", fix: "FIXED" },
     releases: [
       {
+        version: "v1.13.4",
+        date: "2026.10.16",
+        changes: [
+          { kind: "new", text: "Region recording on macOS: the recorder now crops each frame the way it already cropped a tracked window, so the launch menu offers \"Record a region\" there again instead of withholding it on Windows alone." },
+          { kind: "new", text: "System audio on Linux, Wayland included: PipeWire capture and PulseAudio loopback are switched on, which is what makes the system's share-audio option exist at all. If the portal still answers with a video-only stream, the app says so and turns the option off rather than recording silence." },
+        ],
+      },
+      {
         version: "v1.13.3",
         date: "2026.10.16",
         changes: [
@@ -656,14 +664,6 @@ const en: Dict = {
           { kind: "improve", text: "Smoother editing: the playhead updates 30 times a second with a trailing flush, so the preview keeps drawing at full frame rate. A playback measurement on a 4K source reports 41 fps at a p95 of 41 ms." },
           { kind: "fix", text: "Quality levels are real: medium, good and high produced one bitrate before, so the choice changed nothing." },
           { kind: "fix", text: "The clip name and date are no longer burned into the export by default, verified against a real encoded file." },
-        ],
-      },
-      {
-        version: "v1.11.0",
-        date: "2026.10.13",
-        changes: [
-          { kind: "improve", text: "Preview URLs no longer carry your file paths: every URL is an opaque handle that reveals nothing about your folder layout." },
-          { kind: "improve", text: "Five copies of the URL reader were consolidated into one, and a failure to read one no longer drops the file." },
         ],
       },
     ],
@@ -744,7 +744,7 @@ const en: Dict = {
       x64: "- Intel Macs (unsigned)",
     },
     toastTitle: "The download has launched",
-    toastDesc: "Bringing OraxRecordly v1.13.3 to {platform} — welcome to the story.",
+    toastDesc: "Bringing OraxRecordly v1.13.4 to {platform} — welcome to the story.",
   },
 
   demo: {
@@ -772,7 +772,7 @@ const en: Dict = {
   },
 
   sticky: {
-    title: "OraxRecordly v1.13.3",
+    title: "OraxRecordly v1.13.4",
     sub: "Free — no watermarks",
   },
 
