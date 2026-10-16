@@ -351,6 +351,7 @@ const ar = {
       { note: "لا يوجد إصدار منشور بعد — تابِعْ صفحةَ الإصدارات" },
       { note: "لا يوجد إصدار منشور بعد — تابِعْ صفحةَ الإصدارات" },
     ],
+    portable: "محمولة — تعمل من مجلد بلا تثبيت",
     linuxFormats: {
       AppImage: "— يعمل في كل التوزيعات بلا تثبيت",
       deb: "— دبيان وأوبنتو وما يتفرّع عنها",
@@ -754,6 +755,7 @@ const en: Dict = {
       { note: "No build published yet — watch the releases page" },
       { note: "No build published yet — watch the releases page" },
     ],
+    portable: "portable - runs from a folder, nothing to install",
     linuxFormats: {
       AppImage: "- runs on every distribution, nothing to install",
       deb: "- Debian, Ubuntu and their descendants",

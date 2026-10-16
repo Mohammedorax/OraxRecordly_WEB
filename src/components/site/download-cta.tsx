@@ -41,11 +41,18 @@ const LINUX_VARIANTS = [
 /**
  * The macOS disk images are published unsigned (no Apple Developer account), so
  * the note next to each one says so and the release ships the Gatekeeper steps.
+ * The zip is the same bundle for anyone who would rather drag the app out than
+ * mount an image.
  */
 const MAC_VARIANTS = [
-  { name: "arm64", asset: "OraxRecordly-macos-arm64-unsigned.dmg" },
-  { name: "x64", asset: "OraxRecordly-macos-x64-unsigned.dmg" },
+  { name: "arm64", variant: "dmg", asset: "OraxRecordly-macos-arm64-unsigned.dmg" },
+  { name: "x64", variant: "dmg", asset: "OraxRecordly-macos-x64-unsigned.dmg" },
+  { name: "arm64", variant: "zip", asset: "OraxRecordly-macos-arm64-unsigned.zip" },
+  { name: "x64", variant: "zip", asset: "OraxRecordly-macos-x64-unsigned.zip" },
 ] as const;
+
+/** The second Windows package: the same app in a folder, without installing. */
+const WINDOWS_PORTABLE = "OraxRecordly-windows-x64.zip";
 
 /** Secondary destination: every release, every platform. */
 const ALL_RELEASES = "https://github.com/Mohammedorax/OraxRecordly/releases";
@@ -255,16 +262,34 @@ export function DownloadCTA({
                   <div className="mt-2 flex flex-wrap gap-2 ps-2">
                     {MAC_VARIANTS.map((variant) => (
                       <a
-                        key={variant.name}
+                        key={`${variant.name}-${variant.variant}`}
                         href={`${LINUX_ASSET_BASE}/${variant.asset}`}
                         target="_blank"
                         rel="noreferrer"
                         className="mono rounded-full border border-ink/15 px-3 py-1 text-xs text-ink-soft transition-colors duration-500 ease-editorial hover:border-orax-blue hover:text-orax-blue"
                       >
-                        {variant.name}
-                        <span className="text-mink-40"> {t.download.macFormats[variant.name]}</span>
+                        {variant.name} {variant.variant}
+                        <span className="text-mink-40">
+                          {" "}
+                          {t.download.macFormats[variant.name]}
+                          {variant.variant === "zip" ? ` · ${t.download.portable}` : ""}
+                        </span>
                       </a>
                     ))}
+                  </div>
+                ) : null}
+
+                {p.name === "Windows" ? (
+                  <div className="mt-2 flex flex-wrap gap-2 ps-2">
+                    <a
+                      href={`${LINUX_ASSET_BASE}/${WINDOWS_PORTABLE}`}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="mono rounded-full border border-ink/15 px-3 py-1 text-xs text-ink-soft transition-colors duration-500 ease-editorial hover:border-orax-blue hover:text-orax-blue"
+                    >
+                      zip
+                      <span className="text-mink-40"> {t.download.portable}</span>
+                    </a>
                   </div>
                 ) : null}
               </li>
