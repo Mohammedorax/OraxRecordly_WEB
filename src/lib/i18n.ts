@@ -229,284 +229,71 @@ const ar = {
     kinds: { new: "جديد", improve: "تحسين", fix: "إصلاح" },
     releases: [
       {
-        version: "v1.12.2",
-        date: "2026.10.14",
+        version: "v1.13.2",
+        date: "2026.10.16",
         changes: [
-          { kind: "new", text: "تقريرُ التصدير القابلُ للنسخ: بعد كلِّ تصديرٍ يظهر زرُّ «نسخ تقرير التصدير» ينسخ نصّاً يبيّن أين ذهب الوقت (تحميل البيانات · تهيئة المصيّر · فكّ الترميز · رسم الإطارات · انتظار المرمّز · الإنهاء) ونسبةَ كلِّ مرحلة، ومعدّلَ الإطارات الفعليّ، والمسارَ والمرمّزَ المستخدَمين، وسطوعَ الإطارات المُقاس. وبهذا تُحلّ مسألةُ «التصدير بطيء» بأرقامٍ حقيقيّةٍ من جهازك بدل التخمين." },
-          { kind: "improve", text: "التقريرُ نصٌّ بسيطٌ (مفتاح: قيمة) بلغةٍ محايدةٍ يسهل لصقه ومقارنةُ تشغيلين، ويُدرج نسخةَ التطبيق من الحزمة نفسِها، ويصدر أيضاً عند فشل التصدير مع سببِ الفشل." },
+          { kind: "new", text: "تنوّع الإصدارات على كل الأجهزة: نسخة محمولة zip لويندوز تعمل من مجلد بلا تثبيت، ونسختا zip لماك (أبل سيليكون · إنتل) بجانب صورتَي dmg، وثلاث صيغ للينكس." },
+          { kind: "new", text: "التشغيل عند بدء النظام على لينكس: يكتب البرنامج مدخلاً قياسياً في ~/.config/autostart كما تفعل كل أسطح مكتب لينكس، ويشير إلى ملف AppImage نفسه لا إلى مسار مؤقّت." },
+          { kind: "improve", text: "ملفّ تعليمات لكل منصة يُنشر مع الإصدار: اختيار الصيغة، وتجاوز عقبة FUSE في AppImage، وقيود AppArmor في أوبنتو 24.04، وأنّ التحديث الذاتي يخصّ AppImage وحده." },
         ],
       },
       {
-        version: "v1.12.1",
-        date: "2026.10.14",
+        version: "v1.13.1",
+        date: "2026.10.16",
         changes: [
-          { kind: "fix", text: "شريط التسجيل فيه زرُّ التقاطٍ واحد فقط: كان زرُّ «تصوير منطقة» الذي أضفناه سابقاً يجاور زرَّ لقطة الشاشة، وكلاهما يفتح منتقي المنطقة نفسَه فيبدوان مكرَّرين. الآن خيارُ «تصوير منطقة» (أو إلغاؤها) داخل قائمة لقطة الشاشة نفسِها، وموضعٌ واحد لا غير — وهذا مُثبَّتٌ باختبار واجهة." },
-          { kind: "fix", text: "اسمُ المقطعِ وتاريخُه لم يعودا يُحرقان في الفيديو المُصدَّر افتراضيّاً: كانا يُرسمان كشريطٍ داكن أسفلَ كلِّ إطار، والخيارُ يخصُّك لا أن تكتشفه في ملفِّك. التصديرُ يظلُّ يعرض تشغيلَه إن أردته." },
+          { kind: "fix", text: "خيار «تصوير منطقة» يُعرض فقط حيث يُقصّ الإطار فعلاً: كان يظهر على ماك بينما المساعد هناك لا يقصّ، فيختار المستخدمُ منطقةً وتُسجَّل الشاشةُ كاملةً بصمت. الآن يظهر على ويندوز وحده، ومُثبَّت باختبار وحدة واختبارَي واجهة." },
+        ],
+      },
+      {
+        version: "v1.13.0",
+        date: "2026.10.15",
+        changes: [
+          { kind: "new", text: "إصدارات لينكس: AppImage يعمل في كل التوزيعات بلا تثبيت، و‎deb لأوبنتو ودبيان وما يتفرّع عنها، و‎rpm لفيدورا وريد هات وأوبن سوزي، مع قناة تحديث للينكس." },
+          { kind: "new", text: "نسخة ماك غير موقّعة (أبل سيليكون · إنتل) لمن يريد تجربتها بلا حساب Apple، مع خطوات تجاوز حاجز Gatekeeper في ملف التعليمات." },
+          { kind: "improve", text: "فحص آلي للحزم على لينكس: تُثبَّت وتُستخرَج وتُشغَّل فعلاً، وتُفحص كل مكتبة مشتركة (101 مكتبة) ومدخل قائمة التطبيقات والأيقونات — فلا يكون «البناء نجح» بديلاً عن «يعمل عندك»." },
         ],
       },
       {
         version: "v1.12.0",
-        date: "2026.10.14",
-        changes: [
-          { kind: "new", text: "زرُّ لقطةِ الشاشة صار زراً واحداً بخيارات: كان يظهر زرّان متجاوران (كاميرا + سهم) فبدا مكرراً. الآن زرٌّ واحد، والخياراتُ داخله، مع تعليمِ آخرِ وضعٍ استخدمتَه." },
-          { kind: "improve", text: "تحريرٌ أسلس: زمنُ التشغيل كان يُحدِّث حالةَ المحرّر مع كلِّ إطار (60 مرة/ث) فيُعاد رسمُ الشجرةِ كاملةً أثناءَ التشغيل. الآن يُحدَّث 30 مرة/ث مع تصريفِ القيمةِ الأخيرة، فالتوقّفُ والتنقّلُ يهبطان على الزمنِ الدقيق، والمعاينةُ ترسمُ بإطاراتها الكاملة." },
-          { kind: "fix", text: "مستوياتُ الجودةِ صارت حقيقية: كانت medium وgood وhigh تُخرج معدّلَ بتّ واحداً لا يتغيّر (لم يكن يُميَّز إلا source)، فاختيارُ الجودةِ لم يكن يُغيّر شيئاً. الآن high هو المرجعُ المعايَر، وgood ‏85%، وmedium ‏70% — أي جودةٌ أعلى عند الطلب، وملفاتٌ أصغرُ وترميزٌ أسرعُ في المستوياتِ الأدنى." },
-          { kind: "fix", text: "اسمُ المقطعِ وتاريخُه داخلَ الفيديو: تحقّقنا منهما على فيديو مُصدَّرٍ فعليّاً — الزاويةُ السفلى 118.2 مع العلامة مقابل 138.0 بدونها (أي أن العلامةَ مرسومةٌ حقاً)، وباقي الإطارِ لا يتغيّر. ومشروعٌ مصدرُه رابطُ معاينةٍ يُصدَّر بلا أيِّ عنوانٍ مطبوع." },
-        ],
-      },
-      {
-        version: "v1.11.2",
         date: "2026.10.13",
         changes: [
-          { kind: "fix", text: "علامةُ المقطع لم تعُد تحرقُ رابطَ المعاينة داخلَ الفيديو: كان اسمُ المقطع في الملفِ المُصدَّر يظهر كرابطٍ كاملٍ أسفلَ الإطار طوالَ المقطع (video?path=C%3A%5C…)، لأن مُنسِّقَ الاسم كان يقتطعُ القيمةَ عند آخر «/» فيلتقطُ الاستعلامَ كلَّه بدلَ اسمِ الملف. الآن يُحلُّ رابطُ المعاينة إلى مسارِ الملفِ الحقيقيّ أولاً، وإن تعذّر استخراجُ اسمٍ نظيفٍ لا تُرسمُ أيُّ علامةٍ إطلاقاً بدلَ طباعةِ عنوان." },
-          { kind: "improve", text: "يشمل الإصلاحُ المسارَين (الحديث والقديم) وملفاتَ GIF أيضاً، لأن الجميعَ يعتمدُ على مُنسِّقِ النصّ نفسِه." },
-        ],
-      },
-      {
-        version: "v1.11.1",
-        date: "2026.10.13",
-        changes: [
-          { kind: "improve", text: "تحصينُ التحقّق: قيودُ اختبارٍ جديدةٌ تحرسُ مسارَ حفظِ المشروع مع الرموزِ المبهمة (المشروعُ يُحفظُ بالمسارِ الحقيقيِّ لا بالرابط)، ومراجعةٌ كاملةٌ أُعيدت على كلِّ الوظائف: الأنواع · 1761 اختبار وحدة · جودةُ الشيفرة · البناء · وستةُ اختباراتِ تشغيلٍ حقيقيٍّ على التطبيق." },
-          { kind: "improve", text: "لا تغييرَ في سلوكِ التطبيق عن 1.11.0 — الإصدارُ مطابقٌ للحالةِ المُتحقَّق منها بالضبط." },
+          { kind: "new", text: "زرّ لقطة الشاشة صار زراً واحداً بخيارات داخله، مع تعليم آخر وضعٍ استخدمته — بدل زرّين متجاورين يبدوان مكرَّرين." },
+          { kind: "improve", text: "تحرير أسلس: زمن التشغيل يُحدَّث 30 مرة/ث مع تصريف القيمة الأخيرة، فتهبط المعاينة بإطاراتها الكاملة. وقياسُ تجزّؤ الإطارات على مصدر 4K يعطي 41 إطاراً/ث عند p95 = 41 ملّي ثانية." },
+          { kind: "fix", text: "مستويات الجودة صارت حقيقية: had medium وgood وhigh معدّلَ بتّ واحداً، فاختيار الجودة لم يكن يغيّر شيئاً." },
+          { kind: "fix", text: "اسم المقطع وتاريخه لم يعودا يُحرقان في الفيديو المُصدَّر افتراضيّاً، وقد تُحقّق من ذلك على ملف مُصدَّر فعليّ." },
         ],
       },
       {
         version: "v1.11.0",
         date: "2026.10.13",
         changes: [
-          { kind: "improve", text: "رابطُ المعاينة لم يعُد يحمل مسارَ ملفك: كان كلُّ رابطٍ ينتهي بالمسارِ الكامل، فيظهرُ ترتيبُ مجلداتك في كلِّ سمةِ مصدرٍ وتلميحٍ وسجلٍّ ولقطةِ شاشة. الآن يحملُ الرابطُ رمزاً مُبْهَماً (بصمةٌ بملحٍ عشوائيٍّ لكل تشغيل)، ويبقى الرابطُ القديمُ صالحاً." },
-          { kind: "improve", text: "وُحِّدت خمسُ نسخٍ من قارئ الرابط في مكانٍ واحد، فصار شكلُ الرابط مفهومًا في موضعٍ واحدٍ فقط، ولا يُسبّبُ فشلُ القراءة خطأً أثناء العرض." },
-        ],
-      },
-      {
-        version: "v1.10.1",
-        date: "2026.10.13",
-        changes: [
-          { kind: "improve", text: "ترتيبُ التسجيلاتِ القديمة: المقاطعُ التي سُجِّلت قبل أن ننقلَ التصويرَ إلى مجلد Cache كانت في الجذر مختلطةً مع الملفاتِ المُصدَّرة، فتُنقلُ الآن مرةً واحدةً ويُحدَّثُ مسارُها في كلِّ مشروعٍ يستخدمُها، فلا يتعطّلُ شيء." },
-          { kind: "improve", text: "لا يُنقلُ إلا ما صوّره البرنامج (الأسماءُ التي تبدأ بـ recording-)، فتبقى الملفاتُ المُصدَّرة والمستوردة كما هي، ولا كتابةَ فوق أي ملفٍ بالاسمِ نفسِه." },
+          { kind: "improve", text: "روابط المعاينة لم تعُد تحمل مسار ملفك: صار كل رابط رمزاً مبهمًا لا يكشف ترتيب مجلداتك." },
+          { kind: "improve", text: "وُحِّدت خمس نسخٍ من قارئ الرابط في مكان واحد، وفشل القراءة لم يعُد يُسقط الملف." },
         ],
       },
       {
         version: "v1.10.0",
         date: "2026.10.13",
         changes: [
-          { kind: "new", text: "خيارُ الاستمرارِ في العمل بالخلفية: إغلاقُ النافذة يُبقي Recordly في منطقة الإشعارات مستعداً للتسجيل، ولا ينقطعُ تسجيلٌ جارٍ بإغلاق نافذة. الإعدادُ في قسم الإعدادات العامة." },
-          { kind: "new", text: "أيقونةُ النظام صارت مُعرَّبةً بالكامل، وفيها أثناء التسجيل: إظهارُ التحكم · إيقافُ التسجيل · إيقافُ التسجيل والخروج (كي لا يضيعَ التسجيلُ عند الخروج)." },
-          { kind: "fix", text: "خياراتُ التلاشي والمزج بين المقاطع صارت في قسم «المشهد» — مكانها الطبيعي — بدل أن تكون مخفيةً داخل قسم تنسيق المؤشر، حيث لم يجدها أحد." },
-          { kind: "improve", text: "الخطوطُ في تنسيق النص صارت من خطوط الجهاز نفسِه، وحُذف خيارُ إضافة خطوط من Google Fonts: لا يُنزَّلُ أيُّ شيءٍ لتنسيقِ نص." },
-          { kind: "fix", text: "المحررُ يفتح على التكبير بثقة: بعضُ مديري النوافذ كان يتجاهلُ طلبَ التكبير قبل إظهارِ النافذة، فأصبح الطلبُ بعد الإظهارِ مع بديلٍ يملأُ مساحةَ العمل إن تُجوهل الطلب." },
-        ],
-      },
-      {
-        version: "v1.9.1",
-        date: "2026.10.13",
-        changes: [
-          { kind: "fix", text: "المزجُ المتقاطعُ يعملُ الآن على المسارِ القديمِ أيضاً: كان يتدرّجُ إلى تلاشٍ عبر الأسود على الأجهزةِ التي تعتمدُ على مسارِ المعالج، فيختلفُ شكلُ المشروعِ نفسِه بين جهازٍ وآخر. الآن المسارانِ يذوبانِ بالطريقةِ ذاتها (123.4 مقابل 124.1 في القياس الفعلي)." },
-          { kind: "improve", text: "هندسةُ الانتقالات: لا يمكنُ أن يتداخلَ تلاشيانِ على مقطعٍ أقصرَ من ملّي ثانيتين، والمزجُ المتقاطعُ يتوقّفُ عند القطعِ التالي بدل أن يبتلعَ المقطعَ الذي بعده." },
-          { kind: "improve", text: "التشخيصُ يسجّلُ الآن إن كان معرّفُ الشاشةِ المطلوبةِ قد حُلَّ فعلاً، فلا يبدو الرجوعُ الصامتُ إلى الشاشةِ الأساسية كأنه تنفيذٌ لاختيارك." },
+          { kind: "new", text: "الاستمرار في العمل بالخلفية: إغلاق النافذة يُبقي Recordly في منطقة الإشعارات مستعداً للتسجيل." },
+          { kind: "new", text: "أيقونة النظام صارت مُعرَّبة بالكامل، ومنها إظهار التحكم أو إيقاف التسجيل أو إيقافه والخروج معاً." },
+          { kind: "fix", text: "خيارات التلاشي والمزج انتقلت إلى قسم «المشهد» — مكانها الطبيعي — بعد أن كانت مخفية في تنسيق المؤشر." },
+          { kind: "improve", text: "خطوط تنسيق النص من خطوط الجهاز فقط، بلا تنزيل أي شيء من الإنترنت." },
         ],
       },
       {
         version: "v1.9.0",
         date: "2026.10.13",
         changes: [
-          { kind: "new", text: "تصويرُ منطقة ترسمُها بنفسك: زرٌّ في شريط الإطلاق يفتح منتقي المنطقة (نفسُ الذي تستخدمُه لاقتناصِ لقطة)، والمستطيلُ الذي ترسمُه يُقتصُّ إليه التسجيلُ بالكامل — فتُصوَّرُ تلك المنطقةُ وحدها مهما تنقّلتَ بين البرامج بعدها." },
-          { kind: "improve", text: "المنطقةُ تُرسَلُ بوحداتٍ فيزيائيةٍ نسبةً إلى الشاشة، فتبقى دقيقةً على الشاشاتِ المُقاسة (Scaling) بدل أن تنحرف بمقدارِ نسبةِ التكبير." },
-          { kind: "improve", text: "الاقتصاصُ يُثبَّتُ طوالَ التسجيلِ، والمسارُ القديمُ لتصويرِ الشاشةِ كاملةً لم يتغيّر إطلاقاً إن لم ترسم منطقة." },
-        ],
-      },
-      {
-        version: "v1.8.2",
-        date: "2026.10.13",
-        changes: [
-          { kind: "fix", text: "علاجُ الملفِ الأسود: على الأجهزةِ التي لا يرسمُ فيها مسارُ العرضِ الحديثُ أيَّ صورة، كان التصديرُ ينجحُ بصمتٍ ويُخرجُ ملفاً بلا صورة. الآن يُعادُ التصديرُ تلقائياً مرةً واحدةً على المسارِ القديم، وإن بقيَ أسودَ يظهرُ تحذيرٌ صريحٌ بدل رسالةِ نجاح." },
-        ],
-      },
-      {
-        version: "v1.8.1",
-        date: "2026.10.13",
-        changes: [
-          { kind: "improve", text: "تشخيصٌ جديدٌ لجودةِ التصدير: يقيسُ التطبيقُ سطوعَ الإطاراتِ التي رسمَها فعلاً ويسجّلُه، فلم يبقَ ممكنًا أن يخرجَ ملفٌّ أسودُ بصمت. وقد كشف هذا أن بعضَ الأجهزة (بلا تسريعِ رسومٍ فعلي) ترسمُ إطاراتٍ سوداءَ قبل الترميز." },
+          { kind: "new", text: "تصوير منطقة ترسمها بنفسك في شريط الإطلاق، والاقتصاص يبقى ثابتاً طوال التسجيل." },
+          { kind: "improve", text: "المنطقة تُرسَل بوحدات فيزيائية نسبةً إلى الشاشة، فتبقى دقيقة على الشاشات المُقاسة." },
         ],
       },
       {
         version: "v1.8.0",
         date: "2026.10.13",
         changes: [
-          { kind: "new", text: "المزجُ المتقاطع: بدلَ التلاشي عبر الأسود، يمكنُك الآن أن تختارَ أن يذوبَ المقطعُ في المقطعِ التالي مباشرةً — يثبتُ المقطعُ الصادرُ على إطارِه الأخير بينما يظهرُ التالي فوقه تدريجياً، بنفسِ الطولِ الذي تختارُه (120 إلى 2000 ملّي ثانية)." },
-          { kind: "new", text: "ثلاثةُ خياراتٍ للانتقال في الإعدادات: بلا انتقال · تلاشٍ عبر الأسود · مزجٌ متقاطع — مع شريطٍ واحدٍ لطولِ الانتقال." },
-          { kind: "fix", text: "إصلاحٌ حقيقيّ في المعاينة: كان الانتقالُ يُقاسُ على ساعةِ المصدرِ لا على الخطِّ الزمني، فلم يكن يظهرُ في مكانِ القطعِ بمجردِ أن تقصَّ أو تسرّع. الآن المعاينةُ والملفُّ المُصدَّرُ يتقاسمان الساعةَ الصحيحة." },
-          { kind: "improve", text: "اختبارٌ شاملٌ جديد يُثبِتُ أن الانتقالَ يصلُ إلى الملفّ فعلاً: يُصدِّرُ مشروعاً من مقطعين ويقيسُ سطوعَ الإطارِ عند القطع — التلاشي عبر الأسود 0.0 (سوادٌ تام) والمزجُ المتقاطع 124.1 (صورةٌ حقيقية)." },
-        ],
-      },
-      {
-        version: "v1.7.1",
-        date: "2026.10.13",
-        changes: [
-          { kind: "new", text: "نجاةٌ من انهيار الواجهة: إن تعطّل مُشغِّلُ المحرر فإنه يُعيدُ تحميلَه ويعيدُك تلقائياً إلى مشروعك المحفوظ — بدل نافذةٍ ميتة. وإعادةُ التحميل محكومةٌ بسقفٍ زمني فلا تدورُ في حلقةٍ لا تنتهي." },
-          { kind: "new", text: "إن تعطّل مُشغِّلُ واجهةِ التسجيل أثناءَ تسجيلٍ جارٍ، يُوقِفُ التطبيقُ الالتقاطَ أولاً فيُحفَظ ما وصل إلى القرص، ثم يُعيدُ التحميل — فلا يضيعُ التسجيلُ صامتاً." },
-          { kind: "new", text: "فحصُ مساحةِ القرص قبل التسجيلٍ وقبل التصدير: إن كانت المساحةُ الحرةُ أقلَّ من الحدّ اللازم يرفضُ التطبيقُ البدءَ فوراً برسالةٍ واضحةٍ تُبيّن المتاح — بدل أن يتوقّفَ التسجيلُ أو التصديرُ بعد دقائق." },
-        ],
-      },
-      {
-        version: "v1.7.0",
-        date: "2026.10.13",
-        changes: [
-          { kind: "new", text: "انتقالاتُ تلاشٍ تلقائيةٌ بين المقاطع: عند كلِّ نقطةٍ تقصُّ فيها مقطعاً، يتلاشى النصفان عبر الأسود بدل القفزةِ المباشرة — بمدةٍ تختارُها أنت (120 إلى 2000 ملّي ثانية، الافتراضي 320)." },
-          { kind: "new", text: "تحكّمٌ كامل في قسمِ الانتقالات ضمن الإعدادات: تشغيلٌ أو إيقاف، وشريطٌ لضبطِ طولِ التلاشي. والانتقالُ نفسُه تراه في المعاينةِ وفي الملفِّ المُصدَّر — كلاهما يقرأُ النموذجَ نفسَه." },
-          { kind: "fix", text: "إصلاحُ اختيارِ الشاشة: التطبيقُ الآن يتحققُ من مقياسِ كلِّ شاشةٍ وموضعها الفيزيائي، فيُميّز لوحَ 4K بمقياسِ 200% عن لوحِ 1080p بمقياسِ 100% — بدل أن يُسلّمك شاشةً أخرى على أجهزةِ المقاييسِ المختلطة." },
-          { kind: "improve", text: "لم يبقَ التطبيقُ يسرقُ التركيزَ من برنامجِك عند بدءِ التسجيل: لا يرفعُ النافذةَ المختارةَ إلا إن كانت مصغَّرةً أو مخفيّة." },
-          { kind: "improve", text: "لا يمكنُ أن يضيعَ تسجيلٌ جارٍ بسببِ إغلاقِ النوافذ: يعيدُ التطبيقُ أدواتِ التحكّمِ بدل أن يخرج، وتبقى أيقونةُ النظامِ طريقاً دائماً للإيقاف." },
-        ],
-      },
-      {
-        version: "v1.6.3",
-        date: "2026.10.13",
-        changes: [
-          { kind: "improve", text: "أداء: لم يعد التطبيقُ يعيدُ بناءَ معاينةِ المحررِ بعد كلِّ تصديرٍ ناجح — كان ذلك يعني سياقَ عرضٍ جديداً وإعادةَ ترجمةِ التظليلِ وتحميلَ الفيديو من جديد، ويظهرُ للمستخدم كتجمُّدٍ وميضِ تحميلٍ بعد انتهاءِ التصدير. يُعادُ البناءُ الآن فقط عندما يختلفُ مسارُ العرضِ المُستخدَم فعلاً." },
-          { kind: "improve", text: "قياسٌ جديدٌ لاستجابةِ المحررِ في اختباراتِ الجودة: عشرُ عملياتِ تقسيمٍ وتكبيرٍ متتاليةٍ تحافظُ على 60 إطاراً في الثانيةِ بلا أيِّ مهمةٍ حاجزة، مع ضمانِ بقاءِ المعاينةِ بعد التصدير." },
-        ],
-      },
-      {
-        version: "v1.6.2",
-        date: "2026.10.13",
-        changes: [
-          { kind: "fix", text: "إصلاحُ اختيارِ الشاشة: كان التطبيقُ يقارنُ إحداثياتٍ منطقيةً بأخرى فيزيائية، فتفشلُ المطابقةُ مع أيِّ شاشةٍ مُقاسَة (Scaling) وقد يُسجِّلُ شاشةً غيرَ التي اخترتَها. الآن يُثبَّت المقبضُ الصحيحُ بثلاثِ استراتيجياتٍ مُتحقَّقٍ منها، ويُسجَّلُ الاختيارُ في تشخيصِ الالتقاط." },
-          { kind: "fix", text: "أثناء التسجيلِ ينتقلُ التطبيقُ إلى أيقوناتِ ويندوز المخفية (شريط النظام) بأيقونةِ تسجيلٍ وزرِّ «إيقاف»، بدل أن تختفي النافذةُ بلا أثرٍ يُنقرُ عليه، ويُزالُ الرمزُ عند انتهاءِ التسجيل." },
-          { kind: "improve", text: "المحررُ يُفتحُ الآن مكبَّراً (Maximized) بدل نافذةٍ بحجمِ مساحةِ العمل، فيبدو واضحاً على الشاشاتِ الكبيرةِ والمُقاسَة." },
-        ],
-      },
-      {
-        version: "v1.6.1",
-        date: "2026.10.13",
-        changes: [
-          { kind: "improve", text: "أدواتُ الاختصاراتِ انتقلت إلى الشريطِ السفليِّ نفسِه مع أزرارِ التشغيل: زرُّ لوحةِ مفاتيحٍ يفتحُ كلَّ الخيارات — الحرقُ في الفيديو، سطرٌ أو سطران، الشكل، واللون — بلا صفٍّ إضافيٍّ يأخذُ من مساحةِ التحرير." },
-          { kind: "improve", text: "ويمكن إزالةُ الزرِّ من الشريطِ وإرجاعُه بضغطة، وتبقى كلُّ الخياراتِ في لوحةِ الإعدادات." },
-        ],
-      },
-      {
-        version: "v1.6.0",
-        date: "2026.10.10",
-        changes: [
-          { kind: "new", text: "شريطُ اختصاراتٍ جديد في مساحةِ التحرير: يُشعلُ ظهورَ المفاتيحِ في الفيديو، ويختارُ سطراً أو سطرين، ويبدّلُ الشكلَ — دون فتحِ الإعدادات." },
-          { kind: "new", text: "ثلاثةُ أشكالٍ لعرضِ الاختصارات: كبسولة، شريطٌ بعرضِ الإطار، أو نصٌّ فقط بلا خلفية." },
-          { kind: "new", text: "سطرٌ ثانٍ يعرضُ الاختصاراتِ التي سبقت الحالية، ولونُ تمييزٍ تختارُه من لوحةِ الإعدادات." },
-          { kind: "improve", text: "الشريطُ نفسُه يمكن إخفاؤه إن لم تردْه، ويبقى مخفيّاً مع زرٍّ صغيرٍ لإرجاعه." },
-        ],
-      },
-      {
-        version: "v1.5.2",
-        date: "2026.10.10",
-        changes: [
-          { kind: "fix", text: "بعد انتهاءِ التصديرِ بنجاحٍ كان المحررُ يتحوّلُ إلى شاشةٍ سوداءَ برسالةِ play() ويُخرجُك من عملك؛ الآن يبقى المحررُ كما هو ويظهرُ إشعارُ النجاحِ فقط." },
-          { kind: "fix", text: "إزالةُ ظهورِ رابطِ الملفّ أو مسارِه في أيِّ تلميحٍ للنافذة، مهما مرّ المؤشرُ على عنصرِ الفيديو." },
-          { kind: "improve", text: "معاينةُ المحررِ تتوقّفُ عن الرسمِ أثناء التسجيل، فيقلُّ الحملُ وتتحسّنُ السلاسةُ والاستجابةُ وسرعةُ الجهاز." },
-        ],
-      },
-      {
-        version: "v1.5.1",
-        date: "2026.10.10",
-        changes: [
-          { kind: "new", text: "المقاطعُ المنتهيةُ المصدرةُ تُحفَظ الآن في المجلدِ الأساسي Videos\\OraxRecordly مباشرة، فتراها فوراً." },
-          { kind: "new", text: "المقاطعُ الخامُ وملفاتُ الصوتِ تُكتَب داخل مجلد Cache فرعي، فيبقى المجلدُ الأساسيُّ لِما أنجزتَه." },
-          { kind: "fix", text: "لم يعد يظهر رابطُ الملفّ أو مسارُه عند مرورِ المؤشر على مقطع: التلميحُ يعرضُ اسمَ المقطعِ فقط." },
-        ],
-      },
-      {
-        version: "v1.5.0",
-        date: "2026.10.10",
-        changes: [
-          { kind: "new", text: "من لوحة المشاريع يمكنك فتح أي تسجيل خام في المحرر مباشرة: نقرةٌ مزدوجةٌ على البطاقة، أو «تحرير في المحرر» من قائمة البطاقة." },
-          { kind: "new", text: "نافذةُ معاينةِ الملفِّ صار فيها زرُّ «تحرير في المحرر»، فلا تبقى عالقاً في المشاهدةِ وحدها." },
-          { kind: "improve", text: "مسارٌ واحدٌ لفتحِ الوسائطِ في المحرر: الاستيرادُ وفتحُ تسجيلٍ من اللوحةِ يتركان المحررَ في الحالةِ ذاتها." },
-        ],
-      },
-      {
-        version: "v1.4.9",
-        date: "2026.10.10",
-        changes: [
-          { kind: "fix", text: "المشروعُ الذي نُقِلَ تسجيلُه أو حُذِف يشرحُ السببَ بلغةٍ واضحة بدلَ عرضِ مسارِ الملفّ، ويُزالُ تلقائياً من قائمةِ الأخيرة." },
-          { kind: "fix", text: "سجلُّ آخرِ الصادراتِ يُخفي الملفّاتِ التي لم تعد موجودة بدلَ أن يعرضَ زرَّ إظهارٍ لملفٍّ محذوف." },
-          { kind: "improve", text: "لا تلمسُ اختباراتُ الجودةِ بياناتِك: صار لها ملفٌّ ومجلدٌ خاصّانِ مؤقّتان، فلا تظهرُ مشاريعُ تجريبيّةٌ في مكتبتك." },
-        ],
-      },
-      {
-        version: "v1.4.8",
-        date: "2026.10.10",
-        changes: [
-          { kind: "fix", text: "التصديرُ يعملُ الآن على الأجهزةِ التي لا تُوفّرُ تسريعَ رسوم (أجهزةٌ افتراضيّة، سطحُ مكتبٍ بعيد، تعريفاتٌ محجوبة): يُسمَحُ بالعرضِ البرمجيّ بدلَ الفشل." },
-          { kind: "fix", text: "إن تعذّرَ تشغيلُ مسارِ العرضِ الحديث، يتحوّلُ التصديرُ تلقائياً إلى المسارِ القديمِ ويُكمل بدلَ التوقّف، مع تنبيهٍ واضح." },
-          { kind: "improve", text: "لا يُنشَرُ إصدارٌ إلا بعدَ نجاحِ اختبارِ تصديرٍ حقيقيٍّ للتطبيقِ كاملاً." },
-        ],
-      },
-      {
-        version: "v1.4.7",
-        date: "2026.10.10",
-        changes: [
-          { kind: "fix", text: "فتحُ التسجيلاتِ من مسارٍ بصيغةِ ويندوز القصيرة (مثل C:\\Users\\RUNNER~1) كان يُرفَض؛ الآن يُقرأ الملفّ من مكانه الحقيقيّ." },
-          { kind: "fix", text: "إن بدأت النافذةُ قبل اكتمالِ جسرِ النظام، يُعيدُ التطبيقُ تحميلَها مرّةً واحدةً تلقائياً بدلَ ظهورِ شاشةِ الخطأ." },
-          { kind: "improve", text: "اختبارٌ حقيقيٌّ للتطبيقِ كاملاً (تشغيلٌ وتصديرٌ والتحقّقُ من الملفّ الناتج) ضمن مسارِ الجودة." },
-        ],
-      },
-      {
-        version: "v1.4.6",
-        date: "2026.10.10",
-        changes: [
-          { kind: "fix", text: "لا نافذةَ سوداءَ بعد الآن أثناء التصدير — كانت ffmpeg تفتحُ نافذةَ أوامرَ تعرضُ مسارَ الملفِ المؤقّت." },
-          { kind: "new", text: "تسجيلاتُك وصادراتُك في مجلدٍ ظاهر: Videos\\OraxRecordly، مع نقلٍ آمنٍ لمرّةٍ واحدة." },
-          { kind: "new", text: "شريطُ تقدّمٍ في شريطِ المهامّ، وإشعارٌ عند انتهاءِ التصديرِ بضغطةٍ تُظهرُ الملفّ." },
-          { kind: "improve", text: "لا نومَ للجهازِ أثناء التصدير، وإلغاءٌ أنهى العملياتِ العالقة." },
-          { kind: "improve", text: "تقديرُ حجمِ الملفِّ قبل التصدير، وسجلُّ آخرِ الصادرات، وتذكّرُ إعداداتِك." },
-        ],
-      },
-      {
-        version: "v1.4.5",
-        date: "2026.10.06",
-        changes: [
-          { kind: "new", text: "اسمُ المقطعِ وتاريخُ التسجيلِ يُحرَقانِ في الفيديو — بمفتاحٍ في نافذةِ التصدير." },
-          { kind: "new", text: "حذفُ كلِّ التكبيراتِ التلقائيّةِ بضغطةٍ واحدة، دون المساسِ بتكبيراتِك اليدويّة." },
-          { kind: "improve", text: "تصديرٌ أصحُّ: لا يتوقّفُ عند غيابِ الصوت، ولا تُقتَلُ مهلةُ الانتظارِ تصديراً سليماً." },
-          { kind: "improve", text: "تحريرٌ وتصديرٌ أسرعُ: تخطيطُ الترجماتِ يُحسَبُ مرّةً واحدة، وذاكرةُ الصوتِ المُعدَّلِ إلى النِّصف." },
-        ],
-      },
-      {
-        version: "v1.4.4",
-        date: "2026.10.04",
-        changes: [
-          { kind: "fix", text: "النافذةُ تظهرُ دائماً عند التشغيل." },
-          { kind: "fix", text: "والشريطُ العائمُ يظهرُ معتماً إن تعذّرَ الشفاف." },
-        ],
-      },
-      {
-        version: "v1.4.3",
-        date: "2026.10.04",
-        changes: [
-          { kind: "new", text: "اختصاراتُك على الشاشة، مدمجةٌ في الفيديو." },
-          { kind: "fix", text: "التشغيلُ الباردُ لا يُظهرُ نافذةً فارغة." },
-        ],
-      },
-      {
-        version: "v1.4.2",
-        date: "2026.10.04",
-        changes: [
-          { kind: "new", text: "خطُّ SA Hazm العربيّ بأوزانِه الأربعة." },
-        ],
-      },
-      {
-        version: "v1.4.1",
-        date: "2026.10.04",
-        changes: [
-          { kind: "new", text: "إصداراتُ ويندوز تُنشَرُ من الوسم مباشرةً." },
-          { kind: "improve", text: "لا طلبَ مالٍ في أيِّ مكان." },
-        ],
-      },
-      {
-        version: "v1.4.0",
-        date: "2026.10.02",
-        changes: [
-          { kind: "new", text: "لقطاتُ شاشةٍ بمحرّرِ صورٍ مدمج." },
-          { kind: "new", text: "عربيّةٌ أولاً، من اليمينِ إلى اليسار، بلغتَين." },
-          { kind: "improve", text: "إيقافٌ أسرعُ بعد الخمول، ومقاطعُ أصغرُ بكثير." },
+          { kind: "fix", text: "استرداد التصدير الذي يخرج أسود بالكامل، وإصلاح مسارات الأصول التي كانت تنكسر بعد نقل الملفات." },
         ],
       },
     ],
@@ -574,7 +361,7 @@ const ar = {
       x64: "— معالجات إنتل (غير موقّع)",
     },
     toastTitle: "انطلقتْ رحلةُ التنزيل",
-    toastDesc: "جارٍ إحضارُ OraxRecordly v1.12.2 إلى {platform} — أهلاً بك في الحكاية.",
+    toastDesc: "جارٍ إحضارُ OraxRecordly v1.13.2 إلى {platform} — أهلاً بك في الحكاية.",
   },
 
   demo: {
@@ -602,7 +389,7 @@ const ar = {
   },
 
   sticky: {
-    title: "OraxRecordly v1.12.2",
+    title: "OraxRecordly v1.13.2",
     sub: "مجانيٌّ — بلا علاماتٍ مائيّة",
   },
 
@@ -845,284 +632,71 @@ const en: Dict = {
     kinds: { new: "NEW", improve: "IMPROVED", fix: "FIXED" },
     releases: [
       {
-        version: "v1.12.2",
-        date: "2026.10.14",
+        version: "v1.13.2",
+        date: "2026.10.16",
         changes: [
-          { kind: "new", text: "A copyable export report: after every export a 'Copy export report' action copies a summary of where the time went (metadata load, renderer init, decode loop, render frames, encode wait, finalization) with each phase's share, the real frames per second, the pipeline and encoder used, and the measured frame brightness. That turns 'exporting is slow' into real numbers from your machine instead of guesswork." },
-          { kind: "improve", text: "The report is plain key: value text, language-neutral and easy to paste or compare between two runs. It carries the app version from the packaged build, and a failed export gets a report too, with the reason." },
+          { kind: "new", text: "More than one way to install on every platform: a portable Windows zip that runs from a folder without installing, macOS zips (Apple Silicon and Intel) beside the disk images, and three Linux formats." },
+          { kind: "new", text: "Start at login on Linux: the app writes a standard entry to ~/.config/autostart, pointing at the AppImage itself rather than a temporary mount path." },
+          { kind: "improve", text: "A per-platform install note shipped with each release: which file to pick, the FUSE workaround for the AppImage, the AppArmor restriction on Ubuntu 24.04, and the fact that only the AppImage updates itself." },
         ],
       },
       {
-        version: "v1.12.1",
-        date: "2026.10.14",
+        version: "v1.13.1",
+        date: "2026.10.16",
         changes: [
-          { kind: "fix", text: "The recording bar has a single capture control: the record-a-region button added earlier sat next to the screenshot button and both opened the same area selector, which read as a duplicate. Recording a region (or clearing it) is now an entry inside the screenshot menu - one position, pinned by a UI test." },
-          { kind: "fix", text: "The clip name and date are no longer burned into exported videos by default: they were drawn as a dark bar across the bottom of every frame, and that is your decision to make rather than something to discover in your file. The export dialog still offers it." },
+          { kind: "fix", text: "Region recording is offered only where frames are really cropped: it used to appear on macOS, where the recorder cannot crop, so a drawn area silently recorded the whole screen. It is now Windows-only, pinned by a unit test and two UI tests." },
+        ],
+      },
+      {
+        version: "v1.13.0",
+        date: "2026.10.15",
+        changes: [
+          { kind: "new", text: "Linux builds: an AppImage that runs on any distribution without installing, a deb for Ubuntu and Debian, an rpm for Fedora and openSUSE, plus a Linux update feed." },
+          { kind: "new", text: "An unsigned macOS build (Apple Silicon and Intel) for anyone who wants to try it without an Apple account, with the Gatekeeper steps written out in the install note." },
+          { kind: "improve", text: "Automated package verification on Linux: each package is installed, unpacked and actually launched, with every shared library (101 of them), the desktop entry and the icons checked - so \"it built\" is never mistaken for \"it runs\"." },
         ],
       },
       {
         version: "v1.12.0",
-        date: "2026.10.14",
-        changes: [
-          { kind: "new", text: "The screenshot control is one button with its modes inside: it used to render as two buttons side by side (a camera and a caret), which read as a duplicate. The mode you used last is marked." },
-          { kind: "improve", text: "Smoother editing: the playback position set editor state on every animation frame (60/s), re-rendering the whole editor while playing. It now updates at 30/s with a trailing update, so pausing and seeking still land on the exact time while the preview keeps drawing every frame." },
-          { kind: "fix", text: "Quality tiers are real: medium, good and high all produced the same bitrate (only source was different), so picking a quality changed nothing. High is still the tuned reference, good is 85% and medium 70% - more quality when you ask for it, and smaller files with faster encoding on the lower tiers." },
-          { kind: "fix", text: "Clip name and date inside the video: verified on a real export - the bottom-left corner measures 118.2 with the label against 138.0 without it (the pill is genuinely drawn) and the rest of the frame is unchanged. A project whose source is a preview URL exports with no address printed on it." },
-        ],
-      },
-      {
-        version: "v1.11.2",
         date: "2026.10.13",
         changes: [
-          { kind: "fix", text: "The clip label no longer burns the preview address into the video: the exported file showed a full URL across the bottom of every frame (video?path=C%3A%5C...) because the name formatter split the value at the last slash and kept the whole query instead of the file name. The preview URL is now resolved to the real file first, and when no clean name can be established nothing is drawn rather than an address." },
-          { kind: "improve", text: "The fix covers both export pipelines and GIF, since they all share the one text builder." },
-        ],
-      },
-      {
-        version: "v1.11.1",
-        date: "2026.10.13",
-        changes: [
-          { kind: "improve", text: "Verification hardened: new test locks guard the project save path against the opaque media handles (a project is saved with the real path, never the URL), and the whole app was re-verified - types, 1761 unit tests, code quality, the build, and the six end-to-end specs on the real application." },
-          { kind: "improve", text: "No behaviour change from 1.11.0 - this release matches the verified state exactly." },
+          { kind: "new", text: "One screenshot button with the modes inside it, remembering the last one you used, instead of two buttons that looked duplicated." },
+          { kind: "improve", text: "Smoother editing: the playhead updates 30 times a second with a trailing flush, so the preview keeps drawing at full frame rate. A playback measurement on a 4K source reports 41 fps at a p95 of 41 ms." },
+          { kind: "fix", text: "Quality levels are real: medium, good and high produced one bitrate before, so the choice changed nothing." },
+          { kind: "fix", text: "The clip name and date are no longer burned into the export by default, verified against a real encoded file." },
         ],
       },
       {
         version: "v1.11.0",
         date: "2026.10.13",
         changes: [
-          { kind: "improve", text: "Preview URLs no longer contain your file path: every one used to end with the full path, putting your folder layout into every src attribute, tooltip, log line and screenshot. A URL now carries an opaque handle (a hash under a random per-run salt), and older links still work." },
-          { kind: "improve", text: "Five copies of the URL parser became one, so the URL shape is understood in a single place, and a failed lookup returns nothing instead of throwing while the editor renders." },
-        ],
-      },
-      {
-        version: "v1.10.1",
-        date: "2026.10.13",
-        changes: [
-          { kind: "improve", text: "Old recordings are tidied up: takes recorded before footage moved into the Cache folder sat in the root mixed with your exports. They are moved once now, and every project that uses them is repointed in the same pass, so nothing breaks." },
-          { kind: "improve", text: "Only what the recorder produced moves (names that start with recording-), so exports and imported media stay put, and no file is ever overwritten by one with the same name." },
+          { kind: "improve", text: "Preview URLs no longer carry your file paths: every URL is an opaque handle that reveals nothing about your folder layout." },
+          { kind: "improve", text: "Five copies of the URL reader were consolidated into one, and a failure to read one no longer drops the file." },
         ],
       },
       {
         version: "v1.10.0",
         date: "2026.10.13",
         changes: [
-          { kind: "new", text: "Keep running in the background: closing the window leaves Recordly in the notification area, ready to record again, and a recording is never cut short by closing a window. The setting lives in the general settings section." },
-          { kind: "new", text: "The notification-area menu is fully translated, and while recording it offers show controls, stop recording, and stop recording and quit - so leaving cannot lose a take." },
-          { kind: "fix", text: "The fade and dissolve choices between clips moved to the Scene section, where they belong, instead of being hidden inside the cursor-overlay section where nobody found them." },
-          { kind: "improve", text: "Text formatting now lists the fonts installed on your machine, and the Google Fonts import option is gone: nothing is downloaded to format a caption." },
-          { kind: "fix", text: "The editor opens maximized reliably: some window managers ignored the request made before the window was shown, so it is now made afterwards, with the work area used if it is ignored." },
-        ],
-      },
-      {
-        version: "v1.9.1",
-        date: "2026.10.13",
-        changes: [
-          { kind: "fix", text: "Cross-dissolve now works on the legacy pipeline too: on machines that rely on the processor path it degraded to a fade through black, so the same project looked different from one machine to another. Both pipelines now dissolve identically (123.4 against 124.1 in the actual measurement)." },
-          { kind: "improve", text: "Transition geometry: two fades can no longer overlap on a clip shorter than two milliseconds, and a dissolve stops at the next cut instead of swallowing the clip after it." },
-          { kind: "improve", text: "The capture diagnostics now record whether the requested display id was resolved again, so a silent fall back to the primary screen cannot read as if your choice was honoured." },
+          { kind: "new", text: "Keep working in the background: closing the window leaves Recordly in the notification area, ready to record." },
+          { kind: "new", text: "The tray is fully localized, and offers to show the controls, stop recording, or stop and quit." },
+          { kind: "fix", text: "Fade and cross-dissolve options moved to the Scene section where they belong, after being hidden inside cursor formatting." },
+          { kind: "improve", text: "Text formatting uses device fonts only, and downloads nothing." },
         ],
       },
       {
         version: "v1.9.0",
         date: "2026.10.13",
         changes: [
-          { kind: "new", text: "Record a region you draw: a button in the launch bar opens the same picker used for a region screenshot, and the rectangle you draw crops the whole recording — only that part is captured, however you move between programs afterwards." },
-          { kind: "improve", text: "The region is sent in monitor-relative physical pixels, so it stays exact on scaled displays instead of drifting by the scale factor." },
-          { kind: "improve", text: "The crop is fixed for the whole take (unlike a window crop, which is re-derived every frame), and the full-screen path is unchanged when no region is drawn." },
-        ],
-      },
-      {
-        version: "v1.8.2",
-        date: "2026.10.13",
-        changes: [
-          { kind: "fix", text: "Black exports are handled: on machines where the modern renderer draws nothing, the export used to succeed silently and produce a file with no picture. It is now retried once on the legacy pipeline automatically, and if it is still black you get an explicit warning instead of a success message." },
-        ],
-      },
-      {
-        version: "v1.8.1",
-        date: "2026.10.13",
-        changes: [
-          { kind: "improve", text: "A new export-quality check: the app measures the brightness of the frames it actually rendered and records it, so a black export can no longer happen silently. It already revealed that some machines (without real GPU acceleration) render black frames before encoding." },
+          { kind: "new", text: "Record a region you draw yourself from the launch bar, with the crop held for the whole recording." },
+          { kind: "improve", text: "The region is sent in physical units relative to the display, so it stays accurate on scaled screens." },
         ],
       },
       {
         version: "v1.8.0",
         date: "2026.10.13",
         changes: [
-          { kind: "new", text: "Cross-dissolve: instead of fading through black you can now have one clip dissolve straight into the next — the outgoing clip holds on its last frame while the incoming one appears over it, at the length you choose (120 to 2000 ms)." },
-          { kind: "new", text: "Three transition styles in the settings: none, through black, and cross-dissolve — with a single slider for the length." },
-          { kind: "fix", text: "A real preview bug fixed: the transition was sampled on the source clock instead of the timeline clock, so it never appeared where the cut was as soon as you trimmed or sped anything up. The preview and the exported file now share the correct clock." },
-          { kind: "improve", text: "A new end-to-end proof that the transition reaches the file: it exports a two-clip project and measures the frame at the cut — through-black is 0.0 luma (pure black), cross-dissolve is 124.1 (a real picture)." },
-        ],
-      },
-      {
-        version: "v1.7.1",
-        date: "2026.10.13",
-        changes: [
-          { kind: "new", text: "Recovery from a renderer crash: if the editor's renderer dies it reloads and puts you straight back into your saved project instead of leaving a dead window. Reloads are rate-limited so the app can never spin in a crash loop." },
-          { kind: "new", text: "If the recording window's renderer dies during a recording, the app stops the capture first so whatever reached the disk is kept, then reloads — a take is never lost silently." },
-          { kind: "new", text: "Free-space check before recording and before exporting: when the disk cannot hold the result the app refuses immediately with a clear message showing what is available, instead of failing after minutes of work." },
-        ],
-      },
-      {
-        version: "v1.7.0",
-        date: "2026.10.13",
-        changes: [
-          { kind: "new", text: "Automatic fade transitions between clips: at every point where you cut a clip apart, the two halves fade through black instead of jumping, with a length you choose (120 to 2000 ms, 320 by default)." },
-          { kind: "new", text: "A dedicated transitions section in the settings: on or off, plus a slider for the fade length. The same fade you see in the preview is the one written into the exported file — both read one model." },
-          { kind: "fix", text: "Screen selection fixed: the app now checks each display's scale factor and physical position, so a 4K panel at 200% is told apart from a 1080p panel at 100% instead of handing back another screen on mixed-DPI machines." },
-          { kind: "improve", text: "The app no longer steals focus from your program when a recording starts: the chosen window is only raised when it is minimized or hidden." },
-          { kind: "improve", text: "An in-flight recording can no longer be lost to closing windows: the app brings its controls back instead of quitting, and the tray icon always remains a way to stop." },
-        ],
-      },
-      {
-        version: "v1.6.3",
-        date: "2026.10.13",
-        changes: [
-          { kind: "improve", text: "Performance: a successful export no longer rebuilds the editor preview — that meant a new rendering context, shader recompiles and a full video reload, felt as a freeze and a loading flash right after exporting. The preview is only rebuilt when the export actually ran on a different renderer pipeline." },
-          { kind: "improve", text: "The quality suite now measures editor responsiveness: ten consecutive split and zoom edits hold 60 frames per second with no blocking task, and the export spec guarantees the preview stays mounted." },
-        ],
-      },
-      {
-        version: "v1.6.2",
-        date: "2026.10.13",
-        changes: [
-          { kind: "fix", text: "Screen choice fixed: the app compared logical coordinates with physical ones, so the match failed on any scaled display and it could record a different screen than the one you picked. The right monitor handle is now pinned through three validated strategies, and the chosen match is recorded in the capture diagnostics." },
-          { kind: "fix", text: "While recording, the app now moves into the Windows hidden-icons area with a recording icon and a Stop action instead of the window vanishing with nothing left to click; the entry is removed when the recording ends." },
-          { kind: "improve", text: "The editor opens maximized instead of sized to the work area, so it reads clearly on large and scaled displays." },
-        ],
-      },
-      {
-        version: "v1.6.1",
-        date: "2026.10.13",
-        changes: [
-          { kind: "improve", text: "The shortcut controls moved into the playback bar next to play and split: one keyboard button opens everything — burn into the video, one line or two, the shape, and the colour — with no extra row taking height from the editing area." },
-          { kind: "improve", text: "The button can be removed from that bar and brought back with one click, and every option stays available in the settings panel." },
-        ],
-      },
-      {
-        version: "v1.6.0",
-        date: "2026.10.10",
-        changes: [
-          { kind: "new", text: "A new shortcut bar in the editing area: turn the on-screen keys on, choose one line or two, and switch the look without opening settings." },
-          { kind: "new", text: "Three looks for the shortcut display: a capsule, a full-width bar, or plain text with no plate." },
-          { kind: "new", text: "An optional second line showing the shortcuts pressed just before the current one, plus an accent colour of your choice." },
-          { kind: "improve", text: "The bar itself can be hidden if you do not want it, and it stays hidden behind a small chip that brings it back." },
-        ],
-      },
-      {
-        version: "v1.5.2",
-        date: "2026.10.10",
-        changes: [
-          { kind: "fix", text: "A successful export used to drop the editor onto a black screen with the play() message and out of your work; the editor now stays open and you just get the success notice." },
-          { kind: "fix", text: "No window tooltip can show a file link or path any more, whichever video element the cursor passes over." },
-          { kind: "improve", text: "The editor preview stops drawing while a recording runs, so the machine stays responsive and smoother." },
-        ],
-      },
-      {
-        version: "v1.5.1",
-        date: "2026.10.10",
-        changes: [
-          { kind: "new", text: "A finished export is saved straight into the main Videos\\OraxRecordly folder, so you see it immediately." },
-          { kind: "new", text: "Raw footage and its audio sidecars are written to a Cache subfolder, keeping the main folder for what you finished." },
-          { kind: "fix", text: "Hovering a clip no longer shows a file link or path: the tooltip shows the clip name." },
-        ],
-      },
-      {
-        version: "v1.5.0",
-        date: "2026.10.10",
-        changes: [
-          { kind: "new", text: "Open any raw recording straight in the editor from the projects dashboard: double-click the card, or use Edit in editor from its menu." },
-          { kind: "new", text: "The raw-file preview now offers Edit in editor, so watching a clip is no longer a dead end." },
-          { kind: "improve", text: "One path loads media into the editor: importing a file and opening a recording both leave the editor in the same state." },
-        ],
-      },
-      {
-        version: "v1.4.9",
-        date: "2026.10.10",
-        changes: [
-          { kind: "fix", text: "A project whose recording was moved or deleted now explains that in plain language instead of showing a file path, and leaves the recent list." },
-          { kind: "fix", text: "The recent-exports list hides files that no longer exist instead of offering to reveal a deleted file." },
-          { kind: "improve", text: "Quality tests no longer touch your data: they use their own throwaway profile and folder, so no test projects appear in your library." },
-        ],
-      },
-      {
-        version: "v1.4.8",
-        date: "2026.10.10",
-        changes: [
-          { kind: "fix", text: "Exporting now works on machines without GPU acceleration (virtual machines, remote desktops, blocklisted drivers) instead of failing." },
-          { kind: "fix", text: "If the modern renderer cannot start, the export downgrades to the legacy pipeline by itself and finishes, with a clear notice." },
-          { kind: "improve", text: "No release is published before a real end-to-end export test of the running app passes." },
-        ],
-      },
-      {
-        version: "v1.4.7",
-        date: "2026.10.10",
-        changes: [
-          { kind: "fix", text: "Opening a recording from a Windows short path (C:\\Users\\RUNNER~1) was refused; the real location is now used." },
-          { kind: "fix", text: "If a window starts before the system bridge is ready, the app reloads it once instead of showing the error screen." },
-          { kind: "improve", text: "A real end-to-end test of the running app (boot, export, and verify the output file) in the quality pipeline." },
-        ],
-      },
-      {
-        version: "v1.4.6",
-        date: "2026.10.10",
-        changes: [
-          { kind: "fix", text: "No more black console window during export — ffmpeg was showing its command line with the temp path." },
-          { kind: "new", text: "Recordings and exports live in a visible folder: Videos\\OraxRecordly, moved safely once." },
-          { kind: "new", text: "Taskbar progress, a desktop notification when an export finishes, and one click to reveal the file." },
-          { kind: "improve", text: "The machine no longer sleeps mid-export, and cancelling now cleans up every child process." },
-          { kind: "improve", text: "Pre-export size estimate, a recent-exports list, and remembered export settings." },
-        ],
-      },
-      {
-        version: "v1.4.5",
-        date: "2026.10.06",
-        changes: [
-          { kind: "new", text: "Clip name and recording date/time burned into the video, with an export toggle." },
-          { kind: "new", text: "Delete every auto-generated zoom in one click, keeping your manual zooms." },
-          { kind: "improve", text: "More reliable exports: no abort when audio is missing, and no false finalization timeout." },
-          { kind: "improve", text: "Faster editing and exporting: caption layout is cached and edited-audio memory is halved." },
-        ],
-      },
-      {
-        version: "v1.4.4",
-        date: "2026.10.04",
-        changes: [
-          { kind: "fix", text: "The window always appears on launch." },
-          { kind: "fix", text: "The floating bar shows solid if transparency fails." },
-        ],
-      },
-      {
-        version: "v1.4.3",
-        date: "2026.10.04",
-        changes: [
-          { kind: "new", text: "Your shortcuts on screen, burned into the video." },
-          { kind: "fix", text: "A cold launch never shows a blank window." },
-        ],
-      },
-      {
-        version: "v1.4.2",
-        date: "2026.10.04",
-        changes: [
-          { kind: "new", text: "The SA Hazm Arabic font, in four weights." },
-        ],
-      },
-      {
-        version: "v1.4.1",
-        date: "2026.10.04",
-        changes: [
-          { kind: "new", text: "Windows releases publish straight from a tag." },
-          { kind: "improve", text: "No money is asked for, anywhere." },
-        ],
-      },
-      {
-        version: "v1.4.0",
-        date: "2026.10.02",
-        changes: [
-          { kind: "new", text: "Screenshots with a built-in image editor." },
-          { kind: "new", text: "Arabic-first RTL, in two languages." },
-          { kind: "improve", text: "Faster stop after idle, much smaller clips." },
+          { kind: "fix", text: "Recovered exports that came out completely black, and fixed asset paths that broke after moving files." },
         ],
       },
     ],
@@ -1190,7 +764,7 @@ const en: Dict = {
       x64: "- Intel Macs (unsigned)",
     },
     toastTitle: "The download has launched",
-    toastDesc: "Bringing OraxRecordly v1.12.2 to {platform} — welcome to the story.",
+    toastDesc: "Bringing OraxRecordly v1.13.2 to {platform} — welcome to the story.",
   },
 
   demo: {
@@ -1218,7 +792,7 @@ const en: Dict = {
   },
 
   sticky: {
-    title: "OraxRecordly v1.12.2",
+    title: "OraxRecordly v1.13.2",
     sub: "Free — no watermarks",
   },
 
