@@ -15,68 +15,130 @@ import { useMagnetic } from "@/hooks/use-magnetic";
 import { cn } from "@/lib/utils";
 
 /**
- * The Windows installer published by the desktop release pipeline. GitHub
- * redirects `…/releases/latest/download/<asset>` to the asset of the most
- * recent release and serves it as an attachment — a real, direct download.
+ * Every download below is a real asset of the newest release. GitHub redirects
+ * `…/releases/latest/download/<asset>` to that file and serves it as an
+ * attachment, so each link is one click away from the bytes - there is no
+ * intermediate page to search.
  */
-const WINDOWS_INSTALLER =
-  "https://github.com/Mohammedorax/OraxRecordly/releases/latest/download/OraxRecordly-windows-x64.exe";
+const ASSET_BASE = "https://github.com/Mohammedorax/OraxRecordly/releases/latest/download";
 
-/**
- * The three Linux packages the release pipeline publishes, each a real direct
- * download of the newest release:
- *
- *   AppImage  runs on any distribution without installing anything
- *   deb       Debian, Ubuntu, Mint, Pop!_OS, Kali
- *   rpm       Fedora, RHEL, openSUSE
- */
-const LINUX_ASSET_BASE =
-  "https://github.com/Mohammedorax/OraxRecordly/releases/latest/download";
-const LINUX_VARIANTS = [
-  { name: "AppImage", asset: "OraxRecordly-linux-x64.AppImage" },
-  { name: "deb", asset: "OraxRecordly-linux-x64.deb" },
-  { name: "rpm", asset: "OraxRecordly-linux-x64.rpm" },
-] as const;
-
-/**
- * The macOS disk images are published unsigned (no Apple Developer account), so
- * the note next to each one says so and the release ships the Gatekeeper steps.
- * The zip is the same bundle for anyone who would rather drag the app out than
- * mount an image.
- */
-const MAC_VARIANTS = [
-  { name: "arm64", variant: "dmg", asset: "OraxRecordly-macos-arm64-unsigned.dmg" },
-  { name: "x64", variant: "dmg", asset: "OraxRecordly-macos-x64-unsigned.dmg" },
-  { name: "arm64", variant: "zip", asset: "OraxRecordly-macos-arm64-unsigned.zip" },
-  { name: "x64", variant: "zip", asset: "OraxRecordly-macos-x64-unsigned.zip" },
-] as const;
-
-/** The second Windows package: the same app in a folder, without installing. */
-const WINDOWS_PORTABLE = "OraxRecordly-windows-x64.zip";
+/** The installer the auto-updater works with: the recommended Windows package. */
+const WINDOWS_INSTALLER = `${ASSET_BASE}/OraxRecordly-windows-x64.exe`;
 
 /** Secondary destination: every release, every platform. */
 const ALL_RELEASES = "https://github.com/Mohammedorax/OraxRecordly/releases";
 
+type PlatformKey = "Windows" | "macOS" | "Linux";
+type PackageNoteKey =
+  | "windowsInstaller"
+  | "windowsPortable"
+  | "macArm64Dmg"
+  | "macX64Dmg"
+  | "macArm64Zip"
+  | "macX64Zip"
+  | "linuxAppImage"
+  | "linuxDeb"
+  | "linuxRpm";
+
+interface PackageOption {
+  /** Shown on the row in mono: the file you are about to get. */
+  label: string;
+  /** The real asset name, appended to the release download base. */
+  asset: string;
+  /** Real Content-Length, in the decimal megabytes users see elsewhere. */
+  size: string;
+  noteKey: PackageNoteKey;
+}
+
+interface PlatformOption {
+  key: PlatformKey;
+  icon: typeof Monitor;
+  noteIndex: number;
+  packages: PackageOption[];
+}
+
 /**
- * What the release pipeline actually publishes today: the Windows installer and
- * the three Linux packages. macOS is listed so those visitors land on the
- * releases page — never a download we cannot serve.
- *
- * The size is the real Content-Length the release asset serves, in the same
- * decimal MB the vendor pages use.
+ * What the release pipeline publishes today, per platform. Windows and macOS
+ * lead with the package most people want; Linux leads with the AppImage, which
+ * needs no installation and no root, followed by the two packages that give a
+ * Linux desktop real system integration.
  */
-const PLATFORMS = [
+const PLATFORM_OPTIONS: PlatformOption[] = [
   {
-    name: "Windows",
+    key: "Windows",
     icon: Monitor,
-    meta: "161.4 MB",
-    href: WINDOWS_INSTALLER,
-    direct: true,
+    noteIndex: 0,
+    packages: [
+      {
+        label: "exe",
+        asset: "OraxRecordly-windows-x64.exe",
+        size: "161.4 MB",
+        noteKey: "windowsInstaller",
+      },
+      {
+        label: "zip",
+        asset: "OraxRecordly-windows-x64.zip",
+        size: "209.6 MB",
+        noteKey: "windowsPortable",
+      },
+    ],
   },
-  { name: "macOS", icon: Laptop, meta: "dmg", href: ALL_RELEASES, direct: false },
-  // Linux has builds now, so it must not read as "no build yet"; the three
-  // formats are offered as their own links below the row.
-  { name: "Linux", icon: Terminal, meta: "AppImage · deb · rpm", href: ALL_RELEASES, direct: false },
+  {
+    key: "macOS",
+    icon: Laptop,
+    noteIndex: 1,
+    packages: [
+      {
+        label: "arm64 dmg",
+        asset: "OraxRecordly-macos-arm64-unsigned.dmg",
+        size: "159.8 MB",
+        noteKey: "macArm64Dmg",
+      },
+      {
+        label: "x64 dmg",
+        asset: "OraxRecordly-macos-x64-unsigned.dmg",
+        size: "163.2 MB",
+        noteKey: "macX64Dmg",
+      },
+      {
+        label: "arm64 zip",
+        asset: "OraxRecordly-macos-arm64-unsigned.zip",
+        size: "154.9 MB",
+        noteKey: "macArm64Zip",
+      },
+      {
+        label: "x64 zip",
+        asset: "OraxRecordly-macos-x64-unsigned.zip",
+        size: "158.4 MB",
+        noteKey: "macX64Zip",
+      },
+    ],
+  },
+  {
+    key: "Linux",
+    icon: Terminal,
+    noteIndex: 2,
+    packages: [
+      {
+        label: "AppImage",
+        asset: "OraxRecordly-linux-x64.AppImage",
+        size: "177.5 MB",
+        noteKey: "linuxAppImage",
+      },
+      {
+        label: "deb",
+        asset: "OraxRecordly-linux-x64.deb",
+        size: "144.2 MB",
+        noteKey: "linuxDeb",
+      },
+      {
+        label: "rpm",
+        asset: "OraxRecordly-linux-x64.rpm",
+        size: "131.1 MB",
+        noteKey: "linuxRpm",
+      },
+    ],
+  },
 ];
 
 type Variant = "button" | "compact" | "link";
@@ -84,12 +146,12 @@ type Variant = "button" | "compact" | "link";
 /**
  * The download island.
  *
- * The primary controls are REAL download links to the Windows installer — no
- * intermediate hop, no toast-only fake. The platform dialog is still here as
- * the "something else / older build" surface: `listen` opts ONE canonical
- * instance into the global triggers (the "D" hotkey and the header's download
- * button dispatch `orax:download`), and the dialog carries the secondary
- * "all releases" link.
+ * The controls open the chooser rather than assuming the visitor is on Windows:
+ * the chooser lists one row per real package - installer or portable on Windows,
+ * both architectures as disk image or zip on macOS, and the three distribution
+ * packages on Linux - and each row is a direct link to the file. `listen` opts
+ * ONE canonical instance into the global triggers (the "D" hotkey and the
+ * header's download button dispatch `orax:download`).
  */
 export function DownloadCTA({
   variant = "button",
@@ -103,8 +165,9 @@ export function DownloadCTA({
 }) {
   const { t, lang } = useI18n();
   const [open, setOpen] = useState(false);
+  const [platform, setPlatform] = useState<PlatformKey>("Windows");
   const { toast } = useToast();
-  const magnetic = useMagnetic<HTMLAnchorElement>(0.22);
+  const magnetic = useMagnetic<HTMLButtonElement>(0.22);
   const DirArrow = lang === "ar" ? ArrowUpLeft : ArrowUpRight;
   const cursorLabel = lang === "ar" ? "حمّل" : "Get";
 
@@ -115,56 +178,57 @@ export function DownloadCTA({
     return () => window.removeEventListener("orax:download", onCall);
   }, [listen]);
 
-  const announce = (platform: string) => {
+  const announce = (name: string) => {
     toast({
       title: t.download.toastTitle,
-      description: t.download.toastDesc.replace("{platform}", platform),
+      description: t.download.toastDesc.replace("{platform}", name),
     });
   };
+
+  const openChooser = () => setOpen(true);
+  const selected =
+    PLATFORM_OPTIONS.find((option) => option.key === platform) ?? PLATFORM_OPTIONS[0];
 
   return (
     <>
       {variant === "button" && (
-        <a
+        <button
           ref={magnetic}
-          href={WINDOWS_INSTALLER}
-          download
+          type="button"
+          onClick={openChooser}
           data-cursor
           data-cursor-label={cursorLabel}
-          onClick={() => announce("Windows")}
           className="group inline-flex items-center gap-3 rounded-full bg-orax-blue px-8 py-4 text-lg font-medium text-white transition-colors duration-500 ease-editorial hover:bg-[#0F55A0]"
         >
           <Download className="size-5" strokeWidth={1.5} />
           {t.download.button}
-        </a>
+        </button>
       )}
 
       {variant === "compact" && (
-        <a
-          href={WINDOWS_INSTALLER}
-          download
+        <button
+          type="button"
+          onClick={openChooser}
           data-cursor
           data-cursor-label={cursorLabel}
-          onClick={() => announce("Windows")}
           className="inline-flex items-center gap-2 rounded-full bg-orax-blue px-5 py-2.5 text-sm font-medium text-white transition-colors duration-500 ease-editorial hover:bg-[#0F55A0]"
         >
           <Download className="size-4" strokeWidth={1.5} />
           {t.download.compact}
-        </a>
+        </button>
       )}
 
       {variant === "link" && (
-        <a
-          href={WINDOWS_INSTALLER}
-          download
+        <button
+          type="button"
+          onClick={openChooser}
           data-cursor
           data-cursor-label={cursorLabel}
-          onClick={() => announce("Windows")}
           className="mono group inline-flex items-center gap-2 border-b border-orax-blue pb-1 text-orax-blue transition-colors duration-500 ease-editorial hover:text-[#0F55A0]"
         >
           <Download className="size-4" strokeWidth={1.5} />
           {t.download.button}
-        </a>
+        </button>
       )}
 
       {/* Secondary, always visible next to the primary CTA: every release,
@@ -194,36 +258,70 @@ export function DownloadCTA({
             </DialogDescription>
           </DialogHeader>
 
-          <ul className="mt-6 space-y-3">
-            {PLATFORMS.map((p, i) => (
-              <li key={p.name}>
+          {/*
+            * The platform chooser. Three systems, and under each one the packages
+            * that system actually has - the distribution names are spelled out on
+            * the rows rather than hidden behind a generic "Linux" label.
+            */}
+          <div
+            role="tablist"
+            aria-label={t.download.choosePlatform}
+            className="mt-6 flex items-center gap-1 rounded-full border border-ink/10 p-1"
+          >
+            {PLATFORM_OPTIONS.map((option) => {
+              const active = option.key === selected.key;
+              return (
+                <button
+                  key={option.key}
+                  type="button"
+                  role="tab"
+                  aria-selected={active}
+                  onClick={() => setPlatform(option.key)}
+                  className={cn(
+                    "mono flex flex-1 items-center justify-center gap-2 rounded-full px-3 py-2 text-xs transition-colors duration-500 ease-editorial",
+                    active
+                      ? "bg-orax-blue text-white"
+                      : "text-ink-soft hover:text-orax-blue",
+                  )}
+                >
+                  <option.icon className="size-4" strokeWidth={1.5} />
+                  {option.key}
+                </button>
+              );
+            })}
+          </div>
+
+          <p className="mt-4 text-start text-sm text-ink-soft">
+            {t.download.platforms[selected.noteIndex].note}
+          </p>
+
+          <ul className="mt-3 space-y-2">
+            {selected.packages.map((pkg) => (
+              <li key={pkg.asset}>
                 <a
-                  href={p.href}
-                  {...(p.direct ? { download: true } : { target: "_blank", rel: "noreferrer" })}
+                  href={`${ASSET_BASE}/${pkg.asset}`}
+                  target="_blank"
+                  rel="noreferrer"
                   onClick={() => {
-                    // Only a real installer download may announce itself.
-                    if (p.direct) announce(p.name);
+                    announce(selected.key);
                     setOpen(false);
                   }}
-                  className="group flex w-full items-center justify-between rounded-2xl border border-ink/10 px-5 py-4 transition-colors duration-500 ease-editorial hover:border-orax-blue hover:bg-orax-blue hover:text-white"
+                  className="group flex w-full items-center justify-between gap-4 rounded-2xl border border-ink/10 px-5 py-4 transition-colors duration-500 ease-editorial hover:border-orax-blue hover:bg-orax-blue hover:text-white"
                 >
-                  <span className="flex items-center gap-4">
-                    <p.icon className="size-6" strokeWidth={1.5} />
-                    <span className="text-start">
-                      <span className="block text-lg font-medium" dir="ltr">
-                        {p.name}
-                      </span>
-                      <span className="block text-sm text-ink-soft group-hover:text-white/60">
-                        {t.download.platforms[i].note}
-                      </span>
+                  <span className="flex min-w-0 flex-col text-start">
+                    <span className="mono font-medium" dir="ltr">
+                      {pkg.label}
+                    </span>
+                    <span className="mt-1 text-sm text-ink-soft group-hover:text-white/70">
+                      {t.download.packages[pkg.noteKey]}
                     </span>
                   </span>
                   <span className="flex shrink-0 flex-col items-end gap-1">
                     <span
                       className="mono whitespace-nowrap text-mink-50 group-hover:text-white/60"
-                      dir={p.meta ? "ltr" : undefined}
+                      dir="ltr"
                     >
-                      {p.meta || t.labels.noBuildYet}
+                      {pkg.size}
                     </span>
                     <DirArrow
                       className="size-4 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
@@ -231,67 +329,6 @@ export function DownloadCTA({
                     />
                   </span>
                 </a>
-
-                {/*
-                  * Linux ships three packages rather than one, so each format gets
-                  * its own real download link instead of hiding behind a releases
-                  * page the visitor then has to search. macOS does the same for its
-                  * two architectures, and says plainly that it is unsigned.
-                  */}
-                {p.name === "Linux" ? (
-                  <div className="mt-2 flex flex-wrap gap-2 ps-2">
-                    {LINUX_VARIANTS.map((variant) => (
-                      <a
-                        key={variant.name}
-                        href={`${LINUX_ASSET_BASE}/${variant.asset}`}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="mono rounded-full border border-ink/15 px-3 py-1 text-xs text-ink-soft transition-colors duration-500 ease-editorial hover:border-orax-blue hover:text-orax-blue"
-                      >
-                        {variant.name}
-                        <span className="text-mink-40">
-                          {" "}
-                          {t.download.linuxFormats[variant.name]}
-                        </span>
-                      </a>
-                    ))}
-                  </div>
-                ) : null}
-
-                {p.name === "macOS" ? (
-                  <div className="mt-2 flex flex-wrap gap-2 ps-2">
-                    {MAC_VARIANTS.map((variant) => (
-                      <a
-                        key={`${variant.name}-${variant.variant}`}
-                        href={`${LINUX_ASSET_BASE}/${variant.asset}`}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="mono rounded-full border border-ink/15 px-3 py-1 text-xs text-ink-soft transition-colors duration-500 ease-editorial hover:border-orax-blue hover:text-orax-blue"
-                      >
-                        {variant.name} {variant.variant}
-                        <span className="text-mink-40">
-                          {" "}
-                          {t.download.macFormats[variant.name]}
-                          {variant.variant === "zip" ? ` · ${t.download.portable}` : ""}
-                        </span>
-                      </a>
-                    ))}
-                  </div>
-                ) : null}
-
-                {p.name === "Windows" ? (
-                  <div className="mt-2 flex flex-wrap gap-2 ps-2">
-                    <a
-                      href={`${LINUX_ASSET_BASE}/${WINDOWS_PORTABLE}`}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="mono rounded-full border border-ink/15 px-3 py-1 text-xs text-ink-soft transition-colors duration-500 ease-editorial hover:border-orax-blue hover:text-orax-blue"
-                    >
-                      zip
-                      <span className="text-mink-40"> {t.download.portable}</span>
-                    </a>
-                  </div>
-                ) : null}
               </li>
             ))}
           </ul>

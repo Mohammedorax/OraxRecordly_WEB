@@ -273,31 +273,6 @@ const ar = {
           { kind: "improve", text: "وُحِّدت خمس نسخٍ من قارئ الرابط في مكان واحد، وفشل القراءة لم يعُد يُسقط الملف." },
         ],
       },
-      {
-        version: "v1.10.0",
-        date: "2026.10.13",
-        changes: [
-          { kind: "new", text: "الاستمرار في العمل بالخلفية: إغلاق النافذة يُبقي Recordly في منطقة الإشعارات مستعداً للتسجيل." },
-          { kind: "new", text: "أيقونة النظام صارت مُعرَّبة بالكامل، ومنها إظهار التحكم أو إيقاف التسجيل أو إيقافه والخروج معاً." },
-          { kind: "fix", text: "خيارات التلاشي والمزج انتقلت إلى قسم «المشهد» — مكانها الطبيعي — بعد أن كانت مخفية في تنسيق المؤشر." },
-          { kind: "improve", text: "خطوط تنسيق النص من خطوط الجهاز فقط، بلا تنزيل أي شيء من الإنترنت." },
-        ],
-      },
-      {
-        version: "v1.9.0",
-        date: "2026.10.13",
-        changes: [
-          { kind: "new", text: "تصوير منطقة ترسمها بنفسك في شريط الإطلاق، والاقتصاص يبقى ثابتاً طوال التسجيل." },
-          { kind: "improve", text: "المنطقة تُرسَل بوحدات فيزيائية نسبةً إلى الشاشة، فتبقى دقيقة على الشاشات المُقاسة." },
-        ],
-      },
-      {
-        version: "v1.8.0",
-        date: "2026.10.13",
-        changes: [
-          { kind: "fix", text: "استرداد التصدير الذي يخرج أسود بالكامل، وإصلاح مسارات الأصول التي كانت تنكسر بعد نقل الملفات." },
-        ],
-      },
     ],
   },
 
@@ -348,10 +323,22 @@ const ar = {
     desc: "مجانيٌّ بالكامل للتسجيلِ والتحرير — بلا علاماتٍ مائيّة، وبلا بطاقةٍ تدفعُ ثمنَ خيالِك.",
     licenseNote: "مجّانيٌّ للاستخدامِ الشخصيِّ والتجاريِّ، برخصة AGPL-3.0",
     allReleases: "كلُّ الإصداراتِ على جيت هاب ↗",
+    choosePlatform: "اختر نظامك",
+    packages: {
+      windowsInstaller: "المثبّت — التحديث التلقائي يعمل معه",
+      windowsPortable: "محمولة: تعمل من مجلد أو ذاكرة، بلا تثبيت",
+      macArm64Dmg: "أبل سيليكون (M1 وما بعده) · غير موقّعة",
+      macX64Dmg: "معالجات إنتل · غير موقّعة",
+      macArm64Zip: "أبل سيليكون · بلا صورة قرص",
+      macX64Zip: "معالجات إنتل · بلا صورة قرص",
+      linuxAppImage: "كل التوزيعات: أوبنتو · فيدورا · آرتش · مانجارو · بلا تثبيت",
+      linuxDeb: "أوبنتو · دبيان · منت · Pop!_OS · كالي",
+      linuxRpm: "فيدورا · ريد هات · أوبن سوزي",
+    },
     platforms: [
       { note: "مُثبِّتُ سطح المكتب لويندوز (64 بت)" },
-      { note: "لا يوجد إصدار منشور بعد — تابِعْ صفحةَ الإصدارات" },
-      { note: "لا يوجد إصدار منشور بعد — تابِعْ صفحةَ الإصدارات" },
+      { note: "أبل سيليكون ومعالجات إنتل — dmg و zip" },
+      { note: "AppImage لكل التوزيعات · deb لتلك العائلات" },
     ],
     portable: "محمولة — تعمل من مجلد بلا تثبيت",
     linuxFormats: {
@@ -679,31 +666,6 @@ const en: Dict = {
           { kind: "improve", text: "Five copies of the URL reader were consolidated into one, and a failure to read one no longer drops the file." },
         ],
       },
-      {
-        version: "v1.10.0",
-        date: "2026.10.13",
-        changes: [
-          { kind: "new", text: "Keep working in the background: closing the window leaves Recordly in the notification area, ready to record." },
-          { kind: "new", text: "The tray is fully localized, and offers to show the controls, stop recording, or stop and quit." },
-          { kind: "fix", text: "Fade and cross-dissolve options moved to the Scene section where they belong, after being hidden inside cursor formatting." },
-          { kind: "improve", text: "Text formatting uses device fonts only, and downloads nothing." },
-        ],
-      },
-      {
-        version: "v1.9.0",
-        date: "2026.10.13",
-        changes: [
-          { kind: "new", text: "Record a region you draw yourself from the launch bar, with the crop held for the whole recording." },
-          { kind: "improve", text: "The region is sent in physical units relative to the display, so it stays accurate on scaled screens." },
-        ],
-      },
-      {
-        version: "v1.8.0",
-        date: "2026.10.13",
-        changes: [
-          { kind: "fix", text: "Recovered exports that came out completely black, and fixed asset paths that broke after moving files." },
-        ],
-      },
     ],
   },
 
@@ -754,10 +716,22 @@ const en: Dict = {
     desc: "Fully free for recording and editing — no watermarks, and no card paying for your imagination.",
     licenseNote: "Free for personal and commercial use, under the AGPL-3.0 licence",
     allReleases: "All releases on GitHub ↗",
+    choosePlatform: "Choose your system",
+    packages: {
+      windowsInstaller: "The installer - automatic updates work with it",
+      windowsPortable: "Portable: runs from a folder or a stick, nothing to install",
+      macArm64Dmg: "Apple Silicon (M1 and later) · unsigned",
+      macX64Dmg: "Intel Macs · unsigned",
+      macArm64Zip: "Apple Silicon · no disk image",
+      macX64Zip: "Intel Macs · no disk image",
+      linuxAppImage: "Every distribution: Ubuntu · Fedora · Arch · Manjaro · nothing to install",
+      linuxDeb: "Ubuntu · Debian · Mint · Pop!_OS · Kali",
+      linuxRpm: "Fedora · RHEL · openSUSE",
+    },
     platforms: [
       { note: "The desktop installer for Windows (64-bit)" },
-      { note: "No build published yet — watch the releases page" },
-      { note: "No build published yet — watch the releases page" },
+      { note: "Apple Silicon and Intel Macs - dmg and zip" },
+      { note: "AppImage for every distribution · deb and rpm for their families" },
     ],
     portable: "portable - runs from a folder, nothing to install",
     linuxFormats: {
