@@ -229,19 +229,21 @@ const ar = {
     kinds: { new: "جديد", improve: "تحسين", fix: "إصلاح" },
     releases: [
       {
+        version: "v1.13.3",
+        date: "2026.10.16",
+        changes: [
+          { kind: "fix", text: "صدق التحديث: لم يعُد البرنامج يعرض تحديثاً لا يستطيع تطبيقه. تركيب ‎deb أو ‎rpm يملكه مدير الحزم لا التطبيق، ونسخة ويندوز المحمولة لا تستبدل نفسها، ونسخة ماك غير الموقّعة لا تستطيع تركيب بديل موقّع — فتُنزَّل الحزمة الجديدة بدل زر تحديث لا يفعل شيئاً." },
+          { kind: "improve", text: "تقرير التصدير يشمل GIF أيضاً: الوقت ومعدّل الإطارات ونسبة كل مرحلة، لا للفيديو وحده." },
+        ],
+      },
+      {
         version: "v1.13.2",
         date: "2026.10.16",
         changes: [
           { kind: "new", text: "تنوّع الإصدارات على كل الأجهزة: نسخة محمولة zip لويندوز تعمل من مجلد بلا تثبيت، ونسختا zip لماك (أبل سيليكون · إنتل) بجانب صورتَي dmg، وثلاث صيغ للينكس." },
           { kind: "new", text: "التشغيل عند بدء النظام على لينكس: يكتب البرنامج مدخلاً قياسياً في ~/.config/autostart كما تفعل كل أسطح مكتب لينكس، ويشير إلى ملف AppImage نفسه لا إلى مسار مؤقّت." },
-          { kind: "improve", text: "ملفّ تعليمات لكل منصة يُنشر مع الإصدار: اختيار الصيغة، وتجاوز عقبة FUSE في AppImage، وقيود AppArmor في أوبنتو 24.04، وأنّ التحديث الذاتي يخصّ AppImage وحده." },
-        ],
-      },
-      {
-        version: "v1.13.1",
-        date: "2026.10.16",
-        changes: [
           { kind: "fix", text: "خيار «تصوير منطقة» يُعرض فقط حيث يُقصّ الإطار فعلاً: كان يظهر على ماك بينما المساعد هناك لا يقصّ، فيختار المستخدمُ منطقةً وتُسجَّل الشاشةُ كاملةً بصمت. الآن يظهر على ويندوز وحده، ومُثبَّت باختبار وحدة واختبارَي واجهة." },
+          { kind: "improve", text: "ملفّ تعليمات لكل منصة يُنشر مع الإصدار: اختيار الصيغة، وتجاوز عقبة FUSE في AppImage، وقيود AppArmor في أوبنتو 24.04، وأنّ التحديث الذاتي يخصّ AppImage وحده." },
         ],
       },
       {
@@ -362,7 +364,7 @@ const ar = {
       x64: "— معالجات إنتل (غير موقّع)",
     },
     toastTitle: "انطلقتْ رحلةُ التنزيل",
-    toastDesc: "جارٍ إحضارُ OraxRecordly v1.13.2 إلى {platform} — أهلاً بك في الحكاية.",
+    toastDesc: "جارٍ إحضارُ OraxRecordly v1.13.3 إلى {platform} — أهلاً بك في الحكاية.",
   },
 
   demo: {
@@ -390,7 +392,7 @@ const ar = {
   },
 
   sticky: {
-    title: "OraxRecordly v1.13.2",
+    title: "OraxRecordly v1.13.3",
     sub: "مجانيٌّ — بلا علاماتٍ مائيّة",
   },
 
@@ -633,19 +635,21 @@ const en: Dict = {
     kinds: { new: "NEW", improve: "IMPROVED", fix: "FIXED" },
     releases: [
       {
+        version: "v1.13.3",
+        date: "2026.10.16",
+        changes: [
+          { kind: "fix", text: "Honest updates: the app no longer offers an update it cannot install. A deb or rpm installation is owned by the package manager, the portable Windows build cannot replace itself, and the unsigned macOS build cannot install a signed replacement - those users download the newer package instead of pressing a button that does nothing." },
+          { kind: "improve", text: "The export report now covers GIF as well: the same elapsed time, average frame rate and per-phase shares, not just for video." },
+        ],
+      },
+      {
         version: "v1.13.2",
         date: "2026.10.16",
         changes: [
           { kind: "new", text: "More than one way to install on every platform: a portable Windows zip that runs from a folder without installing, macOS zips (Apple Silicon and Intel) beside the disk images, and three Linux formats." },
           { kind: "new", text: "Start at login on Linux: the app writes a standard entry to ~/.config/autostart, pointing at the AppImage itself rather than a temporary mount path." },
-          { kind: "improve", text: "A per-platform install note shipped with each release: which file to pick, the FUSE workaround for the AppImage, the AppArmor restriction on Ubuntu 24.04, and the fact that only the AppImage updates itself." },
-        ],
-      },
-      {
-        version: "v1.13.1",
-        date: "2026.10.16",
-        changes: [
           { kind: "fix", text: "Region recording is offered only where frames are really cropped: it used to appear on macOS, where the recorder cannot crop, so a drawn area silently recorded the whole screen. It is now Windows-only, pinned by a unit test and two UI tests." },
+          { kind: "improve", text: "A per-platform install note shipped with each release: which file to pick, the FUSE workaround for the AppImage, the AppArmor restriction on Ubuntu 24.04, and the fact that only the AppImage updates itself." },
         ],
       },
       {
@@ -766,7 +770,7 @@ const en: Dict = {
       x64: "- Intel Macs (unsigned)",
     },
     toastTitle: "The download has launched",
-    toastDesc: "Bringing OraxRecordly v1.13.2 to {platform} — welcome to the story.",
+    toastDesc: "Bringing OraxRecordly v1.13.3 to {platform} — welcome to the story.",
   },
 
   demo: {
@@ -794,7 +798,7 @@ const en: Dict = {
   },
 
   sticky: {
-    title: "OraxRecordly v1.13.2",
+    title: "OraxRecordly v1.13.3",
     sub: "Free — no watermarks",
   },
 
