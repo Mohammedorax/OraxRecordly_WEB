@@ -110,6 +110,22 @@ try{
 }catch(e){document.documentElement.classList.add('intro-hold');}`,
           }}
         />
+        {/*
+          * Repeat visits: GitHub Pages cannot mark the content-hashed files under
+          * /_next/static as immutable, so the browser revalidates them every time.
+          * The worker in /sw.js serves those from cache instead and refreshes images
+          * in the background. It is only registered by a production build, and only
+          * after the load event, so it can never delay the first paint.
+          */}
+        {process.env.NODE_ENV === "production" ? (
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `window.addEventListener('load',function(){try{if(!('serviceWorker' in navigator))return;navigator.serviceWorker.register(${JSON.stringify(
+                (process.env.NEXT_PUBLIC_BASE_PATH || "") + "/sw.js",
+              )}).catch(function(){});}catch(e){}});`,
+            }}
+          />
+        ) : null}
         <noscript>
           <style>{`.intro-curtain{display:none!important}`}</style>
         </noscript>

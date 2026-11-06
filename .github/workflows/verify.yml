@@ -1,0 +1,80 @@
+name: Verify landing page
+
+# Runs the same checks locally and in CI: the export must build, every asset it
+# references must exist, the page must work end to end (language switch, deferred
+# overlays, dialogs, download chooser) and the download must stay within budget.
+#
+# The budget is deliberately generous - it is a tripwire for a regression of the
+# kind this repo already had (1.75 MB pages of raw screenshots), not a precise
+# performance gate.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: verify-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    name: Build, verify and measure
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Type-check and lint
+        run: |
+          npx tsc --noEmit -p tsconfig.json
+          npm run lint
+
+      - name: Install the browser used by the verification
+        run: npx playwright install --with-deps chromium
+
+      - name: Build the static export
+        env:
+          SITE_BASE_PATH: /OraxRecordly_WEB
+          SITE_URL: https://mohammedorax.github.io
+        run: npm run build
+
+      - name: Serve the export like GitHub Pages
+        run: |
+          python3 scripts/serve-export.py 8123 &
+          for attempt in $(seq 1 20); do
+            if curl -fsS "http://127.0.0.1:8123/OraxRecordly_WEB/" > /dev/null; then
+              echo "server ready"
+              exit 0
+            fi
+            sleep 1
+          done
+          echo "server never became ready"
+          exit 1
+
+      - name: Verify the page end to end
+        run: node scripts/verify-page.mjs "http://127.0.0.1:8123/OraxRecordly_WEB/"
+
+      - name: Measure the download
+        run: |
+          node scripts/measure-page.mjs "http://127.0.0.1:8123/OraxRecordly_WEB/" | tee measurement.txt
+          total_kb=$(grep -o 'TOTAL transferred: [0-9.]*' measurement.txt | awk '{print $3}')
+          echo "page transfer: ${total_kb} KB"
+          if awk "BEGIN {exit !(${total_kb} > 950)}"; then
+            echo "::error::The page now transfers ${total_kb} KB, above the 950 KB budget."
+            exit 1
+          fi

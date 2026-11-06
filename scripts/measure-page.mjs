@@ -100,6 +100,29 @@ for (const resource of resources) {
 const total = [...byType.values()].reduce((sum, bucket) => sum + bucket.bytes, 0);
 const kb = (bytes) => `${(bytes / 1024).toFixed(1)} KB`;
 
+
+// A repeat visit is what the service worker exists for: reload and count how much
+// of the page the browser serves from its cache instead of the network.
+await page.reload({ waitUntil: "load" });
+await page.waitForTimeout(1200);
+const repeatResources = await page.evaluate(() =>
+	performance.getEntriesByType("resource").map((entry) => ({
+		transfer: entry.transferSize,
+		decoded: entry.decodedBodySize,
+	})),
+);
+const repeatNavigation = await page.evaluate(() => {
+	const entry = performance.getEntriesByType("navigation")[0];
+	return { transfer: entry?.transferSize ?? 0 };
+});
+const repeatTotal =
+	repeatResources.reduce((sum, resource) => sum + (resource.transfer || 0), 0) +
+	(repeatNavigation.transfer || 0);
+const repeatCached = repeatResources.filter((resource) => resource.transfer === 0).length;
+console.log(
+	`\nRepeat visit: ${kb(repeatTotal)} transferred, ${repeatCached}/${repeatResources.length} resources served from cache`,
+);
+
 console.log(`\nDocument: ${kb(navigation.transfer || navigation.encoded)} (gzip), ${kb(navigation.decoded)} decoded`);
 console.log(`Initial payload before scrolling: ${kb(initialBytes)}`);
 console.log("Resources by type:");
