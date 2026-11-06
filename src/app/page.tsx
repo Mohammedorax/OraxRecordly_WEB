@@ -10,9 +10,7 @@ import { FAQ } from "@/components/site/faq";
 import { Changelog } from "@/components/site/changelog";
 import { Footer } from "@/components/site/footer";
 import { Intro } from "@/components/site/intro";
-import { StickyCTA } from "@/components/site/sticky-cta";
-import { BackToTop } from "@/components/site/back-to-top";
-import { Shortcuts } from "@/components/site/shortcuts";
+import { DeferredOverlays } from "@/components/site/deferred-overlays";
 import { SkipLink } from "@/components/site/skip-link";
 import {
   SiteChromeProvider,
@@ -71,9 +69,7 @@ export default function Home() {
         </main>
 
         <Footer />
-        <StickyCTA />
-        <BackToTop />
-        <Shortcuts />
+        <DeferredOverlays />
 
         <script
           type="application/ld+json"

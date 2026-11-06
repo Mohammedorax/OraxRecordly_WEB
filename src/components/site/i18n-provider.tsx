@@ -9,7 +9,15 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import { DICTS, type Dict, type Lang } from "@/lib/i18n";
+import { ar as DICT_AR, type Dict, type Lang } from "@/lib/i18n-ar";
+
+/**
+ * The English dictionary is a separate chunk: an Arabic-first visitor never
+ * downloads it, and an English visitor gets it before the page is revealed.
+ */
+function loadEnglishDict(): Promise<Dict> {
+  return import("@/lib/i18n-en").then((module) => module.en);
+}
 
 type I18n = {
   lang: Lang;
@@ -61,13 +69,35 @@ export function I18nProvider({
   initialLang: Lang;
   children: ReactNode;
 }) {
-  const [lang, setLangState] = useState<Lang>(initialLang);
+  const [{ lang, t: dict }, setVoice] = useState<{ lang: Lang; t: Dict }>({
+    // The exported HTML is always Arabic; English arrives asynchronously.
+    lang: initialLang,
+    t: DICT_AR,
+  });
 
   // Adopt the stored language pre-paint, then release the visibility guard.
   useIsoLayoutEffect(() => {
     const root = document.documentElement;
     const stored = readStoredLang();
-    if (stored && stored !== initialLang) setLangState(stored);
+
+    if (stored === "en") {
+      // Keep the page hidden until the English dictionary lands. The pre-paint
+      // script has already set lang/dir/title, so revealing now would show the
+      // Arabic copy in an English-language frame - exactly the flash this guard
+      // exists to prevent. The CSS valve still reveals the page on its own if
+      // this promise never settles.
+      root.classList.add("lang-loading");
+      void loadEnglishDict()
+        .then((dictionary) => setVoice({ lang: "en", t: dictionary }))
+        .catch(() => undefined)
+        .finally(() => {
+          root.classList.remove("lang-loading");
+          root.classList.remove("lang-pending");
+          root.classList.add("js-alive");
+        });
+      return;
+    }
+
     root.classList.remove("lang-pending");
     // Hydration has committed, so the client is demonstrably alive: disarm the
     // pure-CSS white-screen circuit breakers in globals.css. They stay armed —
@@ -88,16 +118,26 @@ export function I18nProvider({
     }
   }, [lang]);
 
-  const setLang = useCallback((l: Lang) => setLangState(l), []);
+  const setLang = useCallback((next: Lang) => {
+    if (next === "ar") {
+      setVoice({ lang: "ar", t: DICT_AR });
+      return;
+    }
+    // Switching to English loads the chunk; the current copy stays on screen
+    // until it lands, so the click never blanks the page.
+    void loadEnglishDict()
+      .then((dictionary) => setVoice({ lang: "en", t: dictionary }))
+      .catch(() => undefined);
+  }, []);
   const toggleLang = useCallback(
-    () => setLangState((v) => (v === "ar" ? "en" : "ar")),
-    []
+    () => setLang(lang === "ar" ? "en" : "ar"),
+    [lang, setLang]
   );
 
   const value: I18n = {
     lang,
     dir: lang === "ar" ? "rtl" : "ltr",
-    t: DICTS[lang],
+    t: dict,
     setLang,
     toggleLang,
     monoLabel: lang === "ar" ? "mono mono-ar" : "mono",
@@ -112,7 +152,7 @@ export function I18nProvider({
         title while reading English. As a rendered node it simply follows
         the language through every render.
       */}
-      <title>{DICTS[lang].meta.title}</title>
+      <title>{dict.meta.title}</title>
       {children}
     </I18nContext.Provider>
   );

@@ -3,7 +3,12 @@
 import { ArrowUpLeft, ArrowUpRight } from "lucide-react";
 import { Reveal } from "./reveal";
 import { SitePicture } from "./site-picture";
-import { DemoDialog } from "./demo-dialog";
+import dynamic from "next/dynamic";
+
+/* The demo player is a modal: its code is fetched on first use, not with the page. */
+const DemoDialog = dynamic(() => import("./demo-dialog").then((m) => m.DemoDialog), {
+  ssr: false,
+});
 import { useI18n } from "./i18n-provider";
 import { LQIP } from "@/lib/lqip";
 

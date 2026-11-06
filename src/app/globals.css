@@ -210,6 +210,18 @@
     visibility: visible;
   }
 }
+/*
+ * While the English dictionary is being fetched, the page stays hidden. Arabic is
+ * what the static export ships, and showing it to an English visitor for the few
+ * hundred milliseconds the chunk takes would be the wrong-language flash that the
+ * `lang-pending` guard exists to prevent. The same 1ms/2.5s valve keeps a visitor
+ * whose bundle fails from staring at an empty page.
+ */
+html.lang-loading body {
+  visibility: hidden;
+  animation: orax-lang-reveal 1ms linear 2.5s forwards;
+}
+
 html.lang-pending body {
   visibility: hidden;
   animation: orax-lang-reveal 1ms linear 300ms forwards;
