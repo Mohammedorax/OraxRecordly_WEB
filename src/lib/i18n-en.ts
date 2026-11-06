@@ -232,6 +232,14 @@ export const en: Dict = {
     kinds: { new: "NEW", improve: "IMPROVED", fix: "FIXED" },
     releases: [
       {
+        version: "v1.13.5",
+        date: "2026.11.07",
+        changes: [
+          { kind: "improve", text: "Updated runtime and libraries: the Chromium core that records, decodes and encodes (Electron 43.8.7), the container/codec library (mediabunny 1.65), the preview renderer (Pixi 8.22), the update engine (electron-updater 6.8.11) and the build/test tooling - with the native helpers rebuilt on the new core." },
+          { kind: "improve", text: "Verified in full after the upgrade: 1796 unit tests, both typechecks, the production build and eight real export/run specs all pass before publishing." },
+        ],
+      },
+      {
         version: "v1.13.4",
         date: "2026.10.16",
         changes: [
@@ -264,16 +272,6 @@ export const en: Dict = {
           { kind: "new", text: "Linux builds: an AppImage that runs on any distribution without installing, a deb for Ubuntu and Debian, an rpm for Fedora and openSUSE, plus a Linux update feed." },
           { kind: "new", text: "An unsigned macOS build (Apple Silicon and Intel) for anyone who wants to try it without an Apple account, with the Gatekeeper steps written out in the install note." },
           { kind: "improve", text: "Automated package verification on Linux: each package is installed, unpacked and actually launched, with every shared library (101 of them), the desktop entry and the icons checked - so \"it built\" is never mistaken for \"it runs\"." },
-        ],
-      },
-      {
-        version: "v1.12.0",
-        date: "2026.10.13",
-        changes: [
-          { kind: "new", text: "One screenshot button with the modes inside it, remembering the last one you used, instead of two buttons that looked duplicated." },
-          { kind: "improve", text: "Smoother editing: the playhead updates 30 times a second with a trailing flush, so the preview keeps drawing at full frame rate. A playback measurement on a 4K source reports 41 fps at a p95 of 41 ms." },
-          { kind: "fix", text: "Quality levels are real: medium, good and high produced one bitrate before, so the choice changed nothing." },
-          { kind: "fix", text: "The clip name and date are no longer burned into the export by default, verified against a real encoded file." },
         ],
       },
     ],
@@ -354,7 +352,7 @@ export const en: Dict = {
       x64: "- Intel Macs (unsigned)",
     },
     toastTitle: "The download has launched",
-    toastDesc: "Bringing OraxRecordly v1.13.4 to {platform} — welcome to the story.",
+    toastDesc: "Bringing OraxRecordly v1.13.5 to {platform} — welcome to the story.",
   },
 
   demo: {
@@ -382,7 +380,7 @@ export const en: Dict = {
   },
 
   sticky: {
-    title: "OraxRecordly v1.13.4",
+    title: "OraxRecordly v1.13.5",
     sub: "Free — no watermarks",
   },
 

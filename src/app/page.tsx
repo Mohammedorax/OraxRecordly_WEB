@@ -28,7 +28,7 @@ const JSON_LD = {
   operatingSystem: "Windows 10, Windows 11, macOS, Linux",
   description:
     "استوديو تسجيل الشاشة وتحرير الفيديو من أوراكس: التقط شاشتك بدقة 4K وستين إطاراً في الثانية، وحرّر بإيقاع خيالك، وشارك تحفتك بلا علامات مائية.",
-  softwareVersion: "1.13.4",
+  softwareVersion: "1.13.5",
   inLanguage: "ar",
   isAccessibleForFree: true,
   screenshot: absoluteUrl("/images/app/app-02.webp"),
