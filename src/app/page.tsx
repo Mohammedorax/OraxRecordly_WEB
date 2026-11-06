@@ -27,13 +27,13 @@ const JSON_LD = {
   applicationCategory: "MultimediaApplication",
   // The published release ships a Windows installer only — see
   // https://github.com/Mohammedorax/OraxRecordly/releases
-  operatingSystem: "Windows 10 (build 19041 or newer), Windows 11",
+  operatingSystem: "Windows 10, Windows 11, macOS, Linux",
   description:
     "استوديو تسجيل الشاشة وتحرير الفيديو من أوراكس: التقط شاشتك بدقة 4K وستين إطاراً في الثانية، وحرّر بإيقاع خيالك، وشارك تحفتك بلا علامات مائية.",
-  softwareVersion: "1.13.3",
+  softwareVersion: "1.13.4",
   inLanguage: "ar",
   isAccessibleForFree: true,
-  screenshot: absoluteUrl("/images/app/app-02.jpg"),
+  screenshot: absoluteUrl("/images/app/app-02.webp"),
   featureList: [
     "Screen recording up to 4K at 60fps",
     "Timeline video editor — trim, split, speed",

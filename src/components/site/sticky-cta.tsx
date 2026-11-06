@@ -46,7 +46,7 @@ export function StickyCTA() {
       <div className="flex items-center justify-between gap-4 border-t border-ink/10 bg-paper/95 px-5 py-3 shadow-[0_-8px_30px_rgba(10,10,10,0.10)] backdrop-blur-sm">
         <span className="flex min-w-0 items-center gap-3">
           <Image
-            src={asset("/brand/logo-icon.png")}
+            src={asset("/brand/logo-icon.webp")}
             alt=""
             width={192}
             height={124}

@@ -198,7 +198,7 @@ export function Header() {
             className="pointer-events-auto inline-flex items-center rounded-full border border-black/10 bg-white py-1.5 pe-4 ps-4 shadow-[0_1px_14px_rgba(10,10,10,0.08)] transition-shadow duration-500 ease-editorial hover:shadow-[0_2px_22px_rgba(19,108,200,0.22)]"
           >
             <Image
-              src={asset("/brand/logo-horizontal.png")}
+              src={asset("/brand/logo-horizontal.webp")}
               alt={t.header.logoAlt}
               width={400}
               height={123}

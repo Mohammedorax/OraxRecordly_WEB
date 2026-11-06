@@ -22,10 +22,13 @@ import { asset, SITE_URL } from "@/lib/asset";
  */
 const saHazm = localFont({
   src: [
-    { path: "../fonts/SAHazm-Regular.ttf", weight: "400", style: "normal" },
-    { path: "../fonts/SAHazm-Medium.ttf", weight: "500", style: "normal" },
-    { path: "../fonts/SAHazm-SemiBold.ttf", weight: "600", style: "normal" },
-    { path: "../fonts/SAHazm-Bold.ttf", weight: "700", style: "normal" },
+    // WOFF2, subset to the characters the site can render: the four TTF sources
+    // were 156 KB of uncompressed font on every first paint, these are 60 KB.
+    // Regenerate with `python scripts/subset-fonts.py` after adding new text.
+    { path: "../fonts/SAHazm-Regular.woff2", weight: "400", style: "normal" },
+    { path: "../fonts/SAHazm-Medium.woff2", weight: "500", style: "normal" },
+    { path: "../fonts/SAHazm-SemiBold.woff2", weight: "600", style: "normal" },
+    { path: "../fonts/SAHazm-Bold.woff2", weight: "700", style: "normal" },
   ],
   variable: "--font-sa-hazm",
   display: "swap",
@@ -62,13 +65,13 @@ export const metadata: Metadata = {
     siteName: "OraxRecordly",
     type: "website",
     locale: "ar",
-    images: [asset("/images/app/app-02.jpg")],
+    images: [asset("/images/og.jpg")],
   },
   twitter: {
     card: "summary_large_image",
     title: DICTS.ar.meta.title,
     description: DICTS.ar.meta.description,
-    images: [asset("/images/app/app-02.jpg")],
+    images: [asset("/images/og.jpg")],
   },
   alternates: { canonical: asset("/") },
 };

@@ -1,12 +1,11 @@
 "use client";
 
-import Image from "next/image";
 import { ArrowUpLeft, ArrowUpRight } from "lucide-react";
 import { Reveal } from "./reveal";
+import { SitePicture } from "./site-picture";
 import { DemoDialog } from "./demo-dialog";
 import { useI18n } from "./i18n-provider";
 import { LQIP } from "@/lib/lqip";
-import { asset } from "@/lib/asset";
 
 /**
  * Real captures of the shipped app (public/images/app/*), each matched to the
@@ -86,14 +85,11 @@ export function Features() {
             >
               {/* 4:3 image container with slight rounding */}
               <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-ink/5">
-                <Image
-                  src={asset(FEATURE_MEDIA[i].image)}
+                <SitePicture
+                  src={FEATURE_MEDIA[i].image}
                   alt={feature.alt}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  placeholder="blur"
-                  blurDataURL={LQIP[FEATURE_MEDIA[i].image]}
-                  className="object-cover grayscale transition-all duration-700 ease-editorial group-hover:scale-105 group-hover:grayscale-0"
+                  lqip={LQIP[FEATURE_MEDIA[i].image]}
+                  className="grayscale transition-all duration-700 ease-editorial group-hover:scale-105 group-hover:grayscale-0"
                 />
                 {/* Hover overlay — black at 10% */}
                 <div className="absolute inset-0 bg-black/10 opacity-0 transition-opacity duration-500 ease-editorial group-hover:opacity-100" />

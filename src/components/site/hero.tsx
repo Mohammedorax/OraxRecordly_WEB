@@ -25,7 +25,7 @@ export function Hero() {
       {/* Brand lockup — the logo, in its true colors */}
       <Reveal delay={250} className="mt-10">
         <Image
-          src={asset("/brand/logo-full.png")}
+          src={asset("/brand/logo-full.webp")}
           alt={t.hero.logoAlt}
           width={400}
           height={378}

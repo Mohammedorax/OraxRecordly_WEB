@@ -1,12 +1,11 @@
 "use client";
 
 import { useRef, useState } from "react";
-import Image from "next/image";
 import { ChevronsLeftRight } from "lucide-react";
 import { Reveal } from "./reveal";
 import { useI18n } from "./i18n-provider";
+import { SitePicture } from "./site-picture";
 import { LQIP } from "@/lib/lqip";
-import { asset } from "@/lib/asset";
 
 /** The formats and frame rates the studio ships out of the box. */
 const EXPORT_CHIPS = ["MP4", "GIF", "PNG", "JPEG", "4K", "60FPS"];
@@ -79,15 +78,10 @@ export function BeforeAfter() {
             className="relative aspect-[16/10] cursor-ew-resize touch-none select-none overflow-hidden rounded-2xl bg-ink/5 outline-offset-4 focus-visible:outline-1 focus-visible:outline-orax-blue"
           >
             {/* AFTER — the Orax edit (base layer) */}
-            <Image
-              src={asset("/images/app/app-02.jpg")}
+            <SitePicture
+              src="/images/app/app-02.jpg"
               alt={t.features.items[1].alt}
-              fill
-              sizes="(max-width: 768px) 100vw, 1100px"
-              placeholder="blur"
-              blurDataURL={LQIP["/images/app/app-02.jpg"]}
-              className="object-cover"
-              draggable={false}
+              lqip={LQIP["/images/app/app-02.jpg"]}
             />
 
             {/* BEFORE — the raw capture, clipped up to the divider */}
@@ -96,16 +90,11 @@ export function BeforeAfter() {
               style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}
               aria-hidden="true"
             >
-              <Image
-                src={asset("/images/app/app-02.jpg")}
-                alt=""
-                fill
-                sizes="(max-width: 768px) 100vw, 1100px"
-                placeholder="blur"
-                blurDataURL={LQIP["/images/app/app-02.jpg"]}
-                className="object-cover grayscale contrast-75 brightness-90"
-                draggable={false}
-              />
+              <SitePicture
+              src="/images/app/app-02.jpg"
+              alt={t.features.items[1].alt}
+              lqip={LQIP["/images/app/app-02.jpg"]}
+            />
               {/* a whisper of sensor flatness over the raw side */}
               <div className="absolute inset-0 bg-black/10" />
             </div>

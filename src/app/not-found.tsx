@@ -11,7 +11,7 @@ export default function NotFound() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-paper px-6 text-center text-ink">
       <Image
-        src={asset("/brand/logo-full.png")}
+        src={asset("/brand/logo-full.webp")}
         alt={t.notFound.logoAlt}
         width={400}
         height={378}

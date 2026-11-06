@@ -1,12 +1,11 @@
 "use client";
 
-import Image from "next/image";
 import { Reveal } from "./reveal";
 import { Scramble } from "./scramble";
 import { cn } from "@/lib/utils";
 import { useI18n } from "./i18n-provider";
+import { SitePicture } from "./site-picture";
 import { LQIP } from "@/lib/lqip";
-import { asset } from "@/lib/asset";
 
 /** Asymmetrical radius patterns — Card A / B / C per the editorial spec */
 const RADIUS_PATTERNS = [
@@ -36,16 +35,11 @@ function MarqueeSet({ alts }: { alts: string[] }) {
             RADIUS_PATTERNS[i % 3]
           )}
         >
-          <Image
-            src={asset(src)}
+          <SitePicture
+            src={src}
             alt={alts[i] ?? ""}
-            fill
-            sizes="(max-width: 768px) 208px, 288px"
-            loading="lazy"
-            placeholder="blur"
-            blurDataURL={LQIP[src]}
-            draggable={false}
-            className="object-cover grayscale transition-all duration-700 ease-editorial group-hover:scale-105 group-hover:grayscale-0"
+            lqip={LQIP[src]}
+            className="grayscale transition-all duration-700 ease-editorial group-hover:scale-105 group-hover:grayscale-0"
           />
         </figure>
       ))}

@@ -162,7 +162,7 @@ export function Footer() {
             <Reveal>
               <span className="inline-flex items-center rounded-full border border-white/15 bg-white py-2.5 pe-5 ps-5">
                 <Image
-                  src={asset("/brand/logo-horizontal.png")}
+                  src={asset("/brand/logo-horizontal.webp")}
                   alt={f.logoAlt}
                   width={400}
                   height={123}

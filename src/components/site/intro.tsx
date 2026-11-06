@@ -55,7 +55,7 @@ export function Intro() {
   return (
     <div ref={curtainRef} className="intro-curtain" aria-hidden="true">
       <Image
-        src={asset("/brand/logo-full.png")}
+        src={asset("/brand/logo-full.webp")}
         alt=""
         width={400}
         height={378}

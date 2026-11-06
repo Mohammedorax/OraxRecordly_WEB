@@ -114,7 +114,7 @@ export function Comparison() {
                 >
                   <span className="inline-flex flex-col items-center gap-2">
                     <Image
-                      src={asset("/brand/logo-icon.png")}
+                      src={asset("/brand/logo-icon.webp")}
                       alt=""
                       width={192}
                       height={124}

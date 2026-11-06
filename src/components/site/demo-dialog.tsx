@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
 import { Pause, Play } from "lucide-react";
 import {
   Dialog,
@@ -13,8 +12,8 @@ import {
 } from "@/components/ui/dialog";
 import { useMagnetic } from "@/hooks/use-magnetic";
 import { cn } from "@/lib/utils";
+import { SitePicture } from "./site-picture";
 import { LQIP } from "@/lib/lqip";
-import { asset } from "@/lib/asset";
 import { useI18n } from "./i18n-provider";
 
 const DURATION = 84; // 01:24 — the demo's editorial runtime
@@ -123,16 +122,13 @@ export function DemoDialog({ listen = false }: { listen?: boolean }) {
         {/* Screen */}
         <div className="relative aspect-video w-full overflow-hidden bg-black">
           {SCENES.map((scene, i) => (
-            <Image
+            <SitePicture
               key={scene.img}
-              src={asset(scene.img)}
+              src={scene.img}
               alt={t.demo.scenes[i]}
-              fill
-              sizes="(max-width: 768px) 100vw, 768px"
-              placeholder="blur"
-              blurDataURL={LQIP[scene.img]}
+              lqip={LQIP[scene.img]}
               className={cn(
-                "object-cover transition-opacity duration-700 ease-editorial",
+                "transition-opacity duration-700 ease-editorial",
                 i === sceneIdx ? "opacity-100" : "opacity-0"
               )}
             />
