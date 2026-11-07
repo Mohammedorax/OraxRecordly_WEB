@@ -232,6 +232,16 @@ export const en: Dict = {
     kinds: { new: "NEW", improve: "IMPROVED", fix: "FIXED" },
     releases: [
       {
+        version: "v1.13.6",
+        date: "2026.11.07",
+        changes: [
+          { kind: "fix", text: "Exporting on Linux: the WebGPU renderer could initialise and then crash on the very first frame on some distributions (Fedora among them), failing the export with zero frames rendered. Linux now uses WebGL first - the backend the editor preview already runs on that machine - with WebGPU as the fallback." },
+          { kind: "fix", text: "A renderer crash no longer ends the export: a failed modern run is retried automatically on the software pipeline (through the bundled FFmpeg) and finishes, including when a distribution build ships no WebCodecs H.264 encoder." },
+          { kind: "fix", text: "The Pixi renderer is pinned to 8.14 after 8.22 introduced a cross-dissolve export crash around frame 39." },
+          { kind: "improve", text: "Failure reports now include the first stack frames and the real reason: Linux no longer receives \"H.264 Annex B is not supported\" for a Windows-only path." },
+        ],
+      },
+      {
         version: "v1.13.5",
         date: "2026.11.07",
         changes: [
@@ -263,15 +273,6 @@ export const en: Dict = {
           { kind: "new", text: "Start at login on Linux: the app writes a standard entry to ~/.config/autostart, pointing at the AppImage itself rather than a temporary mount path." },
           { kind: "fix", text: "Region recording is offered only where frames are really cropped: it used to appear on macOS, where the recorder cannot crop, so a drawn area silently recorded the whole screen. It is now Windows-only, pinned by a unit test and two UI tests." },
           { kind: "improve", text: "A per-platform install note shipped with each release: which file to pick, the FUSE workaround for the AppImage, the AppArmor restriction on Ubuntu 24.04, and the fact that only the AppImage updates itself." },
-        ],
-      },
-      {
-        version: "v1.13.0",
-        date: "2026.10.15",
-        changes: [
-          { kind: "new", text: "Linux builds: an AppImage that runs on any distribution without installing, a deb for Ubuntu and Debian, an rpm for Fedora and openSUSE, plus a Linux update feed." },
-          { kind: "new", text: "An unsigned macOS build (Apple Silicon and Intel) for anyone who wants to try it without an Apple account, with the Gatekeeper steps written out in the install note." },
-          { kind: "improve", text: "Automated package verification on Linux: each package is installed, unpacked and actually launched, with every shared library (101 of them), the desktop entry and the icons checked - so \"it built\" is never mistaken for \"it runs\"." },
         ],
       },
     ],
@@ -352,7 +353,7 @@ export const en: Dict = {
       x64: "- Intel Macs (unsigned)",
     },
     toastTitle: "The download has launched",
-    toastDesc: "Bringing OraxRecordly v1.13.5 to {platform} — welcome to the story.",
+    toastDesc: "Bringing OraxRecordly v1.13.6 to {platform} — welcome to the story.",
   },
 
   demo: {
@@ -380,7 +381,7 @@ export const en: Dict = {
   },
 
   sticky: {
-    title: "OraxRecordly v1.13.5",
+    title: "OraxRecordly v1.13.6",
     sub: "Free — no watermarks",
   },
 
